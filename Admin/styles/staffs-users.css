@@ -1,0 +1,49 @@
+:root {
+	--primary-clr: #ff4a00;
+	--primary-light-clr: #ffede6;
+	--light-lime: #ebfaf1;
+	--lime: #62d493;
+	--light-crimson: #ffe6eb;
+	--crismson: #fe2c55;
+	--border: #ccc;
+	--card-border: 1px solid #e5e5e5;
+	--grey: #999;
+	--white: #fff;
+	--bg-clr: #f5f5f5;
+	--dark-grey: #666;
+	--black: #000;
+	--dark: #202040;
+	--light-yellow: #fef7e6;
+	--dark-lime: #28b665;
+}
+
+.table-wrapper-inner {
+	position: relative;
+	background-color: var(--white);
+	border: var(--card-border);
+	padding: 1rem;
+	border-radius: 8px;
+}
+.table-wrapper :is(thead, tbody) :is(tr, th, td) {
+	border: none;
+}
+.table-wrapper tbody td {
+	color: var(--dark);
+	font-size: 14px;
+}
+.table-wrapper tbody td a {
+	color: var(--dark-lime);
+	font-size: 15px;
+}
+.table-wrapper tbody td button {
+	color: var(--crismson);
+}
+@media all and (max-width: 991px) {
+	.table-wrapper {
+		max-width: 900px;
+		overflow-x: scroll;
+	}
+	.table-wrapper-inner {
+		min-width: 900px;
+	}
+}

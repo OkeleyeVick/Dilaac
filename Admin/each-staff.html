@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="../assets/images/favicon-icon-logo2.svg" />
+		<!-- external styles -->
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../assets/font/bootstrap-icons.css" />
+
+		<!-- ======== custom styles ======= --->
+		<!-- globalstyles -->
+		<link rel="stylesheet" href="./styles/globalstyles.css" />
+		<!-- layout styles -->
+		<link rel="stylesheet" href="./styles/layout.css" />
+		<!-- page styles -->
+		<link rel="stylesheet" href="./styles/each-staff.css" />
+		<title>Each Staff</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="row col-12 m-0 wrapper-inner">
+				<div class="nav-sidebar p-0 d-none d-md-inline-flex col-md-3">
+					<div class="nav-sidebar-inner">
+						<div class="nav-sidebar-logo">
+							<a href="#"><img src="../assets/images/variant-logo.svg" alt="" class="img-fluid" /></a>
+						</div>
+						<div class="nav-sidebar-content">
+							<ul class="nav-links">
+								<li class="each-nav-link">
+									<a href="./dashboard.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 24 24">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M3 3h7v9H3zm11 0h7v5h-7zm0 9h7v9h-7zM3 16h7v5H3z" />
+											</svg>
+										</span>
+										<span>Dashboard</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./users.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 36 36">
+												<path
+													fill="currentColor"
+													d="M18 17a7 7 0 1 0-7-7a7 7 0 0 0 7 7Zm0-12a5 5 0 1 1-5 5a5 5 0 0 1 5-5Z"
+													class="clr-i-outline clr-i-outline-path-1" />
+												<path
+													fill="currentColor"
+													d="M30.47 24.37a17.16 17.16 0 0 0-24.93 0A2 2 0 0 0 5 25.74V31a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2v-5.26a2 2 0 0 0-.53-1.37ZM29 31H7v-5.27a15.17 15.17 0 0 1 22 0Z"
+													class="clr-i-outline clr-i-outline-path-2" />
+												<path fill="none" d="M0 0h36v36H0z" />
+											</svg>
+										</span>
+										<span>Users</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./staffs.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 15 15">
+												<path
+													fill="currentColor"
+													d="M10.5 14.49v.5h.5v-.5h-.5Zm-10 0H0v.5h.5v-.5Zm14 .01v.5h.5v-.5h-.5ZM8 3.498a2.499 2.499 0 0 1-2.5 2.498v1C7.433 6.996 9 5.43 9 3.498H8ZM5.5 5.996A2.499 2.499 0 0 1 3 3.498H2a3.499 3.499 0 0 0 3.5 3.498v-1ZM3 3.498A2.499 2.499 0 0 1 5.5 1V0A3.499 3.499 0 0 0 2 3.498h1ZM5.5 1A2.5 2.5 0 0 1 8 3.498h1A3.499 3.499 0 0 0 5.5 0v1Zm5 12.99H.5v1h10v-1Zm-9.5.5v-1.995H0v1.995h1Zm2.5-4.496h4v-1h-4v1Zm6.5 2.5v1.996h1v-1.996h-1Zm-2.5-2.5a2.5 2.5 0 0 1 2.5 2.5h1a3.5 3.5 0 0 0-3.5-3.5v1Zm-6.5 2.5a2.5 2.5 0 0 1 2.5-2.5v-1a3.5 3.5 0 0 0-3.5 3.5h1ZM14 13v1.5h1V13h-1Zm.5 1H12v1h2.5v-1ZM12 11a2 2 0 0 1 2 2h1a3 3 0 0 0-3-3v1Zm-.5-3A1.5 1.5 0 0 1 10 6.5H9A2.5 2.5 0 0 0 11.5 9V8ZM13 6.5A1.5 1.5 0 0 1 11.5 8v1A2.5 2.5 0 0 0 14 6.5h-1ZM11.5 5A1.5 1.5 0 0 1 13 6.5h1A2.5 2.5 0 0 0 11.5 4v1Zm0-1A2.5 2.5 0 0 0 9 6.5h1A1.5 1.5 0 0 1 11.5 5V4Z" />
+											</svg>
+										</span>
+										<span>Staffs</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./console.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 16 16">
+												<g transform="translate(16 0) scale(-1 1)">
+													<g fill="currentColor">
+														<path
+															d="M4.5 6a.5.5 0 1 0 0-1a.5.5 0 0 0 0 1ZM6 6a.5.5 0 1 0 0-1a.5.5 0 0 0 0 1Zm2-.5a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0Z" />
+														<path
+															d="M12 1a2 2 0 0 1 2 2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10ZM2 12V5a2 2 0 0 1 2-2h9a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1Zm1-4v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8H3Zm12-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v2h12Z" />
+													</g>
+												</g>
+											</svg>
+										</span>
+										<span>Console</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./bloglist.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 24 24">
+												<path
+													fill="currentColor"
+													d="M20 22H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1zm-1-2V4H5v16h14zM8 7h8v2H8V7zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" />
+											</svg>
+										</span>
+										<span>Blog List</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./settings.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 36 36">
+												<g transform="translate(36 0) scale(-1 1)">
+													<path
+														fill="currentColor"
+														d="M18.1 11c-3.9 0-7 3.1-7 7s3.1 7 7 7s7-3.1 7-7s-3.1-7-7-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5s5 2.2 5 5s-2.2 5-5 5z"
+														class="clr-i-outline clr-i-outline-path-1" />
+													<path
+														fill="currentColor"
+														d="m32.8 14.7l-2.8-.9l-.6-1.5l1.4-2.6c.3-.6.2-1.4-.3-1.9l-2.4-2.4c-.5-.5-1.3-.6-1.9-.3l-2.6 1.4l-1.5-.6l-.9-2.8C21 2.5 20.4 2 19.7 2h-3.4c-.7 0-1.3.5-1.4 1.2L14 6c-.6.1-1.1.3-1.6.6L9.8 5.2c-.6-.3-1.4-.2-1.9.3L5.5 7.9c-.5.5-.6 1.3-.3 1.9l1.3 2.5c-.2.5-.4 1.1-.6 1.6l-2.8.9c-.6.2-1.1.8-1.1 1.5v3.4c0 .7.5 1.3 1.2 1.5l2.8.9l.6 1.5l-1.4 2.6c-.3.6-.2 1.4.3 1.9l2.4 2.4c.5.5 1.3.6 1.9.3l2.6-1.4l1.5.6l.9 2.9c.2.6.8 1.1 1.5 1.1h3.4c.7 0 1.3-.5 1.5-1.1l.9-2.9l1.5-.6l2.6 1.4c.6.3 1.4.2 1.9-.3l2.4-2.4c.5-.5.6-1.3.3-1.9l-1.4-2.6l.6-1.5l2.9-.9c.6-.2 1.1-.8 1.1-1.5v-3.4c0-.7-.5-1.4-1.2-1.6zm-.8 4.7l-3.6 1.1l-.1.5l-.9 2.1l-.3.5l1.8 3.3l-2 2l-3.3-1.8l-.5.3c-.7.4-1.4.7-2.1.9l-.5.1l-1.1 3.6h-2.8l-1.1-3.6l-.5-.1l-2.1-.9l-.5-.3l-3.3 1.8l-2-2l1.8-3.3l-.3-.5c-.4-.7-.7-1.4-.9-2.1l-.1-.5L4 19.4v-2.8l3.4-1l.2-.5c.2-.8.5-1.5.9-2.2l.3-.5l-1.7-3.3l2-2l3.2 1.8l.5-.3c.7-.4 1.4-.7 2.2-.9l.5-.2L16.6 4h2.8l1.1 3.5l.5.2c.7.2 1.4.5 2.1.9l.5.3l3.3-1.8l2 2l-1.8 3.3l.3.5c.4.7.7 1.4.9 2.1l.1.5l3.6 1.1v2.8z"
+														class="clr-i-outline clr-i-outline-path-2" />
+													<path fill="none" d="M0 0h36v36H0z" />
+												</g>
+											</svg>
+										</span>
+										<span>Settings</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="nav-links">
+								<li class="each-nav-link">
+									<a href="#" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 24 24">
+												<g transform="rotate(180 12 12)">
+													<path
+														fill="currentColor"
+														d="M6 2h9a2 2 0 0 1 2 2v1a1 1 0 0 1-2 0V4H6v16h9v-1a1 1 0 0 1 2 0v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+													<path
+														fill="currentColor"
+														d="M16.795 16.295c.39.39 1.02.39 1.41 0l3.588-3.588a1 1 0 0 0 0-1.414l-3.588-3.588a.999.999 0 0 0-1.411 1.411L18.67 11H10a1 1 0 0 0 0 2h8.67l-1.876 1.884a.999.999 0 0 0 .001 1.411z" />
+												</g>
+											</svg>
+										</span>
+										<span>Log out</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- content start -->
+				<div class="page-content p-0 col-md-9">
+					<div class="page-content-inner">
+						<!-- topper -->
+						<div class="topper">
+							<!-- title -->
+							<div class="title">
+								<div class="d-none d-md-inline-flex"><h1>Staff</h1></div>
+								<div class="mobile-menu-toggler d-md-none">
+									<button
+										type="button"
+										data-bs-toggle="offcanvas"
+										data-bs-target="#offcanvasWithBothOptions"
+										aria-controls="offcanvasWithBothOptions">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="32"
+											height="32"
+											preserveAspectRatio="xMidYMid meet"
+											viewBox="0 0 32 32">
+											<g transform="translate(32 0) scale(-1 1)">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M4 8h24M4 16h24M4 24h24" />
+											</g>
+										</svg>
+									</button>
+									<a href="#" class="mobile-logo">
+										<img src="../assets/images/logo.png" alt="" class="img-fluid" />
+									</a>
+								</div>
+							</div>
+							<!-- title ends -->
+							<!-- notification starts -->
+							<div class="notify-user">
+								<button>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="32"
+										height="32"
+										preserveAspectRatio="xMidYMid meet"
+										viewBox="0 0 16 16">
+										<g transform="translate(16 0) scale(-1 1)">
+											<path
+												fill="currentColor"
+												d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742c-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+										</g>
+									</svg>
+								</button>
+								<a href="#" class="user-icon">
+									<div class="user-image">
+										<img src="../assets/images/Avatar.jfif" alt="" class="img-fluid" />
+									</div>
+									<div class="user-detail d-none d-md-inline-flex">
+										<span><b>John Snow</b></span>
+										<span><small>johnsnow@gmail.com</small></span>
+									</div>
+								</a>
+							</div>
+							<!-- notification ends -->
+						</div>
+						<!-- topper ends  -->
+						<div class="page-content-body">
+							<!-- page title for sm screen start -->
+							<div class="title d-md-none">
+								<h2>Staff</h2>
+							</div>
+							<!-- page title for sm screen end-->
+							<div class="page-content-body-inner">
+								<div class="flex-wrapper col-md-12 col-lg-9 m-0">
+									<div class="user-details">
+										<div class="top">
+											<div class="user-details-inner">
+												<div class="left">
+													<div class="image-container">
+														<img src="../assets/images/profile-image.jfif" alt="" class="img-fluid" />
+													</div>
+												</div>
+												<div class="right">
+													<h5 class="fullname">James Bay</h5>
+													<small class="email">JamesTheRealBay@music.com</small>
+													<span class="hidden">**************</span>
+												</div>
+											</div>
+											<button class="delete-btn">Delete</button>
+										</div>
+										<div class="bottom row">
+											<div class="type col">
+												<b>Account Type</b>
+												<small>Basic</small>
+											</div>
+											<div class="date col">
+												<b>Date Created</b>
+												<small>22 July, 2022</small>
+											</div>
+											<div class="time col">
+												<b>Time</b>
+												<small>3:55pm</small>
+											</div>
+										</div>
+									</div>
+									<div class="grid-wrapper">
+										<div class="referral">
+											<div class="referral-title">
+												<span>
+													<em>
+														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															width="1em"
+															height="1em"
+															preserveAspectRatio="xMidYMid meet"
+															viewBox="0 0 15 15">
+															<g transform="translate(15 0) scale(-1 1)">
+																<path
+																	fill="currentColor"
+																	d="M10.5 14.49v.5h.5v-.5h-.5Zm-10 0H0v.5h.5v-.5Zm7-4.996v.5v-.5Zm-4 0v-.5v.5ZM8 3.498a2.499 2.499 0 0 1-2.5 2.498v1C7.433 6.996 9 5.43 9 3.498H8ZM5.5 5.996A2.499 2.499 0 0 1 3 3.498H2a3.499 3.499 0 0 0 3.5 3.498v-1ZM3 3.498A2.499 2.499 0 0 1 5.5 1V0A3.499 3.499 0 0 0 2 3.498h1ZM5.5 1A2.5 2.5 0 0 1 8 3.498h1A3.499 3.499 0 0 0 5.5 0v1Zm5 12.99H.5v1h10v-1Zm-9.5.5v-1.995H0v1.995h1Zm2.5-4.496h4v-1h-4v1Zm6.5 2.5v1.996h1v-1.996h-1Zm-2.5-2.5a2.5 2.5 0 0 1 2.5 2.5h1a3.5 3.5 0 0 0-3.5-3.5v1Zm-6.5 2.5a2.5 2.5 0 0 1 2.5-2.5v-1a3.5 3.5 0 0 0-3.5 3.5h1ZM12 5v5h1V5h-1Zm-2 3h5V7h-5v1Z" />
+															</g>
+														</svg>
+													</em>
+												</span>
+												<h5>Referrals</h5>
+											</div>
+											<div class="referral-links">
+												<span>JamesTheRealBay@music.co.uk</span>
+												<span>JamesTheRealBay@music.co.uk</span>
+												<span>JamesTheRealBay@music.co.uk</span>
+												<span>JamesTheRealBay@music.co.uk</span>
+											</div>
+										</div>
+										<div class="signup">
+											<div class="signup-title">
+												<span>
+													<em>
+														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															width="1em"
+															height="1em"
+															preserveAspectRatio="xMidYMid meet"
+															viewBox="0 0 16 16">
+															<g transform="translate(16 0) scale(-1 1)">
+																<path
+																	fill="currentColor"
+																	fill-rule="evenodd"
+																	d="M8.5 1a6.5 6.5 0 1 1 0 13a6.5 6.5 0 0 1 0-13zm4.894 4a5.527 5.527 0 0 0-3.053-2.676c.444.84.765 1.74.953 2.676h2.1zm.582 2.995A5.11 5.11 0 0 0 14 7.5a5.464 5.464 0 0 0-.213-1.5h-2.342c.032.331.055.664.055 1a10.114 10.114 0 0 1-.206 2h2.493c.095-.329.158-.665.19-1.005zm-3.535 0l.006-.051A9.04 9.04 0 0 0 10.5 7a8.994 8.994 0 0 0-.076-1H6.576A8.82 8.82 0 0 0 6.5 7a8.98 8.98 0 0 0 .233 2h3.534c.077-.332.135-.667.174-1.005zM10.249 5a8.974 8.974 0 0 0-1.255-2.97C8.83 2.016 8.666 2 8.5 2a3.62 3.62 0 0 0-.312.015l-.182.015L8 2.04A8.97 8.97 0 0 0 6.751 5h3.498zM5.706 5a9.959 9.959 0 0 1 .966-2.681A5.527 5.527 0 0 0 3.606 5h2.1zM3.213 6A5.48 5.48 0 0 0 3 7.5A5.48 5.48 0 0 0 3.213 9h2.493A10.016 10.016 0 0 1 5.5 7c0-.336.023-.669.055-1H3.213zm2.754 4h-2.36a5.515 5.515 0 0 0 3.819 2.893A10.023 10.023 0 0 1 5.967 10zM8.5 12.644A8.942 8.942 0 0 0 9.978 10H7.022A8.943 8.943 0 0 0 8.5 12.644zM11.033 10a10.024 10.024 0 0 1-1.459 2.893A5.517 5.517 0 0 0 13.393 10h-2.36z"
+																	clip-rule="evenodd" />
+															</g>
+														</svg>
+													</em>
+												</span>
+												<h5>Signup Agent</h5>
+											</div>
+											<div class="signup-links">
+												<span>Mozilla/5.0 (X11; Linux x86_64)</span>
+												<span>ApplsWebkit/537.36 (KHTML. like Gecko)</span>
+												<span>Chrome/96.04664.45</span>
+												<span>Safari/537.3.6</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- page content inner end -->
+
+					<!-- footer starts -->
+					<footer>
+						<div class="footer-inner">
+							<div class="row col-12 m-0 align-items-center justify-content-md-between">
+								<div class="made-with col-sm-5 p-0">
+									<span>Etentlabs Made With</span>
+								</div>
+								<ul class="links col-sm-5 p-0">
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Help</a></li>
+									<li><a href="#">Contact</a></li>
+									<li><a href="#">Terms & Condition</a></li>
+								</ul>
+							</div>
+						</div>
+					</footer>
+					<!-- footer ends -->
+				</div>
+				<!-- content ends -->
+
+				<!-- ? mobile  view -->
+
+				<div
+					class="offcanvas offcanvas-start"
+					data-bs-scroll="true"
+					tabindex="-1"
+					id="offcanvasWithBothOptions"
+					aria-labelledby="offcanvasWithBothOptionsLabel">
+					<div class="offcanvas-header">
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" -label="Close"></button>
+					</div>
+					<div class="offcanvas-body">
+						<div class="mobile-canvas-content">
+							<ul class="nav-links">
+								<li class="each-nav-link">
+									<a href="./dashboard.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 24 24">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M3 3h7v9H3zm11 0h7v5h-7zm0 9h7v9h-7zM3 16h7v5H3z" />
+											</svg>
+										</span>
+										<span>Dashboard</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./users.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 36 36">
+												<path
+													fill="currentColor"
+													d="M18 17a7 7 0 1 0-7-7a7 7 0 0 0 7 7Zm0-12a5 5 0 1 1-5 5a5 5 0 0 1 5-5Z"
+													class="clr-i-outline clr-i-outline-path-1" />
+												<path
+													fill="currentColor"
+													d="M30.47 24.37a17.16 17.16 0 0 0-24.93 0A2 2 0 0 0 5 25.74V31a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2v-5.26a2 2 0 0 0-.53-1.37ZM29 31H7v-5.27a15.17 15.17 0 0 1 22 0Z"
+													class="clr-i-outline clr-i-outline-path-2" />
+												<path fill="none" d="M0 0h36v36H0z" />
+											</svg>
+										</span>
+										<span>Users</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./staffs.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 15 15">
+												<path
+													fill="currentColor"
+													d="M10.5 14.49v.5h.5v-.5h-.5Zm-10 0H0v.5h.5v-.5Zm14 .01v.5h.5v-.5h-.5ZM8 3.498a2.499 2.499 0 0 1-2.5 2.498v1C7.433 6.996 9 5.43 9 3.498H8ZM5.5 5.996A2.499 2.499 0 0 1 3 3.498H2a3.499 3.499 0 0 0 3.5 3.498v-1ZM3 3.498A2.499 2.499 0 0 1 5.5 1V0A3.499 3.499 0 0 0 2 3.498h1ZM5.5 1A2.5 2.5 0 0 1 8 3.498h1A3.499 3.499 0 0 0 5.5 0v1Zm5 12.99H.5v1h10v-1Zm-9.5.5v-1.995H0v1.995h1Zm2.5-4.496h4v-1h-4v1Zm6.5 2.5v1.996h1v-1.996h-1Zm-2.5-2.5a2.5 2.5 0 0 1 2.5 2.5h1a3.5 3.5 0 0 0-3.5-3.5v1Zm-6.5 2.5a2.5 2.5 0 0 1 2.5-2.5v-1a3.5 3.5 0 0 0-3.5 3.5h1ZM14 13v1.5h1V13h-1Zm.5 1H12v1h2.5v-1ZM12 11a2 2 0 0 1 2 2h1a3 3 0 0 0-3-3v1Zm-.5-3A1.5 1.5 0 0 1 10 6.5H9A2.5 2.5 0 0 0 11.5 9V8ZM13 6.5A1.5 1.5 0 0 1 11.5 8v1A2.5 2.5 0 0 0 14 6.5h-1ZM11.5 5A1.5 1.5 0 0 1 13 6.5h1A2.5 2.5 0 0 0 11.5 4v1Zm0-1A2.5 2.5 0 0 0 9 6.5h1A1.5 1.5 0 0 1 11.5 5V4Z" />
+											</svg>
+										</span>
+										<span>Staffs</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./console.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 16 16">
+												<g transform="translate(16 0) scale(-1 1)">
+													<g fill="currentColor">
+														<path
+															d="M4.5 6a.5.5 0 1 0 0-1a.5.5 0 0 0 0 1ZM6 6a.5.5 0 1 0 0-1a.5.5 0 0 0 0 1Zm2-.5a.5.5 0 1 1-1 0a.5.5 0 0 1 1 0Z" />
+														<path
+															d="M12 1a2 2 0 0 1 2 2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10ZM2 12V5a2 2 0 0 1 2-2h9a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1Zm1-4v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8H3Zm12-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v2h12Z" />
+													</g>
+												</g>
+											</svg>
+										</span>
+										<span>Console</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./bloglist.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 24 24">
+												<path
+													fill="currentColor"
+													d="M20 22H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1zm-1-2V4H5v16h14zM8 7h8v2H8V7zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" />
+											</svg>
+										</span>
+										<span>Blog List</span>
+									</a>
+								</li>
+								<li class="each-nav-link">
+									<a href="./settings.html" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 36 36">
+												<g transform="translate(36 0) scale(-1 1)">
+													<path
+														fill="currentColor"
+														d="M18.1 11c-3.9 0-7 3.1-7 7s3.1 7 7 7s7-3.1 7-7s-3.1-7-7-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5s5 2.2 5 5s-2.2 5-5 5z"
+														class="clr-i-outline clr-i-outline-path-1" />
+													<path
+														fill="currentColor"
+														d="m32.8 14.7l-2.8-.9l-.6-1.5l1.4-2.6c.3-.6.2-1.4-.3-1.9l-2.4-2.4c-.5-.5-1.3-.6-1.9-.3l-2.6 1.4l-1.5-.6l-.9-2.8C21 2.5 20.4 2 19.7 2h-3.4c-.7 0-1.3.5-1.4 1.2L14 6c-.6.1-1.1.3-1.6.6L9.8 5.2c-.6-.3-1.4-.2-1.9.3L5.5 7.9c-.5.5-.6 1.3-.3 1.9l1.3 2.5c-.2.5-.4 1.1-.6 1.6l-2.8.9c-.6.2-1.1.8-1.1 1.5v3.4c0 .7.5 1.3 1.2 1.5l2.8.9l.6 1.5l-1.4 2.6c-.3.6-.2 1.4.3 1.9l2.4 2.4c.5.5 1.3.6 1.9.3l2.6-1.4l1.5.6l.9 2.9c.2.6.8 1.1 1.5 1.1h3.4c.7 0 1.3-.5 1.5-1.1l.9-2.9l1.5-.6l2.6 1.4c.6.3 1.4.2 1.9-.3l2.4-2.4c.5-.5.6-1.3.3-1.9l-1.4-2.6l.6-1.5l2.9-.9c.6-.2 1.1-.8 1.1-1.5v-3.4c0-.7-.5-1.4-1.2-1.6zm-.8 4.7l-3.6 1.1l-.1.5l-.9 2.1l-.3.5l1.8 3.3l-2 2l-3.3-1.8l-.5.3c-.7.4-1.4.7-2.1.9l-.5.1l-1.1 3.6h-2.8l-1.1-3.6l-.5-.1l-2.1-.9l-.5-.3l-3.3 1.8l-2-2l1.8-3.3l-.3-.5c-.4-.7-.7-1.4-.9-2.1l-.1-.5L4 19.4v-2.8l3.4-1l.2-.5c.2-.8.5-1.5.9-2.2l.3-.5l-1.7-3.3l2-2l3.2 1.8l.5-.3c.7-.4 1.4-.7 2.2-.9l.5-.2L16.6 4h2.8l1.1 3.5l.5.2c.7.2 1.4.5 2.1.9l.5.3l3.3-1.8l2 2l-1.8 3.3l.3.5c.4.7.7 1.4.9 2.1l.1.5l3.6 1.1v2.8z"
+														class="clr-i-outline clr-i-outline-path-2" />
+													<path fill="none" d="M0 0h36v36H0z" />
+												</g>
+											</svg>
+										</span>
+										<span>Settings</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="nav-links">
+								<li class="each-nav-link">
+									<a href="#" class="nav-link-item">
+										<span>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="32"
+												height="32"
+												preserveAspectRatio="xMidYMid meet"
+												viewBox="0 0 24 24">
+												<g transform="rotate(180 12 12)">
+													<path
+														fill="currentColor"
+														d="M6 2h9a2 2 0 0 1 2 2v1a1 1 0 0 1-2 0V4H6v16h9v-1a1 1 0 0 1 2 0v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+													<path
+														fill="currentColor"
+														d="M16.795 16.295c.39.39 1.02.39 1.41 0l3.588-3.588a1 1 0 0 0 0-1.414l-3.588-3.588a.999.999 0 0 0-1.411 1.411L18.67 11H10a1 1 0 0 0 0 2h8.67l-1.876 1.884a.999.999 0 0 0 .001 1.411z" />
+												</g>
+											</svg>
+										</span>
+										<span>Log out</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- wrapper ends -->
+
+		<script src="../assets/js/bootstrap.bundle.js"></script>
+		<script src="./custom.js"></script>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+:root {
+	--primary-clr: #ff4a00;
+	--primary-light-clr: #ffede6;
+	--light-lime: #ebfaf1;
+	--lime: #62d493;
+	--light-crimson: #ffe6eb;
+	--crismson: #fe2c55;
+	--border: #ccc;
+	--card-border: 1px solid #e5e5e5;
+	--grey: #999;
+	--white: #fff;
+	--bg-clr: #f5f5f5;
+	--dark-grey: #666;
+	--black: #000;
+	--dark: #202040;
+	--light-yellow: #fef7e6;
+	--yellow: #faba23;
+	--dark-lime: #28b665;
+}
+
+.page-content-body-inner .add-a-blog {
+	padding: 2rem 0 3rem;
+}
+.add-a-blog a {
+	color: var(--white);
+	background-color: var(--lime);
+	border-radius: 5px;
+	padding: 1rem 2rem;
+	-webkit-transition: 280ms ease-in-out;
+	-moz-transition: 280ms ease-in-out;
+	-ms-transition: 280ms ease-in-out;
+	-o-transition: 280ms ease-in-out;
+	transition: 280ms ease-in-out;
+}
+.add-a-blog a:hover {
+	background-color: var(--dark-lime);
+}
+.blogs-wrapper-inner {
+	display: grid;
+	display: -ms-grid;
+	display: -moz-grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+}
+@media all and (max-width: 991px) {
+	.blogs-wrapper-inner {
+		grid-template-columns: 1fr;
+	}
+}
+.blogs-wrapper-inner .each-blog {
+	padding: 1rem;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	background-color: var(--white);
+}
+.each-blog .blog-date small {
+	color: var(--dark);
+	font-weight: 600;
+	font-size: 14px;
+}
+.each-blog .blog-title h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--dark);
+}
+.each-blog .blog-body span {
+	font-size: 15px;
+	color: var(--dark);
+}
+.blogs-wrapper-inner .each-blog-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 1.5rem;
+}
+.blogs-wrapper-inner .each-blog-inner .blog-extra {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+.blog-extra a * {
+	font-size: 14px !important;
+}
+.blog-extra :is(.comment, .view-blog, .delete) * {
+	color: var(--dark-grey);
+}
+.blog-extra :is(.comment, .view-blog, .delete):hover * {
+	color: var(--dark);
+}
+.each-blog .blog-extra span svg {
+	width: 1.3rem;
+}
+
+.pagination-wrapper {
+	margin: 4pc 0;
+}
+.pagination-wrapper .page-link {
+	color: var(--dark);
+	font-size: 0.8rem;
+}
+.pagination-wrapper .page-link:hover {
+	background-color: var(--primary-clr);
+	color: var(--white);
+}
+@media all and (max-width: 320px) {
+	.blog-extra :is(.comment, .view-blog, .delete) > span > small:not(:has(svg)) {
+		display: none;
+	}
+}
