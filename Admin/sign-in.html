@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="../assets/images/dilaac-favicon.svg" type="image/x-icon" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../assets/css/base.css" />
+		<link rel="stylesheet" href="../assets/css/admin-auth-styles/auth-styles.css" />
+		<title>Sign In</title>
+	</head>
+	<body>
+		<div id="v-body-main">
+			<div id="v-admin-container" class="v-body-inner row col-12 align-items-stretch m-0">
+				<div class="col-md-6 col-lg-6 h-100 p-sm-0">
+					<!-- main @::start -->
+					<main class="h-100">
+						<div class="v-logo-image p-0 px-sm-3 px-md-5">
+							<img src="../assets/images/dilaac-logo.png" alt="" class="img-fluid" />
+						</div>
+						<div class="col-12 col-sm-8 col-md-10 col-lg-8 mx-auto v-outer-form-container">
+							<form action="" id="v-form-container">
+								<div class="v-form-title col-11 col-sm-10 col-lg-11 mx-auto">
+									<h2 class="v-title">Sign-In</h2>
+								</div>
+								<div class="v-form-inner d-flex flex-column gap-4">
+									<div class="v-form-input">
+										<label for="username-email" class="form-label">Username or Email</label>
+										<input type="text" class="form-control" id="username-email" />
+									</div>
+									<!-- each input @::start -->
+									<div class="col-12 p-0 v-has-password">
+										<label for="password" class="form-label">
+											<span>Password</span>
+											<a href=""><span>Forgot password</span></a>
+										</label>
+										<div class="v-form-input position-relative">
+											<input type="password" class="form-control" id="password" />
+											<button type="button" class="v-password-toggler"></button>
+										</div>
+									</div>
+									<!-- each input @::end -->
+									<div class="v-submit-button">
+										<button type="submit">Sign in</button>
+									</div>
+									<div class="v-post-form-input mt-2 text-center">
+										<small> Don't have an account? <a href="./signup.html">Sign up</a> </small>
+									</div>
+								</div>
+							</form>
+						</div>
+					</main>
+					<!-- main @::end -->
+				</div>
+				<div class="d-none d-md-inline col-md-6 col-lg-6 h-100 p-sm-0">
+					<div class="v-admin-image-container h-100 d-flex align-items-center">
+						<img src="../assets/images/dilaac-admin-auth-user-image-one.jpg" alt="" class="img-fluid h-100 w-100" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			(function () {
+				const seeIcon = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.275 15.296C2.425 14.192 2 13.639 2 12c0-1.64.425-2.191 1.275-3.296C4.972 6.5 7.818 4 12 4c4.182 0 7.028 2.5 8.725 4.704C21.575 9.81 22 10.361 22 12c0 1.64-.425 2.191-1.275 3.296C19.028 17.5 16.182 20 12 20c-4.182 0-7.028-2.5-8.725-4.704Z"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"/></g></svg>
+         `;
+				const unseeIcon = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="M9 12a3 3 0 0 0 5.121 2.121l3.36 3.36A10.44 10.44 0 0 1 12 19c-4.664 0-8.4-2.903-10-7c.901-2.307 2.48-4.236 4.52-5.48l3.359 3.359A2.99 2.99 0 0 0 9 12Z" opacity=".16"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.73 5.073A10.96 10.96 0 0 1 12 5c4.664 0 8.4 2.903 10 7a11.595 11.595 0 0 1-1.555 2.788M6.52 6.519C4.48 7.764 2.9 9.693 2 12c1.6 4.097 5.336 7 10 7a10.44 10.44 0 0 0 5.48-1.52m-7.6-7.6a3 3 0 1 0 4.243 4.243"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m4 4l16 16"/></g></svg>
+         `;
+
+				const formInputContainer = document.querySelector(".v-has-password");
+				const formInput = formInputContainer.querySelector(".form-control");
+				const toggleButton = formInputContainer.querySelector(".v-password-toggler");
+				const svg = toggleButton.querySelector("svg");
+
+				toggleButton.innerHTML = unseeIcon;
+				function setInputType(passwordType, iconType) {
+					formInput.type = passwordType;
+					toggleButton.innerHTML = iconType;
+				}
+				function toggleInputPassword(e) {
+					e.stopPropagation();
+					formInput.type === "password" ? setInputType("text", seeIcon) : setInputType("password", unseeIcon);
+				}
+				toggleButton.addEventListener("click", toggleInputPassword);
+			})();
+		</script>
+	</body>
+</html>

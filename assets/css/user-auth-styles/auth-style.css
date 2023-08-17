@@ -1,0 +1,144 @@
+#v-body-main {
+	--height: 100vh;
+	--height-dvh: 100dvh;
+	height: max-content;
+	overflow: hidden;
+
+	& .v-body-inner {
+		height: var(--height);
+		height: var(--height-dvh);
+	}
+
+	@media all and (max-width: 768px) {
+		& {
+			overflow: auto;
+		}
+	}
+}
+main {
+	background-color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+main .position-sticky {
+	top: 0;
+
+	& .image-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+#v-form-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+
+	& .v-logo {
+		width: 8rem;
+		margin-inline: auto;
+	}
+
+	& .v-form-title {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1rem;
+		align-items: center;
+		text-align: center;
+		margin-top: 3rem;
+
+		& .v-title {
+			font-weight: 800;
+		}
+
+		& .v-subtext {
+			font-size: 0.78rem;
+			opacity: 0.8;
+		}
+	}
+}
+
+#v-form-container .v-form-inner {
+	& .form-label {
+		font-size: 0.8rem;
+		font-weight: 500;
+		margin-bottom: 1px;
+		opacity: 0.9;
+	}
+	& .form-control {
+		font-size: 0.9rem;
+		background-color: var(--primary-clr-opacity);
+		min-height: 3rem;
+		border: 1px solid var(--primary-clr-opacity);
+
+		&:focus {
+			box-shadow: none;
+			border-color: var(--primary-clr);
+		}
+	}
+	& .v-submit-button {
+		margin-block-start: 2rem;
+		& button {
+			background-color: var(--primary-clr);
+			width: 100%;
+			color: var(--white);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-block: 0.9rem;
+			border-radius: 5px;
+			font-size: 0.87rem;
+			font-weight: 500;
+
+			&:hover {
+				background-color: var(--primary-clr-dark);
+			}
+		}
+	}
+
+	& .v-post-form-input small {
+		& a {
+			text-decoration: underline;
+			color: var(--primary-clr);
+			font-size: 0.85rem;
+			transition: text-underline-offset 300ms ease;
+			text-underline-offset: 1px;
+
+			&:hover {
+				text-underline-offset: 5px;
+			}
+		}
+	}
+	& .v-signup-inputs-container .form-control {
+		min-height: 2.85rem;
+	}
+}
+.v-has-password .v-password-toggler {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	translate: -20% -50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.375rem;
+	padding: 0.495rem;
+
+	&:hover {
+		background-color: var(--primary-clr);
+
+		& svg {
+			color: var(--white);
+		}
+	}
+
+	& svg {
+		--size: 1.3rem;
+		width: var(--size);
+		height: var(--size);
+		user-select: none;
+		pointer-events: none;
+		color: var(--primary-clr);
+	}
+}
