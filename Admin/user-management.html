@@ -10,7 +10,7 @@
 
 		<!-- ======== custom styles ======= --->
 		<!-- layout styles -->
-		<link rel="stylesheet" href="../assets/css/users-styles/layout.css" />
+		<link rel="stylesheet" href="./styles/layout.css" />
 		<!-- globalstyles -->
 		<link rel="stylesheet" href="../assets/css/base.css" />
 		<title>Layout</title>
@@ -18,7 +18,6 @@
 	<body>
 		<div class="wrapper">
 			<div class="row col-12 m-0 wrapper-inner">
-				<!-- nav-sidebar@::start -->
 				<div class="nav-sidebar p-0 d-none d-md-inline-flex col-md-3">
 					<div class="nav-sidebar-inner">
 						<div class="nav-sidebar-logo">
@@ -47,7 +46,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./user-management.html" class="nav-link-item">
+									<a href="./users.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
 												<path
@@ -59,7 +58,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./transfer-history.html" class="nav-link-item">
+									<a href="./staffs.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
 												<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -72,7 +71,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./fee-exchange.html" class="nav-link-item">
+									<a href="./console.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 												<path
@@ -86,7 +85,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./configure-country.html" class="nav-link-item">
+									<a href="./bloglist.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
 												<path
@@ -117,15 +116,14 @@
 						</div>
 					</div>
 				</div>
-				<!-- nav-sidebar@::end -->
-				<!-- content @::start -->
+				<!-- content start -->
 				<div class="page-content p-0 col-md-9">
 					<div class="page-content-inner">
-						<!-- topper @::start-->
+						<!-- topper -->
 						<div class="topper">
 							<!-- title -->
 							<div class="title">
-								<div class="d-none d-md-inline-flex"><h6 class="v-top-title">Welcome, Vickkk</h6></div>
+								<div class="d-none d-md-inline-flex"><h5>Layout</h5></div>
 								<div class="mobile-menu-toggler d-flex align-items-center gap-3 d-md-none">
 									<button
 										type="button"
@@ -186,19 +184,25 @@
 							</div>
 							<!-- notification ends -->
 						</div>
-						<!-- topper @::end  -->
+						<!-- topper ends  -->
 						<div class="page-content-body">
-							<main class="page-content-body-inner"></main>
+							<!-- page title for sm screen start -->
+							<div class="title d-md-none">
+								<h5 class="v-page-content-title">Layout</h5>
+							</div>
+							<!-- page title for sm screen end-->
+							<div class="page-content-body-inner"></div>
 						</div>
-						<!-- page content body @::end-->
+						<!-- page content body -->
 
-						<!-- page content body @::end- -->
+						<!-- page content body end -->
 					</div>
-					<!-- page content inner @::end- -->
+					<!-- page content inner end -->
 				</div>
-				<!-- content @::end -->
+				<!-- content ends -->
 
-				<!-- mobile offcanvas @::start -->
+				<!-- ? mobile  view -->
+
 				<div
 					class="offcanvas offcanvas-start"
 					data-bs-scroll="true"
@@ -228,7 +232,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./user-management.html" class="nav-link-item">
+									<a href="./users.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
 												<path
@@ -240,7 +244,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./transfer-history.html" class="nav-link-item">
+									<a href="./staffs.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
 												<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -267,7 +271,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./configure-country.html" class="nav-link-item">
+									<a href="./bloglist.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
 												<path
@@ -298,9 +302,8 @@
 						</div>
 					</div>
 				</div>
-				<!-- mobile offcanvas @::end -->
 			</div>
-			<!-- wrapper @::end- -->
+			<!-- wrapper ends -->
 		</div>
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="./custom.js"></script>

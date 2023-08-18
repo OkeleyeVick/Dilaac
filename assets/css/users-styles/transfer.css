@@ -1,0 +1,170 @@
+#v-tab-content-container .v-pre-title .v-sm-title {
+	font-size: 0.9rem;
+}
+#v-tab-content-container .nav-pills .nav-item {
+	flex-grow: 1;
+	text-align: center;
+}
+#v-tab-content-container .nav-pills .nav-link {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 3.2rem;
+	background-color: var(--primary-clr-opacity);
+	color: var(--primary-clr);
+	overflow: hidden;
+	padding-block: 0.2rem;
+}
+#v-tab-content-container .nav-pills .nav-link.active {
+	background-color: var(--primary-clr);
+	color: var(--white);
+}
+.nav-pills .v-image-overflow {
+	margin-bottom: -8px;
+	width: 6rem;
+
+	& .img-fluid {
+		scale: 1.2;
+	}
+}
+.nav-pills .v-tab-title {
+	font-weight: 600;
+	font-size: 0.901rem;
+}
+.tab-content .v-outer-form-container form {
+	--gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--gap);
+	padding-block: 3rem;
+}
+.tab-content .v-separator {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-block: var(--gap);
+	justify-content: center;
+	border-top: 1px solid var(--border);
+}
+.tab-content .v-separator .v-floating-item {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: max-content;
+	font-size: 0.8rem;
+	opacity: 0.7;
+	height: 0;
+	padding: 0.6rem 1.2rem;
+	border-radius: 100px;
+	z-index: 1;
+	background-color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.tab-content :is(.form-select, .form-control) {
+	background-color: var(--primary-clr-opacity);
+	font-size: 0.9rem;
+	min-height: 2.9rem;
+	opacity: 0.98;
+	color: var(--black);
+	border-color: var(--primary-clr-opacity);
+
+	&:focus {
+		border-color: var(--primary-clr);
+		box-shadow: none;
+	}
+}
+.tab-content .form-label {
+	font-size: 0.85rem;
+	font-weight: 500;
+	opacity: 0.7;
+	margin-bottom: 2px;
+}
+.tab-content .submit-button {
+	margin-top: 1.5rem;
+
+	& .v-submit-button {
+		background-color: var(--primary-clr);
+		color: var(--white);
+		font-size: 0.9rem;
+		width: 100%;
+		min-height: 2.8rem;
+		border-radius: 0.3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			background-color: var(--primary-clr-dark);
+		}
+	}
+}
+
+/* modal styles */
+#v-transfer-summary .modal-footer button {
+	flex-grow: 1;
+}
+
+@media all and (max-width: 480px) {
+	#v-transfer-summary {
+		font-size: 14px;
+	}
+}
+#v-input-pin-form-container form {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+#v-input-pin-form-container .v-pins-container {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 1.2rem;
+}
+
+.v-pins-container .form-control {
+	background-color: var(--primary-clr-opacity);
+	border-width: 1.5px;
+	border-color: var(--primary-clr);
+	font-size: 1.2rem;
+	text-align: center;
+	aspect-ratio: 1/1;
+	&:focus {
+		border-color: var(--primary-clr);
+		box-shadow: none;
+	}
+}
+
+#v-input-pin-form-container {
+	align-items: center;
+	margin-block: 2rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+}
+#v-input-pin-form-container .v-small-text {
+	font-size: 0.8rem;
+	gap: 0.3rem;
+	justify-content: center;
+	& button {
+		color: var(--primary-clr);
+		&:hover {
+			color: var(--primary-clr-dark);
+		}
+	}
+}
+#v-input-pin-form-container :is(.v-proceed-button, .v-submit-button) {
+	background-color: var(--primary-clr);
+	color: var(--white);
+	width: 100%;
+	text-align: center;
+	font-size: 0.9rem;
+	border-radius: 0.38rem;
+	min-height: 2.9rem;
+
+	&:hover {
+		background-color: var(--primary-clr-dark);
+	}
+}

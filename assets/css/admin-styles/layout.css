@@ -8,7 +8,7 @@
 	--black: #000;
 	--sm-svg-size: 1rem;
 	--xs-svg-size: 0.85rem;
-	--md-svg-size: 1.08rem;
+	--md-svg-size: 1.1rem;
 	--lg-svg-size: 1.4rem;
 	--xl-svg-size: 1.8rem;
 	--shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
@@ -238,9 +238,6 @@
 	.page-content-inner {
 		padding: 0;
 	}
-}
-main.page-content-body-inner {
-	padding: 1rem 0.8rem;
 }
 /* mobile offcanvas bar */
 .offcanvas {

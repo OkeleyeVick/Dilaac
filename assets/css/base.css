@@ -23,6 +23,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	transition: background-color 280ms ease, color 100ms ease;
+	text-rendering: optimizeLegibility;
 }
 :is(h1, h2, h3, h4, h5, h6, ul) {
 	margin: 0;
