@@ -45,3 +45,7 @@ button {
 	-o-transition: 280ms ease-in-out;
 	transition: 280ms ease-in-out;
 }
+::selection {
+	background-color: var(--primary-clr-opacity);
+	color: var(--primary-clr);
+}

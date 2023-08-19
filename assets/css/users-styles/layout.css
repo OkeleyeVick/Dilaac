@@ -3,6 +3,7 @@
 	--primary-light-clr: #ffede6;
 	--border: rgb(204 204 204 / 0.35);
 	--grey: #828282;
+	--card-icon-bg: #efefef;
 	--white: #fff;
 	--bg-clr: #f5f5f5;
 	--black: #000;
@@ -12,6 +13,7 @@
 	--lg-svg-size: 1.4rem;
 	--xl-svg-size: 1.8rem;
 	--shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+	--height: 63px;
 }
 .wrapper-inner {
 	--nav-side-bar-width: 240px;
@@ -44,6 +46,7 @@
 	justify-content: start;
 	padding: 0.85rem 2rem;
 	border-bottom: 1px solid var(--border);
+	height: var(--height);
 
 	& .v-nav-sidebar-logo {
 		width: 7rem;
@@ -140,6 +143,7 @@
 }
 .page-content .topper {
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: space-between;
 	border-bottom: 1px solid var(--border);
@@ -148,6 +152,7 @@
 	top: 0;
 	background-color: var(--white);
 	z-index: 2;
+	height: var(--height);
 }
 .page-content .topper .title {
 	display: flex;
@@ -166,7 +171,7 @@
 	}
 
 	& svg {
-		--size: var(--lg-svg-size);
+		--size: calc(var(--lg-svg-size) * 0.9);
 		width: var(--size);
 		height: var(--size);
 	}
@@ -270,5 +275,99 @@ main.page-content-body-inner {
 	.offcanvas,
 	.offcanvas-backdrop.show {
 		display: none;
+	}
+}
+.v-search-icon {
+	padding: 8px;
+	border-radius: 50%;
+
+	&:hover {
+		background-color: var(--primary-clr-opacity);
+	}
+}
+.v-search-icon.active {
+	background-color: var(--primary-clr-opacity);
+	color: var(--primary-clr);
+
+	&:hover {
+		background-color: var(--primary-clr);
+		color: var(--white);
+	}
+}
+
+.topper .v-search-input {
+	--r-offset: 1rem;
+	width: 100%;
+	transform-origin: right;
+	transition: scale 200ms ease;
+	scale: 0 1;
+	position: relative;
+	display: grid;
+
+	&.active {
+		scale: 1 1;
+	}
+
+	@media all and (min-width: 600px) {
+		& {
+			max-width: 500px;
+		}
+	}
+	& .form-control {
+		border-width: 1.1px;
+		font-size: 0.89rem;
+		min-height: 2.8rem;
+		border-radius: 0.3rem;
+		border-color: #d9d9d9;
+		padding-right: calc(var(--r-offset) * 6);
+
+		&:focus {
+			border-color: var(--primary-clr);
+			box-shadow: none;
+		}
+
+		&::placeholder {
+			opacity: 0.8;
+			font-size: 0.8rem;
+		}
+	}
+
+	& form {
+		position: relative;
+	}
+
+	& .v-search-button {
+		--offset: 4px;
+		background-color: var(--primary-clr);
+		color: var(--white);
+		font-size: 0.8rem;
+		font-weight: 500;
+		height: 0;
+		padding-inline: calc(var(--r-offset) * 1.5);
+		padding-block: 1.15rem;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: var(--offset) var(--offset) var(--offset) 0;
+		text-transform: capitalize;
+		border-radius: 3px;
+
+		&:hover {
+			background-color: var(--primary-clr-dark);
+		}
+	}
+
+	@media all and (0px < width < 1080px) {
+		& {
+			position: absolute;
+			width: 90%;
+			margin-inline: auto;
+			top: 100%;
+			left: 0;
+			right: 0;
+			margin-top: 2px;
+			z-index: 10;
+		}
 	}
 }

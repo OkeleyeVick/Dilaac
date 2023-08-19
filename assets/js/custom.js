@@ -6,7 +6,6 @@ function pasteCodes(e) {
   don't paste it 
   */
 	if (e.target.localName !== "input") return;
-	// e.preventDefault();
 
 	// get the pincodes
 	let pinCodes = (e.clipboardData || window.clipboardData).getData("text");

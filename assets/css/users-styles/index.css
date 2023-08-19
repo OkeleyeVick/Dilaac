@@ -1,0 +1,40 @@
+.v-card-container-wrapper .v-card-skin {
+	padding: 0.5rem;
+}
+.v-card-container-wrapper .v-card-inner {
+	display: flex;
+	padding: 1rem;
+	align-items: flex-start;
+	gap: 0.7rem;
+	border-radius: 6px;
+	border: 1.5px solid var(--border);
+}
+.v-card-inner .v-card-detail {
+	display: flex;
+	flex-direction: column;
+}
+.v-card-detail .v-card-title {
+	opacity: 0.8;
+	white-space: nowrap;
+	font-size: 0.845rem;
+}
+.v-card-detail .v-card-value {
+	font-weight: 700;
+	color: var(--primary-clr);
+}
+.v-card-inner .v-icon {
+	background-color: var(--card-icon-bg);
+	border-radius: 6px;
+	aspect-ratio: 1/1;
+	border: 1px solid transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.52rem;
+	& svg {
+		--size: calc(var(--lg-svg-size) * 0.85);
+		color: var(--primary-clr);
+		width: var(--size);
+		height: var(--size);
+	}
+}
