@@ -53,9 +53,9 @@
 	margin: auto;
 	width: max-content;
 	font-size: 0.8rem;
-	opacity: 0.7;
 	height: 0;
 	padding: 0.6rem 1.2rem;
+	color: var(--grey);
 	border-radius: 100px;
 	z-index: 1;
 	background-color: var(--white);
@@ -82,6 +82,29 @@
 	opacity: 0.7;
 	margin-bottom: 2px;
 }
+.tab-content .form-check {
+	cursor: pointer;
+	& .form-check-input {
+		--size: 1.2rem;
+		cursor: pointer;
+		height: var(--size);
+		width: var(--size);
+		border-color: var(--primary-clr);
+		&:focus {
+			box-shadow: 0 0 0 0.25rem var(--primary-clr-opacity);
+		}
+		&:checked {
+			background-color: var(--primary-clr);
+			border: var(--primary-clr);
+		}
+	}
+	.form-check-label {
+		font-size: 0.88rem;
+		opacity: 0.8;
+		cursor: pointer;
+		margin-left: 5px;
+	}
+}
 .tab-content .submit-button {
 	margin-top: 1.5rem;
 
@@ -101,7 +124,20 @@
 		}
 	}
 }
-
+.v-form-input .v-put-amount .form-control {
+	padding-left: 2.2rem;
+}
+.v-form-input .v-put-amount .v-currency {
+	font-size: 1.1rem;
+	font-weight: 600;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0.8rem;
+	display: flex;
+	align-items: center;
+}
 /* modal styles */
 #v-transfer-summary .modal-footer button {
 	flex-grow: 1;
@@ -166,5 +202,86 @@
 
 	&:hover {
 		background-color: var(--primary-clr-dark);
+	}
+}
+.v-transfer-body-container {
+	text-align: center;
+
+	& .v-price-container {
+		margin-block: 1rem 1.5rem;
+
+		& .v-price {
+			font-weight: 700;
+		}
+	}
+}
+#v-transfer-summary .v-board {
+	background-color: var(--bg-clr);
+	padding: 1rem;
+	border-radius: 7px;
+
+	& .v-board-inner {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.6rem;
+
+		& .v-key {
+			font-size: 0.85rem;
+		}
+		& .v-value {
+			font-weight: 700;
+			font-size: 0.9rem;
+			letter-spacing: -0.6px;
+			word-spacing: 2px;
+			text-transform: uppercase;
+		}
+		& .v-image-container {
+			--size: 25px;
+			width: var(--size);
+			height: var(--size);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			aspect-ratio: 1/1;
+			justify-content: center;
+			overflow: hidden;
+			margin-right: 10px;
+		}
+		@media all and (max-width: 400px) {
+			& :is(.v-key, .v-value) {
+				font-size: 0.7rem;
+			}
+		}
+	}
+}
+#v-transfer-summary .modal-footer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0rem 0.5rem;
+
+	@media all and (max-width: 450px) {
+		& {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	& button {
+		text-align: center;
+		padding-block: 0.6rem;
+		border-radius: 5px;
+		font-size: 0.9rem;
+		font-weight: 500;
+
+		&.v-cancel {
+			background-color: var(--primary-clr-opacity);
+			color: var(--primary-clr);
+		}
+		&.v-proceed {
+			background-color: var(--primary-clr);
+			color: var(--white);
+			&:hover {
+				background-color: var(--primary-clr-dark);
+			}
+		}
 	}
 }

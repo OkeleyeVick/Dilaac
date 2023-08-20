@@ -20,6 +20,8 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: auto;
+	padding-block: 2rem;
 }
 main .position-sticky {
 	top: 0;
@@ -140,5 +142,15 @@ main .position-sticky {
 		user-select: none;
 		pointer-events: none;
 		color: var(--primary-clr);
+	}
+}
+.v-post-form-input-text {
+	--fs: 0.8rem;
+	font-size: var(--fs);
+
+	& a {
+		font-size: var(--fs);
+		color: var(--primary-clr);
+		text-decoration: underline;
 	}
 }

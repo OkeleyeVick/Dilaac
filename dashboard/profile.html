@@ -13,15 +13,19 @@
 		<link rel="stylesheet" href="../assets/css/layout.css" />
 		<!-- globalstyles -->
 		<link rel="stylesheet" href="../assets/css/base.css" />
+
+		<!-- specific page style -->
+		<link rel="stylesheet" href="../assets/css/users-styles/.css" />
 		<title>Layout</title>
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="row col-12 m-0 wrapper-inner">
+				<!-- nav-sidebar@::start -->
 				<div class="nav-sidebar p-0 d-none d-md-inline-flex col-md-3">
 					<div class="nav-sidebar-inner">
 						<div class="nav-sidebar-logo">
-							<a href="/">
+							<a href="#">
 								<div class="v-nav-sidebar-logo">
 									<img src="../assets/images/dilaac-logo.png" alt="" class="img-fluid" />
 								</div>
@@ -88,7 +92,7 @@
 							</ul>
 							<ul class="nav-links">
 								<li class="each-nav-link">
-									<a href="" class="nav-link-item">
+									<a href="../signin.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 												<g transform="rotate(180 512 512)">
@@ -105,7 +109,8 @@
 						</div>
 					</div>
 				</div>
-				<!-- content start -->
+				<!-- nav-sidebar@::end -->
+				<!-- content @::start -->
 				<div class="page-content p-0 col-md-9">
 					<div class="page-content-inner">
 						<!-- topper @::start-->
@@ -180,20 +185,15 @@
 						</div>
 						<!-- topper @::end  -->
 						<div class="page-content-body">
-							<!-- page title for sm screen start -->
-							<div class="title d-md-none">
-								<h5 class="v-page-content-title">Layout</h5>
-							</div>
-							<!-- page title for sm screen end-->
-							<div class="page-content-body-inner"></div>
+							<main class="page-content-body-inner"></main>
 						</div>
-						<!-- page content body -->
+						<!-- page content body @::end-->
 
-						<!-- page content body end -->
+						<!-- page content body @::end- -->
 					</div>
-					<!-- page content inner end -->
+					<!-- page content inner @::end- -->
 				</div>
-				<!-- content ends -->
+				<!-- content @::end -->
 
 				<!-- mobile offcanvas @::start -->
 				<div
@@ -286,7 +286,7 @@
 				</div>
 				<!-- mobile offcanvas @::end -->
 			</div>
-			<!-- wrapper ends -->
+			<!-- wrapper @::end- -->
 		</div>
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>

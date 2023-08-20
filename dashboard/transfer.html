@@ -7,21 +7,24 @@
 		<link rel="icon" href="../assets/images/dilaac-favicon.svg" />
 		<!-- external styles -->
 		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-
-		<!-- ======== custom styles ======= --->
 		<!-- layout styles -->
 		<link rel="stylesheet" href="../assets/css/layout.css" />
+
 		<!-- globalstyles -->
 		<link rel="stylesheet" href="../assets/css/base.css" />
-		<title>Layout</title>
+
+		<!-- specific page style -->
+		<link rel="stylesheet" href="../assets/css/users-styles/transfer.css" />
+		<title>Transfer History</title>
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="row col-12 m-0 wrapper-inner">
+				<!-- nav-sidebar @::start @::start-->
 				<div class="nav-sidebar p-0 d-none d-md-inline-flex col-md-3">
 					<div class="nav-sidebar-inner">
 						<div class="nav-sidebar-logo">
-							<a href="/">
+							<a href="#">
 								<div class="v-nav-sidebar-logo">
 									<img src="../assets/images/dilaac-logo.png" alt="" class="img-fluid" />
 								</div>
@@ -88,7 +91,7 @@
 							</ul>
 							<ul class="nav-links">
 								<li class="each-nav-link">
-									<a href="" class="nav-link-item">
+									<a href="../signin.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 												<g transform="rotate(180 512 512)">
@@ -105,7 +108,8 @@
 						</div>
 					</div>
 				</div>
-				<!-- content start -->
+				<!-- nav-sidebar @::@::end -->
+				<!-- content start @::start-->
 				<div class="page-content p-0 col-md-9">
 					<div class="page-content-inner">
 						<!-- topper @::start-->
@@ -180,20 +184,195 @@
 						</div>
 						<!-- topper @::end  -->
 						<div class="page-content-body">
-							<!-- page title for sm screen start -->
-							<div class="title d-md-none">
-								<h5 class="v-page-content-title">Layout</h5>
-							</div>
-							<!-- page title for sm screen end-->
-							<div class="page-content-body-inner"></div>
-						</div>
-						<!-- page content body -->
+							<!--  main @::start-->
+							<main class="page-content-body-inner">
+								<div class="col-12 col-md-10 col-lg-8 mx-auto p-0" id="v-tab-content-container">
+									<div class="v-pre-title mb-3 mt-2">
+										<span class="v-sm-title">Select Transfer Type</span>
+									</div>
+									<ul class="nav nav-pills gap-3 justify-content-stretch" id="pills-tab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<div
+												role="button"
+												class="nav-link w-100 active"
+												id="pills-domestic-tab"
+												data-bs-toggle="pill"
+												data-bs-target="#pills-domestic"
+												type="button"
+												role="tab"
+												aria-controls="pills-domestic"
+												aria-selected="true">
+												<span class="v-tab-title">Domestic</span>
+												<div class="v-image-overflow">
+													<img src="../assets/images/dilaac-wallet-image.png" alt="" class="img-fluid" />
+												</div>
+											</div>
+										</li>
+										<li class="nav-item" role="presentation">
+											<div
+												class="nav-link w-100"
+												id="pills-profile-tab"
+												data-bs-toggle="pill"
+												data-bs-target="#pills-profile"
+												type="button"
+												role="tab"
+												aria-controls="pills-profile"
+												aria-selected="false">
+												<span class="v-tab-title">International</span>
+												<div class="v-image-overflow">
+													<img src="../assets/images/dilaac-carbon_flight-international.png" alt="" class="img-fluid" />
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="tab-content" id="pills-tabContent">
+										<!-- each tab-pane @::start -->
+										<div class="tab-pane fade show active" id="pills-domestic" role="tabpanel" aria-labelledby="pills-domestic-tab" tabindex="0">
+											<div class="v-outer-form-container col-12 col-sm-10 col-md-12 col-lg-8 mx-auto">
+												<form action="" id="v-domestic-form-container">
+													<!-- each form @::start -->
+													<div class="v-form-input">
+														<label for="" class="form-label"> Select country </label>
+														<select class="form-select" aria-label="Default select example">
+															<option selected></option>
+															<option value="1">One</option>
+															<option value="2">Two</option>
+															<option value="3">Three</option>
+														</select>
+													</div>
+													<!-- each form @::end -->
+													<!-- each input-container @::start -->
+													<div class="v-form-input">
+														<label for="phone-number" class="form-label">Mobile number</label>
+														<input type="tel" inputmode="numeric" class="form-control" id="phone-number" />
+													</div>
+													<!-- each input-container @::end -->
 
-						<!-- page content body end -->
+													<!-- separator @::start -->
+													<div class="v-separator">
+														<div class="v-floating-item">Destination Info</div>
+													</div>
+													<!-- separator @::end -->
+
+													<!-- each form @::start -->
+													<div class="v-form-input">
+														<label for="" class="form-label"> Select destination </label>
+														<select class="form-select" aria-label="Default select example">
+															<option selected></option>
+															<option value="1">One</option>
+															<option value="2">Two</option>
+															<option value="3">Three</option>
+														</select>
+													</div>
+													<!-- each form @::end -->
+													<!-- each input-container @::start -->
+													<div class="v-form-input">
+														<label for="destination-number" class="form-label">Destination number</label>
+														<input type="text" class="form-control" id="destination-number" />
+													</div>
+													<!-- each input-container @::end -->
+													<!-- each input-container @::start -->
+													<div class="v-form-input">
+														<label for="amount-number" class="form-label">Amount</label>
+														<div class="position-relative v-put-amount">
+															<input type="text" class="form-control" id="destination-number" />
+															<div class="v-currency">&#8358;</div>
+														</div>
+													</div>
+													<!-- each input-container @::end -->
+
+													<div class="submit-button">
+														<button type="button" class="v-submit-button" data-bs-toggle="modal" data-bs-target="#v-transfer-summary">
+															Continue
+														</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<!-- each tab-pane @::end -->
+										<!-- each tab-pane @::start -->
+										<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+											<div class="v-outer-form-container col-12 col-sm-10 col-md-12 col-lg-8 mx-auto">
+												<form action="" id="v-internation-form-container">
+													<!-- each form @::start -->
+													<div class="v-form-input">
+														<label for="" class="form-label"> Select country </label>
+														<select class="form-select" aria-label="Default select example">
+															<option selected></option>
+															<option value="1">One</option>
+															<option value="2">Two</option>
+															<option value="3">Three</option>
+														</select>
+													</div>
+													<!-- each form @::end -->
+													<!-- each input-container @::start -->
+													<div class="v-form-input">
+														<label for="phone-number" class="form-label">Mobile number</label>
+														<input type="tel" inputmode="numeric" class="form-control" id="phone-number" />
+													</div>
+													<!-- each input-container @::end -->
+
+													<!-- separator @::start -->
+													<div class="v-separator">
+														<div class="v-floating-item">Destination Info</div>
+													</div>
+													<!-- separator @::end -->
+
+													<!-- each form @::start -->
+													<div class="v-form-input d-flex align-items-center justify-content-evenly">
+														<!-- each radio button @::start-->
+														<div class="form-check">
+															<input class="form-check-input" type="radio" name="flexRadioDefault" id="momo" />
+															<label class="form-check-label" for="momo"> Momo provider </label>
+														</div>
+														<!-- each form @::end -->
+														<!-- each radio button @::start-->
+														<div class="form-check">
+															<input class="form-check-input" type="radio" name="flexRadioDefault" id="bank" />
+															<label class="form-check-label" for="bank"> Bank </label>
+														</div>
+														<!-- each form @::end -->
+													</div>
+													<!-- each form @::end -->
+													<!-- each form @::start -->
+													<div class="v-form-input">
+														<label for="" class="form-label"> Select destination </label>
+														<select class="form-select" aria-label="Default select example">
+															<option selected></option>
+															<option value="1">One</option>
+															<option value="2">Two</option>
+															<option value="3">Three</option>
+														</select>
+													</div>
+													<!-- each form @::end -->
+													<!-- each input-container @::start -->
+													<div class="v-form-input">
+														<label for="destination-number" class="form-label">Destination number</label>
+														<input type="text" class="form-control" id="destination-number" />
+													</div>
+													<!-- each input-container @::end -->
+
+													<div class="submit-button">
+														<button type="button" class="v-submit-button" data-bs-toggle="modal" data-bs-target="#v-transfer-summary">
+															Continue
+														</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<!-- each tab-pane @::end -->
+									</div>
+								</div>
+							</main>
+							<!--  main @::end-->
+						</div>
+						<!-- page content body @::end -->
+
+						<!-- page content body @::end -->
 					</div>
-					<!-- page content inner end -->
+					<!-- page content inner @::end -->
 				</div>
-				<!-- content ends -->
+				<!-- content @::end-->
 
 				<!-- mobile offcanvas @::start -->
 				<div
@@ -286,9 +465,118 @@
 				</div>
 				<!-- mobile offcanvas @::end -->
 			</div>
-			<!-- wrapper ends -->
+			<!-- wrapper ends @::end -->
 		</div>
+
+		<!-- =============== ALL MODALS @::start ========== -->
+
+		<!-- modal @::start -->
+		<div class="modal fade" id="v-transfer-summary" tabindex="-1" aria-labelledby="v-transfer-summaryLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h6 class="modal-title flex-grow-1 text-center" id="v-transfer-summaryLabel">Transfer summary</h6>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="v-transfer-body-container">
+							<div class="v-price-container">
+								<h2 class="v-price">&#8358; 2000</h2>
+							</div>
+							<div class="v-board">
+								<ul class="v-board-inner">
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Momo Provider</span>
+										<span class="d-flex">
+											<div class="v-image-container">
+												<img src="../assets/images/dilaac-momo-image.png" alt="" class="img-fluid" />
+											</div>
+											<span class="v-value">mtn momo</span>
+										</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Transfer amount</span>
+										<span class="v-value">&#8358; 2000</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Service charge</span>
+										<span class="v-value">&#8358; 10</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Total Amount to be debited</span>
+										<span class="v-value">&#8358; 2010</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer justify-content-evenly border-0 flex-wrap">
+						<button type="button" class="v-cancel" data-bs-dismiss="modal">Cancel</button>
+						<button type="button" class="v-proceed" data-bs-toggle="modal" data-bs-target="#v-input-pin-modal">Proceed to transfer</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal @::end -->
+		<!-- Modal -->
+		<div class="modal fade" id="v-input-pin-modal" tabindex="-1" aria-labelledby="v-input-pin-label" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h6 class="modal-title flex-grow-1 text-center" id="v-input-pin-label">Input PIN</h6>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div id="v-input-pin-form-container" class="col-12 col-sm-11 mx-auto">
+							<div class="v-modal-image">
+								<img src="../assets/images/dilaac-transaction-image.png" alt="" class="img-fluid" />
+							</div>
+							<form action="" id="">
+								<div class="v-pins-container gap-2 gap-sm-3">
+									<!-- each pin input @::start -->
+									<div class="v-each-input">
+										<input type="tel" class="form-control" maxlength="1" autofocus="true" />
+									</div>
+									<!-- each pin input @::end-->
+									<!-- each pin input @::start -->
+									<div class="v-each-input">
+										<input type="tel" class="form-control" maxlength="1" />
+									</div>
+									<!-- each pin input @::end-->
+									<!-- each pin input @::start -->
+									<div class="v-each-input">
+										<input type="tel" class="form-control" maxlength="1" />
+									</div>
+									<!-- each pin input @::end-->
+									<!-- each pin input @::start -->
+									<div class="v-each-input">
+										<input type="tel" class="form-control" maxlength="1" />
+									</div>
+									<!-- each pin input @::end-->
+									<!-- each pin input @::start -->
+									<div class="v-each-input">
+										<input type="tel" class="form-control" maxlength="1" />
+									</div>
+									<!-- each pin input @::end-->
+								</div>
+								<span class="d-flex align-items-center v-small-text">
+									<span>I did not receive code</span>
+									<button type="button" class="v-resend">Resend</button>
+								</span>
+								<div class="submit-button">
+									<button type="submit" class="v-submit-button">Proceed</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal @::end -->
+		<!-- =============== ALL MODALS @::end ========== -->
+
 		<script src="../assets/js/bootstrap.bundle.js"></script>
+		<script src="../assets/js/custom.js"></script>
 		<script src="../assets/js/utilities.js"></script>
 	</body>
 </html>
