@@ -1,7 +1,56 @@
+#v-export-container {
+	row-gap: 10px;
+
+	& svg {
+		--size: var(--sm-svg-size);
+		width: var(--size);
+		height: var(--size);
+	}
+	& .v-export {
+		background-color: var(--primary-clr);
+		color: var(--white);
+		display: flex;
+		align-items: center;
+		padding: 0.6rem 0.9rem;
+		border-radius: 3px;
+		gap: 10px;
+
+		&:hover {
+			background-color: var(--primary-clr-dark);
+		}
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+}
+.v-trigger-modal-for-timeframe {
+	display: flex;
+	align-items: center;
+	font-size: 0.8rem;
+	background-color: var(--primary-clr-opacity);
+	border-radius: 4px;
+	padding: 10px 12px;
+	gap: 10px;
+	color: var(--primary-clr);
+
+	& > svg {
+		--size: var(--lg-svg-size) !important;
+		width: var(--size);
+		height: var(--size);
+	}
+	& .v-right {
+		gap: 5px;
+	}
+	& .v-date {
+		color: var(--primary-clr);
+		font-weight: 600;
+	}
+}
 #v-table-container {
 	display: flex;
 	flex-direction: column;
 	row-gap: 2rem;
+	height: 100%;
+	justify-content: space-between;
 }
 #v-table-container .nav-item .nav-link {
 	color: var(--black);
@@ -42,13 +91,14 @@
 		}
 	}
 }
-#v-table-container table :is(th, td span) {
+#v-table-container table :is(th, td) {
 	padding: 0.8rem 1rem;
 	white-space: nowrap;
 }
 #v-table-container table thead th {
-	font-size: 0.83rem;
-	font-weight: 600;
+	font-size: 0.8rem;
+	font-weight: 400;
+	opacity: 0.7;
 }
 #v-table-container table {
 	margin-bottom: 0;

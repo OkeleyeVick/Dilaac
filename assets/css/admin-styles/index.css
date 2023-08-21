@@ -1,9 +1,5 @@
-.v-card-wrapper-inner {
-	row-gap: 0.7rem;
-	margin-bottom: 1rem;
-}
-.v-card-container-wrapper {
-	margin-bottom: 1rem;
+:is(.v-card-wrapper-inner, #v-cloak) {
+	row-gap: 1rem;
 }
 .v-card-container-wrapper .v-top .v-top-text {
 	color: var(--primary-clr);
@@ -32,9 +28,10 @@
 	display: flex;
 	padding: 1rem;
 	align-items: flex-start;
-	gap: 0.7rem;
+	flex-direction: column;
 	border-radius: 6px;
-	border: 1.5px solid var(--border);
+	border: 1.1px solid transparent;
+	background-color: var(--bg-clr);
 }
 .v-card-inner .v-card-detail {
 	display: flex;
@@ -44,23 +41,21 @@
 	opacity: 0.8;
 	white-space: nowrap;
 	font-size: 0.845rem;
+	font-weight: 400;
 }
-.v-card-detail .v-card-value {
-	font-weight: 700;
-	color: var(--primary-clr);
+.v-card-inner .v-card-value {
+	font-weight: 800;
+	color: var(--primary-tab-clr);
 }
 .v-card-inner .v-icon {
-	background-color: var(--card-icon-bg);
-	border-radius: 6px;
-	aspect-ratio: 1/1;
-	border: 1px solid transparent;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.52rem;
+	gap: 0.3rem;
+	margin-bottom: 5px;
 	& svg {
-		--size: calc(var(--lg-svg-size) * 0.85);
-		color: var(--primary-clr);
+		--size: calc(var(--md-svg-size));
+		color: var(--primary-tab-clr);
 		width: var(--size);
 		height: var(--size);
 	}

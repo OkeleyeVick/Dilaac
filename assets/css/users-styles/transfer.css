@@ -94,6 +94,7 @@
 			box-shadow: 0 0 0 0.25rem var(--primary-clr-opacity);
 		}
 		&:checked {
+			box-shadow: 0 0 0 0.25rem var(--primary-clr-opacity);
 			background-color: var(--primary-clr);
 			border: var(--primary-clr);
 		}
@@ -127,6 +128,9 @@
 .v-form-input .v-put-amount .form-control {
 	padding-left: 2.2rem;
 }
+.v-recievers-name {
+	font-size: 0.73rem;
+}
 .v-form-input .v-put-amount .v-currency {
 	font-size: 1.1rem;
 	font-weight: 600;
@@ -139,15 +143,13 @@
 	align-items: center;
 }
 /* modal styles */
-#v-transfer-summary .modal-footer button {
+.modal .modal-content {
+	border-radius: 0.6rem;
+}
+.modal .modal-footer button {
 	flex-grow: 1;
 }
 
-@media all and (max-width: 480px) {
-	#v-transfer-summary {
-		font-size: 14px;
-	}
-}
 #v-input-pin-form-container form {
 	display: flex;
 	flex-direction: column;
@@ -215,7 +217,69 @@
 		}
 	}
 }
-#v-transfer-summary .v-board {
+.modal .v-pre-board {
+	margin-bottom: 1rem;
+	row-gap: 1rem;
+	flex-direction: row !important;
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+	}
+	& small {
+		font-size: 0.7rem;
+		margin-bottom: 6px;
+	}
+	& .v-acct-num {
+		font-weight: 800;
+		font-size: 0.9rem;
+		letter-spacing: -0.3px;
+	}
+	& .v-acct-name {
+		font-size: 0.8rem;
+		font-weight: 500;
+		letter-spacing: -0.3px;
+	}
+
+	& svg {
+		--size: var(--xl-svg-size);
+		width: var(--size);
+		height: var(--size);
+		color: var(--primary-clr);
+	}
+
+	& .v-go-between {
+		width: calc(70% / 2);
+		margin-inline: auto;
+
+		& .v-go-between-stroke {
+			height: 2.5px;
+			background-color: var(--primary-clr);
+			width: 100%;
+			position: relative;
+
+			&:after,
+			&:before {
+				--size: 1rem;
+				border-radius: 50%;
+				aspect-ratio: 1/1;
+				width: var(--size);
+				content: "";
+				background-color: var(--primary-clr);
+				top: 50%;
+				translate: 0px -50%;
+				position: absolute;
+			}
+			&:before {
+				left: 0;
+			}
+			&:after {
+				right: 0;
+			}
+		}
+	}
+}
+.modal .v-board {
 	background-color: var(--bg-clr);
 	padding: 1rem;
 	border-radius: 7px;
@@ -254,7 +318,7 @@
 		}
 	}
 }
-#v-transfer-summary .modal-footer {
+.modal .modal-footer {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 0rem 0.5rem;
@@ -283,5 +347,18 @@
 				background-color: var(--primary-clr-dark);
 			}
 		}
+	}
+}
+.modal .v-pre-footer {
+	background-color: var(--primary-clr-opacity);
+	border-radius: 5px;
+	padding: 0.7rem 1rem;
+	margin-top: 0.7rem;
+
+	& .v-key {
+		font-size: 0.8rem;
+	}
+	& .v-value {
+		font-size: 0.9rem;
 	}
 }
