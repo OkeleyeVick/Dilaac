@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="../assets/css/base.css" />
 
 		<!-- specific page style -->
-		<link rel="stylesheet" href="../assets/css/users-styles/.css" />
+		<link rel="stylesheet" href="../assets/css/users-styles/profile.css" />
 		<title>Layout</title>
 	</head>
 	<body>
@@ -185,7 +185,171 @@
 						</div>
 						<!-- topper @::end  -->
 						<div class="page-content-body">
-							<main class="page-content-body-inner"></main>
+							<main class="page-content-body-inner">
+								<!-- custom jumbotron @::start -->
+								<div class="v-user-jumbotron">
+									<div class="v-image-overlay d-flex align-items-center justify-content-end justify-content-md-between">
+										<div class="v-image-one v-image d-none d-md-inline">
+											<img src="../assets/images/diaac-strings.png" alt="" class="img-fluid" />
+										</div>
+										<div class="v-image-two v-image text-end">
+											<img src="../assets/images/dilaac-image-dollar.png" alt="" class="img-fluid" />
+										</div>
+									</div>
+								</div>
+								<!-- custom jumbotron @::end -->
+								<div class="col-12 col-lg-10 my-5 mx-auto">
+									<div class="v-settings-tab-content row col-12 mt-5 m-0 flex-md-row align-items-stretch">
+										<div class="col-12 col-lg-4 p-0 v-settings-tab-content-inner">
+											<div class="nav flex-lg-column flex-row flex-wrap nav-pills p-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+												<button
+													class="nav-link active"
+													id="v-pills-edit-profile-tab"
+													data-bs-toggle="pill"
+													data-bs-target="#v-pills-edit-profile"
+													type="button"
+													role="tab"
+													aria-controls="v-pills-edit-profile"
+													aria-selected="true">
+													Edit Profile
+												</button>
+												<button
+													class="nav-link"
+													id="v-pills-set-pin-tab"
+													data-bs-toggle="pill"
+													data-bs-target="#v-pills-set-pin"
+													type="button"
+													role="tab"
+													aria-controls="v-pills-set-pin"
+													aria-selected="false">
+													Set PIN
+												</button>
+												<button
+													class="nav-link"
+													id="v-pills-password-tab"
+													data-bs-toggle="pill"
+													data-bs-target="#v-pills-password"
+													type="button"
+													role="tab"
+													aria-controls="v-pills-password"
+													aria-selected="false">
+													Password & Security
+												</button>
+											</div>
+										</div>
+										<div class="tab-content col-lg-8 p-lg-4 p-0 pt-4" id="v-pills-tabContent">
+											<div
+												class="tab-pane fade show active"
+												id="v-pills-edit-profile"
+												role="tabpanel"
+												aria-labelledby="v-pills-edit-profile-tab"
+												tabindex="0">
+												<form action="">
+													<div class="form-container-title">
+														<h6 class="v-title">Edit Profile</h6>
+													</div>
+													<div class="v-form-inner">
+														<div class="row col-12 align-items-center v-signup-inputs-container">
+															<!-- each input @::start -->
+															<div class="col-12 p-0 v-user-picture-upload">
+																<div class="position-relative v-ASG-35" role="button">
+																	<div class="v-image-container">
+																		<img src="../assets/images/dilaac-user-image.jfif" alt="" class="img-fluid" />
+																	</div>
+																	<button type="button" class="v-camera">
+																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+																			<path
+																				fill="currentColor"
+																				d="M19 6h-1.586l-1-1c-.579-.579-1.595-1-2.414-1h-4c-.819 0-1.835.421-2.414 1l-1 1H5C3.346 6 2 7.346 2 9v8c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3V9c0-1.654-1.346-3-3-3zm-7 10a3.5 3.5 0 1 1 .001-7.001A3.5 3.5 0 0 1 12 16zm6-4.701a1.3 1.3 0 1 1 0-2.6a1.3 1.3 0 0 1 0 2.6z" />
+																		</svg>
+																	</button>
+																</div>
+																<input type="file" name="" id="user-image-upload" hidden />
+															</div>
+															<!-- each input @::end -->
+															<!-- each input @::start -->
+															<div class="col-12 p-0 col-md">
+																<label for="firstname" class="form-label">Firstname</label>
+																<input type="text" class="form-control" id="firstname" />
+															</div>
+															<!-- each input @::end -->
+															<!-- each input @::start -->
+															<div class="col-12 p-0 col-md">
+																<label for="lastname" class="form-label">Lastname</label>
+																<input type="text" inputmode="lastname" class="form-control" id="lastname" />
+															</div>
+															<!-- each input @::end -->
+															<!-- each input @::start -->
+															<div class="col-12 p-0">
+																<label for="email" class="form-label">Email</label>
+																<input type="email" class="form-control" id="email" />
+															</div>
+															<!-- each input @::end -->
+															<!-- each input @::start -->
+															<div class="col-12 p-0">
+																<label for="phone-number" class="form-label">Phone Number</label>
+																<input type="tel" inputmode="numeric" class="form-control" id="phone-number" />
+															</div>
+															<!-- each input @::end -->
+															<!-- each input @::start -->
+															<div class="v-submit-button p-0">
+																<button type="submit">Save</button>
+															</div>
+															<!-- each input @::end -->
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="tab-pane fade" id="v-pills-set-pin" role="tabpanel" aria-labelledby="v-pills-set-pin-tab" tabindex="0">
+												<form action="">
+													<div class="form-container-title">
+														<h6 class="v-title">Set password</h6>
+													</div>
+												</form>
+											</div>
+											<div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab" tabindex="0">
+												<form action="">
+													<div class="form-container-title">
+														<h6 class="v-title">Set password</h6>
+													</div>
+													<div class="v-form-inner d-flex flex-column gap-3 mt-5">
+														<!-- each input @::start -->
+														<div class="col-12 p-0 v-has-password">
+															<label for="old-password" class="form-label">Enter old password</label>
+															<div class="v-form-input position-relative">
+																<input type="password" class="form-control" id="old-password" />
+																<button type="button" class="v-password-toggler"></button>
+															</div>
+														</div>
+														<!-- each input @::end -->
+														<!-- each input @::start -->
+														<div class="col-12 p-0 v-has-password">
+															<label for="new-password" class="form-label">New password</label>
+															<div class="v-form-input position-relative">
+																<input type="password" class="form-control" id="new-password" />
+																<button type="button" class="v-password-toggler"></button>
+															</div>
+														</div>
+														<!-- each input @::end -->
+														<!-- each input @::start -->
+														<div class="col-12 p-0 v-has-password">
+															<label for="confirm-password" class="form-label">Confirm password</label>
+															<div class="v-form-input position-relative">
+																<input type="password" class="form-control" id="confirm-password" />
+																<button type="button" class="v-password-toggler"></button>
+															</div>
+														</div>
+														<!-- each input @::end -->
+														<div class="v-submit-button">
+															<button type="submit">Continue</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</main>
 						</div>
 						<!-- page content body @::end-->
 
@@ -252,7 +416,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./profile.html" class="nav-link-item">
+									<a href="./set-pin.html" class="nav-link-item">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 												<g fill="none" stroke="currentColor" stroke-width="1.5">
@@ -290,5 +454,94 @@
 		</div>
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
+		<script>
+			(function () {
+				const seeIcon = `
+			            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.275 15.296C2.425 14.192 2 13.639 2 12c0-1.64.425-2.191 1.275-3.296C4.972 6.5 7.818 4 12 4c4.182 0 7.028 2.5 8.725 4.704C21.575 9.81 22 10.361 22 12c0 1.64-.425 2.191-1.275 3.296C19.028 17.5 16.182 20 12 20c-4.182 0-7.028-2.5-8.725-4.704Z"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"/></g></svg>
+			         `;
+				const unseeIcon = `
+			            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="M9 12a3 3 0 0 0 5.121 2.121l3.36 3.36A10.44 10.44 0 0 1 12 19c-4.664 0-8.4-2.903-10-7c.901-2.307 2.48-4.236 4.52-5.48l3.359 3.359A2.99 2.99 0 0 0 9 12Z" opacity=".16"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.73 5.073A10.96 10.96 0 0 1 12 5c4.664 0 8.4 2.903 10 7a11.595 11.595 0 0 1-1.555 2.788M6.52 6.519C4.48 7.764 2.9 9.693 2 12c1.6 4.097 5.336 7 10 7a10.44 10.44 0 0 0 5.48-1.52m-7.6-7.6a3 3 0 1 0 4.243 4.243"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m4 4l16 16"/></g></svg>
+			         `;
+
+				const formInputContainers = document.querySelectorAll(".v-has-password");
+				const fakeButton = document.querySelector(".v-ASG-35");
+				const imageProfileInput = document.getElementById("user-image-upload");
+				const parentImageContainer = document.querySelector(".v-user-picture-upload");
+
+				const readFile = function (uploadedFile) {
+					return new Promise((resolve, reject) => {
+						const reader = new FileReader();
+
+						reader.addEventListener("load", () => resolve(reader.result));
+						reader.addEventListener("error", () => resolve(reader.error));
+
+						reader.readAsDataURL(uploadedFile);
+					});
+				};
+
+				function checkTypeOfFile(fileName) {
+					let isAllowableFile = true,
+						errorMessage = null;
+					const fileExtensions = ["png", "jpg", "jpeg"];
+
+					const fileExt = fileName.split(".")[1].toLowerCase();
+					if (!fileExtensions.includes(fileExt)) {
+						isAllowableFile = false;
+						errorMessage = "Upload an image in PNG, JPEG or JPG format!";
+					}
+					return { isAllowableFile, errorMessage };
+				}
+
+				function UpdateTheDom(errorMessage) {
+					if (errorMessage) {
+						const span = document.createElement("div");
+						span.classList.add("error-message", "my-3");
+						span.innerHTML = errorMessage;
+						parentImageContainer.appendChild(span);
+					} else {
+						parentImageContainer.querySelectorAll(".error-message").forEach((error) => {
+							error.remove();
+						});
+					}
+				}
+
+				fakeButton.addEventListener("click", function () {
+					imageProfileInput.click();
+				});
+				imageProfileInput.addEventListener("input", async (event) => {
+					const imageFile = event.target.files[0];
+					const { isAllowableFile, errorMessage } = checkTypeOfFile(imageFile.name);
+
+					if (errorMessage !== null || isAllowableFile === false) {
+						UpdateTheDom(errorMessage ?? "Something went wrong, try uploading file again");
+					}
+
+					if (isAllowableFile && errorMessage === null) {
+						const result = await readFile(imageFile);
+						if (result) {
+							fakeButton.querySelector("img.img-fluid").src = result;
+							UpdateTheDom();
+						}
+					}
+				});
+
+				for (const formInputContainer of formInputContainers) {
+					const formInput = formInputContainer.querySelector(".form-control");
+					const toggleButton = formInputContainer.querySelector(".v-password-toggler");
+					const svg = toggleButton.querySelector("svg");
+
+					toggleButton.innerHTML = unseeIcon;
+					function setInputType(passwordType, iconType) {
+						formInput.type = passwordType;
+						toggleButton.innerHTML = iconType;
+					}
+					function toggleInputPassword(e) {
+						e.stopPropagation();
+						formInput.type === "password" ? setInputType("text", seeIcon) : setInputType("password", unseeIcon);
+					}
+					toggleButton.addEventListener("click", toggleInputPassword);
+				}
+			})();
+		</script>
 	</body>
 </html>
