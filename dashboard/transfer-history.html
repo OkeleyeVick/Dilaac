@@ -114,6 +114,7 @@
 				</div>
 				<!-- content start -->
 				<div class="page-content p-0 col-md-9">
+					<!-- page content inner start -->
 					<div class="page-content-inner">
 						<!-- topper @::start-->
 						<div class="topper">
@@ -1339,7 +1340,7 @@
 						<h6 class="modal-title flex-grow-1 text-center" id="time-frameLabel ">Time frame</h6>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body px-3">
 						<div class="d-flex align-items-center flex-wrap gap-2 justify-content-between filter-button-container">
 							<button type="button" class="active">Last 1 month</button>
 							<button type="button">Last 3 month</button>
@@ -1379,41 +1380,5 @@
 		<!-- modals @::end -->
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
-		<script>
-			(() => {
-				const modalTimeFrameSelections = document.querySelectorAll("#time-frame .each-date");
-
-				for (const dateContainer of modalTimeFrameSelections) {
-					const dateInput = dateContainer.querySelector("input[type='date']");
-					const dateToggleButton = dateContainer.querySelector(".date-toggler");
-					dateToggleButton.addEventListener("click", function () {
-						dateInput.showPicker();
-					});
-
-					function getFormattedDate(dateFormat) {
-						let month, year, monthIndex;
-						if (dateFormat) {
-							const monthsShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-							const getMonth = dateFormat.split("-")[1];
-							if (getMonth.startsWith(0)) {
-								monthIndex = getMonth.split("")[1];
-							} else {
-								monthIndex = getMonth;
-							}
-
-							month = monthsShortNames.at(monthIndex - 1);
-							year = dateFormat.split("-")[0];
-						}
-
-						return { month, year };
-					}
-
-					dateInput.addEventListener("change", function () {
-						const { month, year } = getFormattedDate(this.value);
-						dateContainer.querySelector(".date-value").setHTML(`${month} ${year}`);
-					});
-				}
-			})();
-		</script>
 	</body>
 </html>

@@ -65,6 +65,11 @@
 				align-items: center;
 				justify-content: center;
 				color: var(--primary-clr);
+
+				&:hover {
+					background-color: var(--primary-clr);
+					color: var(--white);
+				}
 			}
 		}
 		& .v-image-container {
