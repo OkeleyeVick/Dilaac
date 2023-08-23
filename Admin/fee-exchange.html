@@ -13,9 +13,15 @@
 		<link rel="stylesheet" href="../assets/css/layout.css" />
 		<!-- globalstyles -->
 		<link rel="stylesheet" href="../assets/css/base.css" />
-		<title>Layout</title>
+		<!-- utility style -->
+		<link rel="stylesheet" href="../assets/css/table.css" />
+		<!-- specific page style -->
+		<link rel="stylesheet" href="../assets/css/admin-styles/fee-exchange.css" />
+
+		<title>Fee Exchange</title>
 	</head>
 	<body>
+		<!-- wrapper start -->
 		<div class="wrapper">
 			<div class="row col-12 m-0 wrapper-inner">
 				<div class="nav-sidebar p-0 d-none d-md-inline-flex col-md-3">
@@ -71,7 +77,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./fee-exchange.html" class="nav-link-item">
+									<a href="./fee-exchange.html" class="nav-link-item active">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 												<path
@@ -188,121 +194,460 @@
 							<!-- notification ends -->
 						</div>
 						<!-- topper ends  -->
+						<!-- topper ends  -->
 						<div class="page-content-body">
-							<div class="page-content-body-inner"></div>
+							<main class="page-content-body-inner">
+								<div class="v-top">
+									<ul class="nav nav-pills pt-2 w-100" id="pills-tab" role="tablist">
+										<li class="nav-item" role="presentation">
+											<button
+												class="nav-link active"
+												id="pills-collection-tab"
+												data-bs-toggle="pill"
+												data-bs-target="#pills-collection"
+												type="button"
+												role="tab"
+												aria-controls="pills-collection"
+												aria-selected="true">
+												Collection
+											</button>
+										</li>
+										<li class="nav-item" role="presentation">
+											<button
+												class="nav-link"
+												id="pills-disbursement-tab"
+												data-bs-toggle="pill"
+												data-bs-target="#pills-disbursement"
+												type="button"
+												role="tab"
+												aria-controls="pills-disbursement"
+												aria-selected="false">
+												Disbursement
+											</button>
+										</li>
+									</ul>
+								</div>
+								<div id="v-table-container" class="mt-3">
+									<div class="v-table-skin rounded-3">
+										<div class="tab-content" id="pills-tabContent">
+											<div
+												class="tab-pane fade show active"
+												id="pills-collection"
+												role="tabpanel"
+												aria-labelledby="pills-collection-tab"
+												tabindex="0">
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th scope="col">S/N</th>
+															<th scope="col">Country</th>
+															<th scope="col">Transfer fee band range</th>
+															<th scope="col">Service charge</th>
+															<th scope="col">Local to USD</th>
+															<th scope="col"></th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- each row@:: start -->
+														<tr>
+															<td>
+																<span class="serial-no">1</span>
+															</td>
+															<td>
+																<div class="d-flex align-items-center v-country-detail">
+																	<div class="v-flag-svg">
+																		<img src="../assets/images/dilaac-by.svg" alt="" class="img-fluid" />
+																	</div>
+																	<span class="v-country-name">South Africa</span>
+																</div>
+															</td>
+															<td>
+																<div class="d-flex align-items-center v-country-detail">
+																	<div class="v-user-image">
+																		<img src="../assets/images/dilaac-user-image-2.jfif" alt="" class="img-fluid" />
+																	</div>
+																	<span class="v-user-email">jonbellion@gmail.com</span>
+																</div>
+															</td>
+															<td>
+																<div class="d-flex align-items-center v-country-detail">
+																	<div class="v-flag-svg">
+																		<img src="../assets/images/dilaac-by.svg" alt="" class="img-fluid" />
+																	</div>
+																	<span class="v-country-name">South Africa</span>
+																</div>
+															</td>
+															<td>
+																<span class="no-of-transaction">100</span>
+															</td>
+															<td>
+																<span class="d-flex align-items-center v-edit">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+																		<path
+																			fill="currentColor"
+																			d="m227.32 73.37l-44.69-44.68a16 16 0 0 0-22.63 0L36.69 152A15.86 15.86 0 0 0 32 163.31V208a16 16 0 0 0 16 16h168a8 8 0 0 0 0-16H115.32l112-112a16 16 0 0 0 0-22.63ZM136 75.31L152.69 92L68 176.69L51.31 160ZM48 208v-28.69L76.69 208Zm48-3.31L79.32 188L164 103.31L180.69 120Zm96-96L147.32 64l24-24L216 84.69Z" />
+																	</svg>
+																	<span class="v-text">Edit</span>
+																</span>
+															</td>
+														</tr>
+														<!-- each row@:: end -->
+													</tbody>
+												</table>
+
+												<div class="d-flex align-items-center justify-content-end mt-4 v-add-country-container">
+													<button type="button" class="d-flex align-items-center gap-1" data-bs-target="#collection-modal" data-bs-toggle="modal">
+														<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+															<path
+																fill="none"
+																stroke="currentColor"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																stroke-width="1.5"
+																d="M12.75 7.75h-10m5-5v10" />
+														</svg>
+														<span>Add range</span>
+													</button>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="pills-disbursement" role="tabpanel" aria-labelledby="pills-disbursement-tab" tabindex="0"></div>
+										</div>
+									</div>
+									<!-- pagination @::startGive -->
+									<div class="v-pagination-container">
+										<nav aria-label="table-pagination">
+											<ul class="pagination">
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Previous">
+														<span aria-hidden="true">&laquo;</span>
+													</a>
+												</li>
+												<li class="page-item"><a class="page-link active" href="#">1</a></li>
+												<li class="page-item"><a class="page-link" href="#">2</a></li>
+												<li class="page-item"><a class="page-link" href="#">3</a></li>
+												<li class="page-item"><a class="page-link" href="#">4</a></li>
+												<li class="page-item"><a class="page-link" href="#">5</a></li>
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Next">
+														<span aria-hidden="true">&raquo;</span>
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+									<!-- pagination @::start -->
+								</div>
+							</main>
 						</div>
 						<!-- page content body -->
-
-						<!-- page content body end -->
 					</div>
 					<!-- page content inner end -->
 				</div>
 				<!-- content ends -->
+			</div>
+		</div>
+		<!-- wrapper ends -->
 
-				<!-- ? mobile  view -->
-
-				<div
-					class="offcanvas offcanvas-start"
-					data-bs-scroll="true"
-					tabindex="-1"
-					id="offcanvasWithBothOptions"
-					aria-labelledby="offcanvasWithBothOptionsLabel">
-					<div class="offcanvas-header">
-						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" -label="Close"></button>
+		<!-- offcanvas @::start -->
+		<div
+			class="offcanvas offcanvas-start"
+			data-bs-scroll="true"
+			tabindex="-1"
+			id="offcanvasWithBothOptions"
+			aria-labelledby="offcanvasWithBothOptionsLabel">
+			<div class="offcanvas-header">
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" -label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div class="mobile-canvas-content">
+					<ul class="nav-links">
+						<li class="each-nav-link">
+							<a href="./dashboard.html" class="nav-link-item">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+										<g transform="rotate(180 7.5 7.5)">
+											<path
+												fill="currentColor"
+												fill-rule="evenodd"
+												d="M2.8 1h-.05c-.229 0-.426 0-.6.041A1.5 1.5 0 0 0 1.04 2.15c-.04.174-.04.37-.04.6v2.5c0 .229 0 .426.041.6A1.5 1.5 0 0 0 2.15 6.96c.174.04.37.04.6.04h2.5c.229 0 .426 0 .6-.041A1.5 1.5 0 0 0 6.96 5.85c.04-.174.04-.37.04-.6v-2.5c0-.229 0-.426-.041-.6A1.5 1.5 0 0 0 5.85 1.04C5.676 1 5.48 1 5.25 1H2.8Zm-.417 1.014c.043-.01.11-.014.417-.014h2.4c.308 0 .374.003.417.014a.5.5 0 0 1 .37.37c.01.042.013.108.013.416v2.4c0 .308-.003.374-.014.417a.5.5 0 0 1-.37.37C5.575 5.996 5.509 6 5.2 6H2.8c-.308 0-.374-.003-.417-.014a.5.5 0 0 1-.37-.37C2.004 5.575 2 5.509 2 5.2V2.8c0-.308.003-.374.014-.417a.5.5 0 0 1 .37-.37ZM9.8 1h-.05c-.229 0-.426 0-.6.041A1.5 1.5 0 0 0 8.04 2.15c-.04.174-.04.37-.04.6v2.5c0 .229 0 .426.041.6A1.5 1.5 0 0 0 9.15 6.96c.174.04.37.04.6.04h2.5c.229 0 .426 0 .6-.041a1.5 1.5 0 0 0 1.11-1.109c.04-.174.04-.37.04-.6v-2.5c0-.229 0-.426-.041-.6a1.5 1.5 0 0 0-1.109-1.11c-.174-.04-.37-.04-.6-.04H9.8Zm-.417 1.014c.043-.01.11-.014.417-.014h2.4c.308 0 .374.003.417.014a.5.5 0 0 1 .37.37c.01.042.013.108.013.416v2.4c0 .308-.004.374-.014.417a.5.5 0 0 1-.37.37c-.042.01-.108.013-.416.013H9.8c-.308 0-.374-.003-.417-.014a.5.5 0 0 1-.37-.37C9.004 5.575 9 5.509 9 5.2V2.8c0-.308.003-.374.014-.417a.5.5 0 0 1 .37-.37ZM2.75 8h2.5c.229 0 .426 0 .6.041A1.5 1.5 0 0 1 6.96 9.15c.04.174.04.37.04.6v2.5c0 .229 0 .426-.041.6a1.5 1.5 0 0 1-1.109 1.11c-.174.04-.37.04-.6.04h-2.5c-.229 0-.426 0-.6-.041a1.5 1.5 0 0 1-1.11-1.109c-.04-.174-.04-.37-.04-.6v-2.5c0-.229 0-.426.041-.6A1.5 1.5 0 0 1 2.15 8.04c.174-.04.37-.04.6-.04Zm.05 1c-.308 0-.374.003-.417.014a.5.5 0 0 0-.37.37C2.004 9.425 2 9.491 2 9.8v2.4c0 .308.003.374.014.417a.5.5 0 0 0 .37.37c.042.01.108.013.416.013h2.4c.308 0 .374-.004.417-.014a.5.5 0 0 0 .37-.37c.01-.042.013-.108.013-.416V9.8c0-.308-.003-.374-.014-.417a.5.5 0 0 0-.37-.37C5.575 9.004 5.509 9 5.2 9H2.8Zm7-1h-.05c-.229 0-.426 0-.6.041A1.5 1.5 0 0 0 8.04 9.15c-.04.174-.04.37-.04.6v2.5c0 .229 0 .426.041.6a1.5 1.5 0 0 0 1.109 1.11c.174.041.371.041.6.041h2.5c.229 0 .426 0 .6-.041a1.5 1.5 0 0 0 1.109-1.109c.041-.174.041-.371.041-.6V9.75c0-.229 0-.426-.041-.6a1.5 1.5 0 0 0-1.109-1.11c-.174-.04-.37-.04-.6-.04H9.8Zm-.417 1.014c.043-.01.11-.014.417-.014h2.4c.308 0 .374.003.417.014a.5.5 0 0 1 .37.37c.01.042.013.108.013.416v2.4c0 .308-.004.374-.014.417a.5.5 0 0 1-.37.37c-.042.01-.108.013-.416.013H9.8c-.308 0-.374-.004-.417-.014a.5.5 0 0 1-.37-.37C9.004 12.575 9 12.509 9 12.2V9.8c0-.308.003-.374.014-.417a.5.5 0 0 1 .37-.37Z"
+												clip-rule="evenodd" />
+										</g>
+									</svg>
+								</span>
+								<span class="v-link-title">Dashboard</span>
+							</a>
+						</li>
+						<li class="each-nav-link">
+							<a href="./users-management.html" class="nav-link-item">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
+										<path
+											fill="currentColor"
+											d="M1792 896h-640V768h640v128zm256-640v987q-28-35-59-66t-69-56V384H128v1280h903q3 33 10 65t18 63H0V256h2048zM256 1408q0-52 14-101t40-93t63-80t83-61q-34-35-53-81t-19-96q0-53 20-99t55-82t81-55t100-20q53 0 99 20t82 55t55 81t20 100q0 50-19 96t-53 81q46 25 83 61t63 79t40 93t14 102H896q0-53-20-99t-55-82t-81-55t-100-20q-53 0-99 20t-82 55t-55 81t-20 100H256zm384-640q-27 0-50 10t-40 27t-28 41t-10 50q0 27 10 50t27 40t41 28t50 10q27 0 50-10t40-27t28-41t10-50q0-27-10-50t-27-40t-41-28t-50-10zm1398 720l-124 51q6 30 6 61t-6 61l124 51l-49 119l-124-52q-35 51-86 86l52 124l-119 49l-51-124q-30 6-61 6t-61-6l-51 124l-119-49l52-124q-51-35-86-86l-124 52l-49-119l124-51q-6-30-6-61t6-61l-124-51l49-119l124 52q35-51 86-86l-52-124l119-49l51 124q30-6 61-6t61 6l51-124l119 49l-52 124q51 35 86 86l124-52l49 119zm-438 304q40 0 75-15t61-41t41-61t15-75q0-40-15-75t-41-61t-61-41t-75-15q-40 0-75 15t-61 41t-41 61t-15 75q0 40 15 75t41 61t61 41t75 15z" />
+									</svg>
+								</span>
+								<span class="v-link-title">User Management</span>
+							</a>
+						</li>
+						<li class="each-nav-link">
+							<a href="./transfer-history.html" class="nav-link-item">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+										<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+											<path d="M.5 7A6.5 6.5 0 1 0 7 .5a7.23 7.23 0 0 0-5 2" />
+											<path d="m2.5.5l-.5 2L4 3m3 .5v4L4.4 8.8" />
+										</g>
+									</svg>
+								</span>
+								<span class="v-link-title">Transfer History</span>
+							</a>
+						</li>
+						<li class="each-nav-link">
+							<a href="./fee-exchange.html" class="nav-link-item active">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+										<path
+											fill="currentColor"
+											fill-rule="evenodd"
+											d="M4.207 15.061L1 11.854v-.707L4.207 7.94l.707.707l-2.353 2.354H15v1H2.56l2.354 2.353l-.707.707zm7.586-7L15 4.854v-.707L11.793.94l-.707.707L13.439 4H1v1h12.44l-2.354 2.354l.707.707z"
+											clip-rule="evenodd" />
+									</svg>
+								</span>
+								<span class="v-link-title">Fee & Exchange Rate</span>
+							</a>
+						</li>
+						<li class="each-nav-link">
+							<a href="./configure-country.html" class="nav-link-item">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+										<path
+											fill="currentColor"
+											d="M11.078 0c.294 0 .557.183.656.457l.706 1.957c.253.063.47.126.654.192c.201.072.46.181.78.33l1.644-.87a.702.702 0 0 1 .832.131l1.446 1.495c.192.199.246.49.138.744l-.771 1.807c.128.235.23.436.308.604c.084.183.188.435.312.76l1.797.77c.27.115.437.385.419.674l-.132 2.075a.69.69 0 0 1-.46.605l-1.702.605c-.049.235-.1.436-.154.606a8.79 8.79 0 0 1-.298.774l.855 1.89a.683.683 0 0 1-.168.793l-1.626 1.452a.703.703 0 0 1-.796.096l-1.676-.888a7.23 7.23 0 0 1-.81.367l-.732.274l-.65 1.8a.696.696 0 0 1-.64.457L9.11 20a.697.697 0 0 1-.669-.447l-.766-2.027a14.625 14.625 0 0 1-.776-.29a9.987 9.987 0 0 1-.618-.293l-1.9.812a.702.702 0 0 1-.755-.133L2.22 16.303a.683.683 0 0 1-.155-.783l.817-1.78a9.517 9.517 0 0 1-.302-.644a14.395 14.395 0 0 1-.3-.811L.49 11.74a.69.69 0 0 1-.49-.683l.07-1.921a.688.688 0 0 1 .392-.594L2.34 7.64c.087-.319.163-.567.23-.748a8.99 8.99 0 0 1 .314-.712L2.07 4.46a.683.683 0 0 1 .15-.79l1.404-1.326a.702.702 0 0 1 .75-.138l1.898.784c.21-.14.4-.253.572-.344c.205-.109.479-.223.824-.346l.66-1.841A.696.696 0 0 1 8.984 0h2.094Zm-.49 1.377H9.475L8.87 3.071a.693.693 0 0 1-.434.423c-.436.145-.751.27-.935.367c-.195.103-.444.26-.74.47a.703.703 0 0 1-.673.074l-1.83-.755l-.713.674l.743 1.57a.68.68 0 0 1-.006.597c-.2.401-.335.697-.403.879a10.31 10.31 0 0 0-.27.922a.69.69 0 0 1-.37.45l-1.79.859l-.036.98l1.62.492c.215.065.385.23.456.442c.16.48.288.834.38 1.056a10 10 0 0 0 .404.827a.68.68 0 0 1 .019.606l-.751 1.638l.711.668l1.782-.762a.703.703 0 0 1 .603.024c.365.192.637.325.809.398c.175.073.51.195.996.361a.693.693 0 0 1 .424.41l.708 1.871l.926-.02l.597-1.654a.692.692 0 0 1 .409-.413l1.037-.388c.262-.097.58-.25.951-.46a.703.703 0 0 1 .674-.008l1.577.835l.887-.791L15.856 14a.681.681 0 0 1-.001-.56c.182-.407.305-.714.367-.91c.061-.192.124-.469.185-.825a.69.69 0 0 1 .451-.533l1.648-.585l.072-1.14l-1.62-.694a.692.692 0 0 1-.377-.394a15.337 15.337 0 0 0-.378-.944a11.01 11.01 0 0 0-.42-.794a.682.682 0 0 1-.035-.606l.725-1.7l-.764-.79l-1.488.788a.703.703 0 0 1-.633.013a11.296 11.296 0 0 0-.968-.426a7.185 7.185 0 0 0-.857-.23a.694.694 0 0 1-.508-.441l-.668-1.853Zm-.564 4.264c2.435 0 4.41 1.953 4.41 4.361c0 2.408-1.975 4.36-4.41 4.36c-2.436 0-4.41-1.952-4.41-4.36c0-2.408 1.974-4.36 4.41-4.36Zm0 1.378c-1.667 0-3.018 1.335-3.018 2.983c0 1.648 1.351 2.984 3.018 2.984c1.666 0 3.017-1.336 3.017-2.984s-1.35-2.983-3.017-2.983Z" />
+									</svg>
+								</span>
+								<span class="v-link-title">Configure Country</span>
+							</a>
+						</li>
+					</ul>
+					<ul class="nav-links">
+						<li class="each-nav-link">
+							<a href="#" class="nav-link-item">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+										<g transform="rotate(180 512 512)">
+											<path
+												fill="currentColor"
+												d="M116.832 543.664H671.28c17.696 0 32-14.336 32-32s-14.304-32-32-32H118.832l115.76-115.76c12.496-12.496 12.496-32.752 0-45.248s-32.752-12.496-45.248 0l-189.008 194l189.008 194c6.256 6.256 14.432 9.376 22.624 9.376s16.368-3.12 22.624-9.376c12.496-12.496 12.496-32.752 0-45.248zM959.664 0H415.663c-35.36 0-64 28.656-64 64v288h64.416V103.024c0-21.376 17.344-38.72 38.72-38.72h464.72c21.391 0 38.72 17.344 38.72 38.72l1.007 818.288c0 21.376-17.328 38.72-38.72 38.72h-465.71c-21.376 0-38.72-17.344-38.72-38.72V670.944l-64.416.08V960c0 35.344 28.64 64 64 64h543.984c35.36 0 64.016-28.656 64.016-64V64c-.015-35.344-28.671-64-64.015-64z" />
+										</g>
+									</svg>
+								</span>
+								<span class="v-link-title">Sign out</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- offcanvas @::end -->
+		<!-- modal @::start -->
+		<div class="modal fade" id="collection-modal" tabindex="-1" aria-labelledby="collection-modalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h5 class="modal-title flex-grow-1 text-center" id="collection-modalLabel">Collection</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="offcanvas-body">
-						<div class="mobile-canvas-content">
-							<ul class="nav-links">
-								<li class="each-nav-link">
-									<a href="./dashboard.html" class="nav-link-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
-												<g transform="rotate(180 7.5 7.5)">
+					<div class="modal-body">
+						<form action="" id="v-range-form">
+							<div class="v-form-input">
+								<label for="country-name" class="form-label">Country name</label>
+								<div class="v-form-input-inner">
+									<input type="text" name="" class="form-control" id="country-name" />
+								</div>
+							</div>
+							<div>
+								<div id="v-ranges-parent-container">
+									<!-- each range container @::start-->
+									<div class="v-each-range">
+										<div class="v-range-top d-flex align-items-center justify-content-between">
+											<span class="v-range-count d-flex align-items-center gap-1">
+												<span>Range</span>
+												<span class="v-range-track-num">1</span>
+											</span>
+											<button class="v-delete-range-button">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 													<path
-														fill="currentColor"
-														fill-rule="evenodd"
-														d="M2.8 1h-.05c-.229 0-.426 0-.6.041A1.5 1.5 0 0 0 1.04 2.15c-.04.174-.04.37-.04.6v2.5c0 .229 0 .426.041.6A1.5 1.5 0 0 0 2.15 6.96c.174.04.37.04.6.04h2.5c.229 0 .426 0 .6-.041A1.5 1.5 0 0 0 6.96 5.85c.04-.174.04-.37.04-.6v-2.5c0-.229 0-.426-.041-.6A1.5 1.5 0 0 0 5.85 1.04C5.676 1 5.48 1 5.25 1H2.8Zm-.417 1.014c.043-.01.11-.014.417-.014h2.4c.308 0 .374.003.417.014a.5.5 0 0 1 .37.37c.01.042.013.108.013.416v2.4c0 .308-.003.374-.014.417a.5.5 0 0 1-.37.37C5.575 5.996 5.509 6 5.2 6H2.8c-.308 0-.374-.003-.417-.014a.5.5 0 0 1-.37-.37C2.004 5.575 2 5.509 2 5.2V2.8c0-.308.003-.374.014-.417a.5.5 0 0 1 .37-.37ZM9.8 1h-.05c-.229 0-.426 0-.6.041A1.5 1.5 0 0 0 8.04 2.15c-.04.174-.04.37-.04.6v2.5c0 .229 0 .426.041.6A1.5 1.5 0 0 0 9.15 6.96c.174.04.37.04.6.04h2.5c.229 0 .426 0 .6-.041a1.5 1.5 0 0 0 1.11-1.109c.04-.174.04-.37.04-.6v-2.5c0-.229 0-.426-.041-.6a1.5 1.5 0 0 0-1.109-1.11c-.174-.04-.37-.04-.6-.04H9.8Zm-.417 1.014c.043-.01.11-.014.417-.014h2.4c.308 0 .374.003.417.014a.5.5 0 0 1 .37.37c.01.042.013.108.013.416v2.4c0 .308-.004.374-.014.417a.5.5 0 0 1-.37.37c-.042.01-.108.013-.416.013H9.8c-.308 0-.374-.003-.417-.014a.5.5 0 0 1-.37-.37C9.004 5.575 9 5.509 9 5.2V2.8c0-.308.003-.374.014-.417a.5.5 0 0 1 .37-.37ZM2.75 8h2.5c.229 0 .426 0 .6.041A1.5 1.5 0 0 1 6.96 9.15c.04.174.04.37.04.6v2.5c0 .229 0 .426-.041.6a1.5 1.5 0 0 1-1.109 1.11c-.174.04-.37.04-.6.04h-2.5c-.229 0-.426 0-.6-.041a1.5 1.5 0 0 1-1.11-1.109c-.04-.174-.04-.37-.04-.6v-2.5c0-.229 0-.426.041-.6A1.5 1.5 0 0 1 2.15 8.04c.174-.04.37-.04.6-.04Zm.05 1c-.308 0-.374.003-.417.014a.5.5 0 0 0-.37.37C2.004 9.425 2 9.491 2 9.8v2.4c0 .308.003.374.014.417a.5.5 0 0 0 .37.37c.042.01.108.013.416.013h2.4c.308 0 .374-.004.417-.014a.5.5 0 0 0 .37-.37c.01-.042.013-.108.013-.416V9.8c0-.308-.003-.374-.014-.417a.5.5 0 0 0-.37-.37C5.575 9.004 5.509 9 5.2 9H2.8Zm7-1h-.05c-.229 0-.426 0-.6.041A1.5 1.5 0 0 0 8.04 9.15c-.04.174-.04.37-.04.6v2.5c0 .229 0 .426.041.6a1.5 1.5 0 0 0 1.109 1.11c.174.041.371.041.6.041h2.5c.229 0 .426 0 .6-.041a1.5 1.5 0 0 0 1.109-1.109c.041-.174.041-.371.041-.6V9.75c0-.229 0-.426-.041-.6a1.5 1.5 0 0 0-1.109-1.11c-.174-.04-.37-.04-.6-.04H9.8Zm-.417 1.014c.043-.01.11-.014.417-.014h2.4c.308 0 .374.003.417.014a.5.5 0 0 1 .37.37c.01.042.013.108.013.416v2.4c0 .308-.004.374-.014.417a.5.5 0 0 1-.37.37c-.042.01-.108.013-.416.013H9.8c-.308 0-.374-.004-.417-.014a.5.5 0 0 1-.37-.37C9.004 12.575 9 12.509 9 12.2V9.8c0-.308.003-.374.014-.417a.5.5 0 0 1 .37-.37Z"
-														clip-rule="evenodd" />
-												</g>
-											</svg>
-										</span>
-										<span class="v-link-title">Dashboard</span>
-									</a>
-								</li>
-								<li class="each-nav-link">
-									<a href="./users-management.html" class="nav-link-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
-												<path
-													fill="currentColor"
-													d="M1792 896h-640V768h640v128zm256-640v987q-28-35-59-66t-69-56V384H128v1280h903q3 33 10 65t18 63H0V256h2048zM256 1408q0-52 14-101t40-93t63-80t83-61q-34-35-53-81t-19-96q0-53 20-99t55-82t81-55t100-20q53 0 99 20t82 55t55 81t20 100q0 50-19 96t-53 81q46 25 83 61t63 79t40 93t14 102H896q0-53-20-99t-55-82t-81-55t-100-20q-53 0-99 20t-82 55t-55 81t-20 100H256zm384-640q-27 0-50 10t-40 27t-28 41t-10 50q0 27 10 50t27 40t41 28t50 10q27 0 50-10t40-27t28-41t10-50q0-27-10-50t-27-40t-41-28t-50-10zm1398 720l-124 51q6 30 6 61t-6 61l124 51l-49 119l-124-52q-35 51-86 86l52 124l-119 49l-51-124q-30 6-61 6t-61-6l-51 124l-119-49l52-124q-51-35-86-86l-124 52l-49-119l124-51q-6-30-6-61t6-61l-124-51l49-119l124 52q35-51 86-86l-52-124l119-49l51 124q30-6 61-6t61 6l51-124l119 49l-52 124q51 35 86 86l124-52l49 119zm-438 304q40 0 75-15t61-41t41-61t15-75q0-40-15-75t-41-61t-61-41t-75-15q-40 0-75 15t-61 41t-41 61t-15 75q0 40 15 75t41 61t61 41t75 15z" />
-											</svg>
-										</span>
-										<span class="v-link-title">User Management</span>
-									</a>
-								</li>
-								<li class="each-nav-link">
-									<a href="./transfer-history.html" class="nav-link-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
-												<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-													<path d="M.5 7A6.5 6.5 0 1 0 7 .5a7.23 7.23 0 0 0-5 2" />
-													<path d="m2.5.5l-.5 2L4 3m3 .5v4L4.4 8.8" />
-												</g>
-											</svg>
-										</span>
-										<span class="v-link-title">Transfer History</span>
-									</a>
-								</li>
-								<li class="each-nav-link">
-									<a href="./fee-exchange.html" class="nav-link-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-												<path
-													fill="currentColor"
-													fill-rule="evenodd"
-													d="M4.207 15.061L1 11.854v-.707L4.207 7.94l.707.707l-2.353 2.354H15v1H2.56l2.354 2.353l-.707.707zm7.586-7L15 4.854v-.707L11.793.94l-.707.707L13.439 4H1v1h12.44l-2.354 2.354l.707.707z"
-													clip-rule="evenodd" />
-											</svg>
-										</span>
-										<span class="v-link-title">Fee & Exchange Rate</span>
-									</a>
-								</li>
-								<li class="each-nav-link">
-									<a href="./configure-country.html" class="nav-link-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-												<path
-													fill="currentColor"
-													d="M11.078 0c.294 0 .557.183.656.457l.706 1.957c.253.063.47.126.654.192c.201.072.46.181.78.33l1.644-.87a.702.702 0 0 1 .832.131l1.446 1.495c.192.199.246.49.138.744l-.771 1.807c.128.235.23.436.308.604c.084.183.188.435.312.76l1.797.77c.27.115.437.385.419.674l-.132 2.075a.69.69 0 0 1-.46.605l-1.702.605c-.049.235-.1.436-.154.606a8.79 8.79 0 0 1-.298.774l.855 1.89a.683.683 0 0 1-.168.793l-1.626 1.452a.703.703 0 0 1-.796.096l-1.676-.888a7.23 7.23 0 0 1-.81.367l-.732.274l-.65 1.8a.696.696 0 0 1-.64.457L9.11 20a.697.697 0 0 1-.669-.447l-.766-2.027a14.625 14.625 0 0 1-.776-.29a9.987 9.987 0 0 1-.618-.293l-1.9.812a.702.702 0 0 1-.755-.133L2.22 16.303a.683.683 0 0 1-.155-.783l.817-1.78a9.517 9.517 0 0 1-.302-.644a14.395 14.395 0 0 1-.3-.811L.49 11.74a.69.69 0 0 1-.49-.683l.07-1.921a.688.688 0 0 1 .392-.594L2.34 7.64c.087-.319.163-.567.23-.748a8.99 8.99 0 0 1 .314-.712L2.07 4.46a.683.683 0 0 1 .15-.79l1.404-1.326a.702.702 0 0 1 .75-.138l1.898.784c.21-.14.4-.253.572-.344c.205-.109.479-.223.824-.346l.66-1.841A.696.696 0 0 1 8.984 0h2.094Zm-.49 1.377H9.475L8.87 3.071a.693.693 0 0 1-.434.423c-.436.145-.751.27-.935.367c-.195.103-.444.26-.74.47a.703.703 0 0 1-.673.074l-1.83-.755l-.713.674l.743 1.57a.68.68 0 0 1-.006.597c-.2.401-.335.697-.403.879a10.31 10.31 0 0 0-.27.922a.69.69 0 0 1-.37.45l-1.79.859l-.036.98l1.62.492c.215.065.385.23.456.442c.16.48.288.834.38 1.056a10 10 0 0 0 .404.827a.68.68 0 0 1 .019.606l-.751 1.638l.711.668l1.782-.762a.703.703 0 0 1 .603.024c.365.192.637.325.809.398c.175.073.51.195.996.361a.693.693 0 0 1 .424.41l.708 1.871l.926-.02l.597-1.654a.692.692 0 0 1 .409-.413l1.037-.388c.262-.097.58-.25.951-.46a.703.703 0 0 1 .674-.008l1.577.835l.887-.791L15.856 14a.681.681 0 0 1-.001-.56c.182-.407.305-.714.367-.91c.061-.192.124-.469.185-.825a.69.69 0 0 1 .451-.533l1.648-.585l.072-1.14l-1.62-.694a.692.692 0 0 1-.377-.394a15.337 15.337 0 0 0-.378-.944a11.01 11.01 0 0 0-.42-.794a.682.682 0 0 1-.035-.606l.725-1.7l-.764-.79l-1.488.788a.703.703 0 0 1-.633.013a11.296 11.296 0 0 0-.968-.426a7.185 7.185 0 0 0-.857-.23a.694.694 0 0 1-.508-.441l-.668-1.853Zm-.564 4.264c2.435 0 4.41 1.953 4.41 4.361c0 2.408-1.975 4.36-4.41 4.36c-2.436 0-4.41-1.952-4.41-4.36c0-2.408 1.974-4.36 4.41-4.36Zm0 1.378c-1.667 0-3.018 1.335-3.018 2.983c0 1.648 1.351 2.984 3.018 2.984c1.666 0 3.017-1.336 3.017-2.984s-1.35-2.983-3.017-2.983Z" />
-											</svg>
-										</span>
-										<span class="v-link-title">Configure Country</span>
-									</a>
-								</li>
-							</ul>
-							<ul class="nav-links">
-								<li class="each-nav-link">
-									<a href="#" class="nav-link-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
-												<g transform="rotate(180 512 512)">
+														fill="none"
+														stroke="currentColor"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														stroke-width="1.5"
+														d="m20 9l-1.995 11.346A2 2 0 0 1 16.035 22h-8.07a2 2 0 0 1-1.97-1.654L4 9m17-3h-5.625M3 6h5.625m0 0V4a2 2 0 0 1 2-2h2.75a2 2 0 0 1 2 2v2m-6.75 0h6.75" />
+												</svg>
+											</button>
+										</div>
+										<div class="v-range-inputs">
+											<div class="d-flex align-items-center flex-wrap gap-2">
+												<!-- each input @::start -->
+												<div class="v-form-input flex-grow-1 col-sm">
+													<label for="input-range" class="form-label">Input range</label>
+													<div class="v-form-input-inner">
+														<input type="tel" name="" class="form-control" id="input-range" />
+													</div>
+												</div>
+												<!-- each input @::end -->
+												<!-- each input @::start -->
+												<div class="v-form-input flex-grow-1 col-sm">
+													<label for="service-charge" class="form-label">Service charge</label>
+													<div class="v-form-input-inner">
+														<input type="tel" name="" class="form-control" id="service-charge" />
+													</div>
+												</div>
+												<!-- each input @::start -->
+											</div>
+										</div>
+									</div>
+									<!-- each range container @::end-->
+									<!-- each range container @::start-->
+									<div class="v-each-range">
+										<div class="v-range-top d-flex align-items-center justify-content-between">
+											<span class="v-range-count d-flex align-items-center gap-1">
+												<span>Range</span>
+												<span class="v-range-track-num">2</span>
+											</span>
+											<button class="v-delete-range-button">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 													<path
-														fill="currentColor"
-														d="M116.832 543.664H671.28c17.696 0 32-14.336 32-32s-14.304-32-32-32H118.832l115.76-115.76c12.496-12.496 12.496-32.752 0-45.248s-32.752-12.496-45.248 0l-189.008 194l189.008 194c6.256 6.256 14.432 9.376 22.624 9.376s16.368-3.12 22.624-9.376c12.496-12.496 12.496-32.752 0-45.248zM959.664 0H415.663c-35.36 0-64 28.656-64 64v288h64.416V103.024c0-21.376 17.344-38.72 38.72-38.72h464.72c21.391 0 38.72 17.344 38.72 38.72l1.007 818.288c0 21.376-17.328 38.72-38.72 38.72h-465.71c-21.376 0-38.72-17.344-38.72-38.72V670.944l-64.416.08V960c0 35.344 28.64 64 64 64h543.984c35.36 0 64.016-28.656 64.016-64V64c-.015-35.344-28.671-64-64.015-64z" />
-												</g>
-											</svg>
-										</span>
-										<span class="v-link-title">Sign out</span>
-									</a>
-								</li>
-							</ul>
-						</div>
+														fill="none"
+														stroke="currentColor"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														stroke-width="1.5"
+														d="m20 9l-1.995 11.346A2 2 0 0 1 16.035 22h-8.07a2 2 0 0 1-1.97-1.654L4 9m17-3h-5.625M3 6h5.625m0 0V4a2 2 0 0 1 2-2h2.75a2 2 0 0 1 2 2v2m-6.75 0h6.75" />
+												</svg>
+											</button>
+										</div>
+										<div class="v-range-inputs">
+											<div class="d-flex align-items-center flex-wrap gap-2">
+												<!-- each input @::start -->
+												<div class="v-form-input flex-grow-1 col-sm">
+													<label for="input-range" class="form-label">Input range</label>
+													<div class="v-form-input-inner">
+														<input type="tel" name="" class="form-control" id="input-range" />
+													</div>
+												</div>
+												<!-- each input @::end -->
+												<!-- each input @::start -->
+												<div class="v-form-input flex-grow-1 col-sm">
+													<label for="service-charge" class="form-label">Service charge</label>
+													<div class="v-form-input-inner">
+														<input type="tel" name="" class="form-control" id="service-charge" />
+													</div>
+												</div>
+												<!-- each input @::start -->
+											</div>
+										</div>
+									</div>
+									<!-- each range container @::end-->
+								</div>
+								<div class="d-flex align-items-center justify-content-end mt-3 mb-2">
+									<button type="button" id="v-add-range" class="d-flex align-items-center gap-1">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="1.5"
+												d="M12.75 7.75h-10m5-5v10" />
+										</svg>
+										<span>Add range</span>
+									</button>
+								</div>
+							</div>
+							<div class="v-form-input">
+								<label for="country-to-usd-rate" class="form-label">Country USD exchange rate</label>
+								<div class="v-form-input-inner">
+									<input type="text" name="" class="form-control" id="country-to-usd-rate" />
+								</div>
+							</div>
+							<div class="v-form-input">
+								<label for="local-to-usd-rate" class="form-label">Local to USD conversion</label>
+								<div class="v-form-input-inner">
+									<input type="text" name="" class="form-control" id="local-to-usd-rate" />
+								</div>
+							</div>
+							<div class="d-flex align-items-center justify-content-between">
+								<input type="file" name="v-collection-country-flag" id="" hidden />
+								<button type="button" id="v-add-country-flag-button" class="d-flex align-items-center gap-1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="1.5"
+											d="M12.75 7.75h-10m5-5v10" />
+									</svg>
+									<span>Add country flag</span>
+								</button>
+								<div class="v-country-flag-display">
+									<img src="../assets/images/dilaac-ax.svg" alt="" class="img-fluid" />
+								</div>
+							</div>
+
+							<div class="v-confirm-button mt-4 mb-2">
+								<button type="submit" class="v-confirm-button">Confirm</button>
+							</div>
+						</form>
+						<template id="v-range-template">
+							<!-- each range container @::start-->
+							<div class="v-each-range">
+								<div class="v-range-top d-flex align-items-center justify-content-between">
+									<span class="v-range-count d-flex align-items-center gap-1">
+										<span>Range</span>
+										<span class="v-range-track-num"></span>
+									</span>
+									<button class="v-delete-range-button">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="1.5"
+												d="m20 9l-1.995 11.346A2 2 0 0 1 16.035 22h-8.07a2 2 0 0 1-1.97-1.654L4 9m17-3h-5.625M3 6h5.625m0 0V4a2 2 0 0 1 2-2h2.75a2 2 0 0 1 2 2v2m-6.75 0h6.75" />
+										</svg>
+									</button>
+								</div>
+								<div class="v-range-inputs">
+									<div class="d-flex align-items-center flex-wrap gap-2">
+										<!-- each input @::start -->
+										<div class="v-form-input flex-grow-1 col-sm">
+											<label for="input-range" class="form-label">Input range</label>
+											<div class="v-form-input-inner">
+												<input type="tel" name="" class="form-control" id="input-range" />
+											</div>
+										</div>
+										<!-- each input @::end -->
+										<!-- each input @::start -->
+										<div class="v-form-input flex-grow-1 col-sm">
+											<label for="service-charge" class="form-label">Service charge</label>
+											<div class="v-form-input-inner">
+												<input type="tel" name="" class="form-control" id="service-charge" />
+											</div>
+										</div>
+										<!-- each input @::start -->
+									</div>
+								</div>
+							</div>
+							<!-- each range container @::end-->
+						</template>
 					</div>
 				</div>
 			</div>
-			<!-- wrapper ends -->
 		</div>
+		<!-- modal @::end -->
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
 	</body>

@@ -168,3 +168,54 @@
 		color: var(--primary-clr);
 	}
 }
+
+/* modals */
+.modal .modal-content {
+	border-radius: 0.6rem;
+
+	& .modal-body {
+		margin-block: 2rem 1rem;
+	}
+}
+.v-password-set-pin-modal form {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+.v-password-set-pin-modal .v-pins-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0.3rem;
+}
+.v-pins-container .v-each-input {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& .form-control {
+		background-color: var(--primary-clr-opacity);
+		border-width: 1.5px;
+		border-color: var(--primary-clr);
+		font-size: 1.2rem;
+		text-align: center;
+		max-width: 5rem;
+		aspect-ratio: 1/1;
+		&:focus {
+			border-color: var(--primary-clr);
+			box-shadow: none;
+		}
+	}
+}
+.v-proceed-button {
+	margin-top: 2rem;
+
+	& button {
+		background-color: var(--primary-clr);
+		color: var(--white);
+		min-height: 2.8rem;
+		border-radius: 6px;
+		font-weight: 500;
+		font-size: 0.8rem;
+	}
+}

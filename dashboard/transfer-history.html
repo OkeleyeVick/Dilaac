@@ -17,6 +17,9 @@
 
 		<!-- globalstyles -->
 		<link rel="stylesheet" href="../assets/css/base.css" />
+
+		<!-- specific page style -->
+		<link rel="stylesheet" href="../assets/css/users-styles/transfer-history.css" />
 		<title>Transfer History</title>
 	</head>
 	<body>
@@ -64,7 +67,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./transfer-history.html" class="nav-link-item">
+									<a href="./transfer-history.html" class="nav-link-item active">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
 												<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -1281,7 +1284,7 @@
 							</a>
 						</li>
 						<li class="each-nav-link">
-							<a href="./transfer-history.html" class="nav-link-item">
+							<a href="./transfer-history.html" class="nav-link-item active">
 								<span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
 										<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -1332,16 +1335,85 @@
 		<div class="modal fade" id="time-frame" tabindex="-1" aria-labelledby="time-frameLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title flex-grow-1 text-center" id="time-frameLabel ">Time frame</h5>
+					<div class="modal-header border-0">
+						<h6 class="modal-title flex-grow-1 text-center" id="time-frameLabel ">Time frame</h6>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">...</div>
+					<div class="modal-body">
+						<div class="d-flex align-items-center flex-wrap gap-2 justify-content-between filter-button-container">
+							<button type="button" class="active">Last 1 month</button>
+							<button type="button">Last 3 month</button>
+							<button type="button">Custom</button>
+						</div>
+						<form action="">
+							<div class="date-selection d-flex flex-column gap-4 mt-4">
+								<div class="each-date">
+									<input type="date" name="start-date" id="" hidden />
+									<span class="label">Start date</span>
+									<button type="button" class="date-toggler">
+										<span class="date-value">Select date</span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18l6-6l-6-6" />
+										</svg>
+									</button>
+								</div>
+								<div class="each-date">
+									<input type="date" name="end-date" id="" hidden />
+									<span class="label">End date</span>
+									<button type="button" class="date-toggler">
+										<span class="date-value">Select date</span>
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18l6-6l-6-6" />
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="mt-5 mb-2">
+								<button type="submit" class="v-submit-button">Proceed</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 		<!-- modals @::end -->
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
+		<script>
+			(() => {
+				const modalTimeFrameSelections = document.querySelectorAll("#time-frame .each-date");
+
+				for (const dateContainer of modalTimeFrameSelections) {
+					const dateInput = dateContainer.querySelector("input[type='date']");
+					const dateToggleButton = dateContainer.querySelector(".date-toggler");
+					dateToggleButton.addEventListener("click", function () {
+						dateInput.showPicker();
+					});
+
+					function getFormattedDate(dateFormat) {
+						let month, year, monthIndex;
+						if (dateFormat) {
+							const monthsShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+							const getMonth = dateFormat.split("-")[1];
+							if (getMonth.startsWith(0)) {
+								monthIndex = getMonth.split("")[1];
+							} else {
+								monthIndex = getMonth;
+							}
+
+							month = monthsShortNames.at(monthIndex - 1);
+							year = dateFormat.split("-")[0];
+						}
+
+						return { month, year };
+					}
+
+					dateInput.addEventListener("change", function () {
+						const { month, year } = getFormattedDate(this.value);
+						dateContainer.querySelector(".date-value").setHTML(`${month} ${year}`);
+					});
+				}
+			})();
+		</script>
 	</body>
 </html>

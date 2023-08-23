@@ -45,6 +45,48 @@
 		font-weight: 600;
 	}
 }
+#v-table-search-top .v-num-of-users {
+	font-weight: 600;
+	color: var(--primary-clr);
+}
+#v-table-search-top .v-search-container {
+	position: relative;
+	max-width: 310px;
+	width: 100%;
+
+	& .form-control {
+		min-height: 2.6rem;
+		padding-right: 2rem;
+		font-size: 0.9rem;
+		color: rgba(0 0 0 / 60%);
+		width: 100%;
+
+		&::placeholder {
+			font-size: 0.8rem;
+			opacity: 0.7;
+		}
+
+		&:focus {
+			border-color: var(--primary-clr);
+			box-shadow: none;
+		}
+	}
+}
+#v-table-search-top .v-search-icon-wrapper {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	translate: -50% -50%;
+	display: flex;
+	align-items: center;
+
+	& svg {
+		--size: calc(var(--sm-svg-size) * 1.1);
+		width: var(--size);
+		height: var(--size);
+		opacity: 0.3;
+	}
+}
 #v-table-container {
 	display: flex;
 	flex-direction: column;
@@ -56,6 +98,7 @@
 	color: var(--black);
 	font-size: 0.8rem;
 	border-radius: 0;
+	opacity: 0.8;
 	text-decoration: 2px solid underline;
 	text-underline-offset: 11px;
 	text-decoration-color: transparent;
@@ -109,12 +152,21 @@
 			border-bottom: 1px solid #dee2e6;
 		}
 	}
+	&.table-bordered {
+		& tbody {
+			border-bottom-color: transparent;
+
+			& tr {
+				border-bottom: 1px solid #dee2e6;
+			}
+		}
+	}
 }
 #v-table-container table tbody td {
 	font-size: 0.78rem;
 
-	& > span {
-		opacity: 0.9;
+	& span {
+		opacity: 0.85;
 	}
 	& .v-tab {
 		font-weight: 600;
@@ -136,10 +188,10 @@
 		}
 	}
 
-	&.d-flex:has(.v-flag-svg) {
+	&.d-flex:has(.v-flag-svg, .v-user-image) {
 		gap: 1rem;
 	}
-	& .v-flag-svg {
+	& :is(.v-flag-svg, .v-user-image) {
 		--size: 22px;
 		width: var(--size);
 		height: var(--size);
@@ -156,7 +208,7 @@
 	& .v-country-detail {
 		gap: 5px;
 	}
-	& .v-country-name {
+	& :is(.v-country-name, .v-user-email) {
 		font-weight: 500;
 	}
 }
@@ -211,6 +263,7 @@ table .dropdown-item .v-item-title {
 	padding: 0 !important;
 }
 .v-pagination-container {
+	margin-bottom: 2rem;
 	& .pagination {
 		justify-content: flex-end;
 		gap: 4px;
@@ -242,5 +295,129 @@ table .dropdown-item .v-item-title {
 			background-color: var(--primary-clr-opacity);
 			border-color: var(--primary-clr);
 		}
+	}
+}
+
+/* switch */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+}
+.switch input {
+	display: none;
+}
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--primary-clr-opacity);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	border-radius: 4px;
+}
+.switch input:checked + .slider {
+	background-color: var(--primary-clr);
+	color: var(--white);
+}
+.switch input:checked + .slider::before {
+	background-color: var(--white);
+}
+.slider:before {
+	--size: 22px;
+	position: absolute;
+	content: "";
+	height: var(--size);
+	width: var(--size);
+	left: 10px;
+	bottom: 4px;
+	background-color: var(--primary-clr);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	border-radius: 3px;
+}
+input:checked + .slider {
+	background-color: var(--primary-clr);
+}
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(60px);
+}
+.slider:after {
+	content: "Activate";
+	display: block;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 35%;
+	font-size: 10px;
+	font-weight: 500;
+}
+.switch input:checked + .slider::after {
+	color: var(--white);
+}
+input:checked + .slider:after {
+	content: "Deactivate";
+}
+input:not(:checked) + .slider::after {
+	left: 60%;
+	color: var(--primary-clr);
+}
+/*--------- END --------*/
+
+#discount-modal .v-form-input {
+	& .form-label {
+		font-size: 0.9rem;
+		margin-block: 1px;
+		opacity: 0.8;
+		font-weight: 500;
+		margin-left: 3px;
+	}
+	& .v-form-input-inner {
+		position: relative;
+
+		& .form-control {
+			background-color: var(--primary-clr-opacity);
+			border-color: var(--primary-clr-opacity);
+			min-height: 2.8rem;
+			&:focus {
+				box-shadow: none;
+				border-color: var(--primary-clr);
+			}
+		}
+
+		& .percentage-icon {
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			translate: 0 -50%;
+			display: flex;
+			align-items: center;
+
+			& svg {
+				--size: var(--sm-svg-size);
+				width: var(--size);
+				height: var(--size);
+			}
+		}
+	}
+}
+.v-confirm-button button {
+	min-height: 2.8rem;
+	background-color: var(--primary-clr);
+	color: var(--white);
+	text-align: center;
+	font-weight: 500;
+	width: 100%;
+	font-size: 0.85rem;
+	border-radius: 5px;
+
+	&:hover {
+		background-color: var(--primary-clr-dark);
 	}
 }
