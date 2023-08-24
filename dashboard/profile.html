@@ -584,12 +584,12 @@
 			function UpdateTheDom(errorMessage) {
 				const getSpan = parentImageContainer.querySelector(".error-message");
 				if (getSpan && errorMessage) {
-					return getSpan.setHTML(errorMessage);
+					return (getSpan.textContent = `${errorMessage}`);
 				}
 				if (errorMessage) {
 					const span = document.createElement("div");
 					span.classList.add("error-message", "my-3");
-					span.setHTML(errorMessage);
+					span.textContent = errorMessage;
 					return parentImageContainer.appendChild(span);
 				} else {
 					parentImageContainer.querySelectorAll(".error-message").forEach((error) => {

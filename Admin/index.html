@@ -37,7 +37,7 @@
 						<div class="nav-sidebar-content">
 							<ul class="nav-links">
 								<li class="each-nav-link">
-									<a href="./index.html" class="nav-link-item">
+									<a href="./index.html" class="nav-link-item active">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
 												<g transform="rotate(180 7.5 7.5)">
@@ -201,72 +201,127 @@
 								<div id="v-cloak" class="row col-12 align-items-stretch m-0 p-sm-2 pe-sm-1">
 									<div class="col-xl-8 p-0">
 										<div class="v-chart-container p-2 h-100">
-											<div class="v-chart-container-skin color-grey h-100 p-4">
-												<!-- tabs and pills content @::start -->
-												<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-													<li class="nav-item" role="presentation">
-														<button
-															class="nav-link active"
-															id="pills-home-tab"
-															data-bs-toggle="pill"
-															data-bs-target="#pills-home"
-															type="button"
-															role="tab"
-															aria-controls="pills-home"
-															aria-selected="true">
-															Home
-														</button>
-													</li>
-													<li class="nav-item" role="presentation">
-														<button
-															class="nav-link"
-															id="pills-profile-tab"
-															data-bs-toggle="pill"
-															data-bs-target="#pills-profile"
-															type="button"
-															role="tab"
-															aria-controls="pills-profile"
-															aria-selected="false">
-															Profile
-														</button>
-													</li>
-													<li class="nav-item" role="presentation">
-														<button
-															class="nav-link"
-															id="pills-contact-tab"
-															data-bs-toggle="pill"
-															data-bs-target="#pills-contact"
-															type="button"
-															role="tab"
-															aria-controls="pills-contact"
-															aria-selected="false">
-															Contact
-														</button>
-													</li>
-													<li class="nav-item" role="presentation">
-														<button
-															class="nav-link"
-															id="pills-disabled-tab"
-															data-bs-toggle="pill"
-															data-bs-target="#pills-disabled"
-															type="button"
-															role="tab"
-															aria-controls="pills-disabled"
-															aria-selected="false"
-															disabled>
-															Disabled
-														</button>
-													</li>
-												</ul>
-												<div class="tab-content" id="pills-tabContent">
-													<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-														...
+											<div class="v-chart-container-skin color-grey h-100 p-3 d-flex align-items-stretch flex-column flex-md-row gap-4 flex-wrap">
+												<div class="v-chart-info">
+													<div>
+														<h6 class="v-title">Amount summary</h6>
 													</div>
-													<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
-													<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
-													<div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+													<ul>
+														<li>
+															<div>
+																<h3 class="v-description-value">
+																	<sup>&dollar;</sup>
+																	140, 000
+																</h3>
+																<span class="v-description-text"> Total amount transferred </span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<h3 class="v-description-value">
+																	<sup>&dollar;</sup>
+																	140, 000
+																</h3>
+																<span class="v-description-text"> Total amount transferred </span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<h3 class="v-description-value">
+																	<sup>&dollar;</sup>
+																	140, 000
+																</h3>
+																<span class="v-description-text"> Total amount transferred </span>
+															</div>
+														</li>
+														<li>
+															<a href="" class="d-flex align-items-center gap-2">
+																<span>See history</span>
+																<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+																	<path
+																		fill="none"
+																		stroke="currentColor"
+																		stroke-linecap="round"
+																		stroke-linejoin="round"
+																		stroke-width="2"
+																		d="M22 3h7v7m-1.5-5.5L20 12m-3-7H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3v-9" />
+																</svg>
+															</a>
+														</li>
+													</ul>
 												</div>
-												<!-- tabs and pills content @::end -->
+												<div class="flex-grow-1">
+													<!-- tabs and pills content @::start -->
+													<ul class="nav nav-pills mb-3 justify-content-start gap-3" id="pills-tab" role="tablist">
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link active"
+																id="pills-daily-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-daily"
+																type="button"
+																role="tab"
+																aria-controls="pills-daily"
+																aria-selected="true">
+																Daily
+															</button>
+														</li>
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link"
+																id="pills-weekly-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-weekly"
+																type="button"
+																role="tab"
+																aria-controls="pills-weekly"
+																aria-selected="false">
+																Weekly
+															</button>
+														</li>
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link"
+																id="pills-monthly-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-monthly"
+																type="button"
+																role="tab"
+																aria-controls="pills-monthly"
+																aria-selected="false">
+																Monthly
+															</button>
+														</li>
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link"
+																id="pills-yearly-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-yearly"
+																type="button"
+																role="tab"
+																aria-controls="pills-yearly"
+																aria-selected="false">
+																Yearly
+															</button>
+														</li>
+													</ul>
+													<div class="tab-content" id="pills-tabContent">
+														<div class="tab-pane fade show active" id="pills-daily" role="tabpanel" aria-labelledby="pills-daily-tab" tabindex="0">
+															<canvas id="daily-chart"></canvas>
+														</div>
+														<div class="tab-pane fade" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab" tabindex="0">
+															<canvas id="weekly-chart"></canvas>
+														</div>
+														<div class="tab-pane fade" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab" tabindex="0">
+															<canvas id="monthly-chart"></canvas>
+														</div>
+														<div class="tab-pane fade" id="pills-yearly" role="tabpanel" aria-labelledby="pills-yearly-tab" tabindex="0">
+															<canvas id="yealy-chart"></canvas>
+														</div>
+													</div>
+													<!-- tabs and pills content @::end -->
+												</div>
 											</div>
 										</div>
 									</div>
@@ -295,6 +350,7 @@
 											<div class="v-card col-12 col-sm-6 col-xl p-0">
 												<div class="v-card-skin">
 													<div class="v-card-inner">
+														<div class="v-card-overlay"></div>
 														<span class="v-icon">
 															<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
 																<path
@@ -314,6 +370,7 @@
 											<div class="v-card col-12 col-sm-6 col-xl p-0">
 												<div class="v-card-skin">
 													<div class="v-card-inner">
+														<div class="v-card-overlay"></div>
 														<span class="v-icon">
 															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 																<g fill="none" fill-rule="evenodd">
@@ -337,6 +394,7 @@
 											<div class="v-card col-12 col-sm-6 col-xl p-0">
 												<div class="v-card-skin">
 													<div class="v-card-inner">
+														<div class="v-card-overlay"></div>
 														<span class="v-icon">
 															<svg xmlns="http://www.w3.org/2000/svg" width="448" height="512" viewBox="0 0 448 512">
 																<path
@@ -356,6 +414,7 @@
 											<div class="v-card col-12 col-sm-6 col-xl p-0">
 												<div class="v-card-skin">
 													<div class="v-card-inner">
+														<div class="v-card-overlay"></div>
 														<span class="v-icon">
 															<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
 																<path
@@ -378,7 +437,7 @@
 										<!-- table formatting @::start -->
 										<div id="v-table-container" class="p-2 h-100 d-block">
 											<div class="v-table-skin border rounded-3 h-100">
-												<div class="d-flex align-items-center justify-content-between border-bottom pt-2 px-3">
+												<div class="d-flex align-items-center justify-content-between border-bottom pt-2 pe-3 px-sm-3 flex-wrap">
 													<ul class="nav nav-pills" id="pills-tab" role="tablist">
 														<li class="nav-item" role="presentation">
 															<button
@@ -892,7 +951,7 @@
 												<div class="container-body">
 													<div class="d-flex align-items-center gap-4 flex-wrap flex-sm-nowrap justify-content-between">
 														<div class="d-flex flex-column align-items-center v-chart-detail">
-															<small class="text-nowrap text-sm">Total country in use</small>
+															<small class="text-nowrap text">Total country in use</small>
 															<h1 class="v-num">5</h1>
 														</div>
 														<canvas id="v-pie-chart"></canvas>
@@ -932,7 +991,7 @@
 						<div class="mobile-canvas-content">
 							<ul class="nav-links">
 								<li class="each-nav-link">
-									<a href="./dashboard.html" class="nav-link-item">
+									<a href="./index.html" class="nav-link-item active">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
 												<g transform="rotate(180 7.5 7.5)">
@@ -1026,6 +1085,7 @@
 		<script src="../assets/js/utilities.js"></script>
 		<script src="../assets/js/chart.umd.js"></script>
 		<script>
+			// for pie chart of countries
 			(async function () {
 				let data;
 				function getVariationOfMainColor(opacity = 1) {
@@ -1069,8 +1129,6 @@
 				new Chart(document.getElementById("v-pie-chart"), {
 					type: "pie",
 					responsive: true,
-					aspectRatio: 1,
-					borderWidth: 1,
 					legend: {
 						display: true,
 						position: "bottom",
@@ -1081,6 +1139,7 @@
 								label: "Transactions",
 								data: data.map(({ count }) => count),
 								backgroundColor: data.map(({ bgColor }) => (bgColor !== "" ? bgColor : "")),
+								hoverOffset: 10,
 							},
 						],
 					},

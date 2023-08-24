@@ -610,7 +610,7 @@
 				<div class="mobile-canvas-content">
 					<ul class="nav-links">
 						<li class="each-nav-link">
-							<a href="./dashboard.html" class="nav-link-item">
+							<a href="./index.html" class="nav-link-item">
 								<span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
 										<g transform="rotate(180 7.5 7.5)">
@@ -698,14 +698,21 @@
 		</div>
 		<!-- offcanvas @::end -->
 		<!-- modal @::start -->
-		<div class="modal fade" id="collection-modal" tabindex="-1" aria-labelledby="collection-modalLabel" aria-hidden="true">
+		<div
+			class="modal fade"
+			id="collection-modal"
+			tabindex="-1"
+			data-bs-backdrop="static"
+			data-bs-keyboard="false"
+			aria-labelledby="collection-modalLabel"
+			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 				<div class="modal-content">
 					<div class="modal-header border-0">
 						<h5 class="modal-title flex-grow-1 text-center" id="collection-modalLabel">Collection</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body p-3 px-sm-0">
 						<form action="" id="v-range-form" class="v-form col-12 col-sm-11 mx-auto">
 							<div class="v-form-input">
 								<label for="country-name" class="form-label">Country name</label>
@@ -855,7 +862,7 @@
 										<span>Range</span>
 										<span class="v-range-track-num"></span>
 									</span>
-									<button class="v-delete-range-button">
+									<button type="button" class="v-delete-range-button">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 											<path
 												fill="none"
@@ -972,32 +979,27 @@
 		<script type="module">
 			import { appendChild } from "../assets/js/modules/useAppendImage.js";
 			import { treatImage } from "../assets/js/modules/useImage.js";
-			(() => {
-				const parentContainer = document.getElementById("v-ranges-parent-container");
-				const addNewRangeButton = document.getElementById("v-add-range");
-				const rangeTemplate = document.getElementById("v-range-template");
 
-				// for modals
-				const modalForms = document.querySelectorAll(".modal .v-form");
+			// for modals
+			const modalForms = document.querySelectorAll(".modal .v-form");
 
-				for (const form of modalForms) {
-					const toggleFileInput = form.querySelector(".v-add-country-flag-button");
-					const fileInput = form.querySelector("input[type='file']");
-					const imageContainer = form.querySelector(".v-country-flag-display");
-					const parentContainer = form.querySelector(".v-1fOF1VN");
+			for (const form of modalForms) {
+				const toggleFileInput = form.querySelector(".v-add-country-flag-button");
+				const fileInput = form.querySelector("input[type='file']");
+				const imageContainer = form.querySelector(".v-country-flag-display");
+				const parentContainer = form.querySelector(".v-1fOF1VN");
 
-					toggleFileInput.addEventListener("click", function () {
-						fileInput.click();
-					});
+				toggleFileInput.addEventListener("click", function () {
+					fileInput.click();
+				});
 
-					fileInput.addEventListener("input", async function (event) {
-						if (!event) return;
-						const { error = "Error occured, try again!", base64URL } = await treatImage(event);
+				fileInput.addEventListener("input", async function (event) {
+					if (!event) return;
+					const { error = "Error occured, try again!", base64URL } = await treatImage(event);
 
-						appendChild({ imageParentContainer: imageContainer, imageSrc: base64URL, error: error, parentContainer: parentContainer });
-					});
-				}
-			})();
+					appendChild({ imageParentContainer: imageContainer, imageSrc: base64URL, error: error, parentContainer: parentContainer });
+				});
+			}
 		</script>
 	</body>
 </html>

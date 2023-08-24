@@ -40,7 +40,7 @@
 
 		dateInput.addEventListener("change", function () {
 			const { month, year } = getFormattedDate(this.value);
-			dateContainer.querySelector(".date-value").setHTML(`${month} ${year}`);
+			dateContainer.querySelector(".date-value").textContent = `${month} ${year}`;
 		});
 	}
 })();

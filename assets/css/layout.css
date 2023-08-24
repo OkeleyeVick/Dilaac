@@ -1,5 +1,5 @@
 :root {
-	--primary-clr: #ff4a00;
+	--primary-clr: rgb(255, 74, 0);
 	--primary-light-clr: #ffede6;
 	--border: rgb(204 204 204 / 0.35);
 	--grey: #828282;
@@ -122,6 +122,10 @@
 	}
 }
 .each-nav-link .nav-link-item:hover {
+	color: var(--primary-clr);
+	background-color: var(--primary-clr-opacity);
+}
+.each-nav-link .nav-link-item.active {
 	color: var(--primary-clr);
 	background-color: var(--primary-clr-opacity);
 }

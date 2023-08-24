@@ -23,6 +23,8 @@
 .v-card-container-wrapper .v-card-skin {
 	padding: 0.5rem;
 	padding-block: 0;
+	position: relative;
+	overflow: hidden;
 }
 .v-card-container-wrapper .v-card-inner {
 	display: flex;
@@ -32,6 +34,26 @@
 	border-radius: 6px;
 	border: 1.1px solid transparent;
 	background-color: var(--bg-clr);
+	position: relative;
+
+	& .v-card-overlay {
+		--size: 100px;
+		height: var(--size);
+		width: var(--size);
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		background-repeat: no-repeat;
+		background-position: bottom right;
+	}
+}
+.v-card-wrapper-inner .v-card {
+	&:nth-child(odd) .v-card-overlay {
+		background-image: url(../../images/dilaac-string-image.png);
+	}
+	&:nth-child(even) .v-card-overlay {
+		background-image: url(../../images/dilaac-string-image-2.png);
+	}
 }
 .v-card-inner .v-card-detail {
 	display: flex;
