@@ -1331,8 +1331,8 @@
 			</div>
 		</div>
 		<!-- mobile offcanvas @::end -->
-		<!-- modals @::start -->
-		<!-- Modal -->
+		<!-- =============== modals @::start =================== -->
+		<!-- modal @::start -->
 		<div class="modal fade" id="time-frame" tabindex="-1" aria-labelledby="time-frameLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
@@ -1370,14 +1370,126 @@
 								</div>
 							</div>
 							<div class="mt-5 mb-2">
-								<button type="submit" class="v-submit-button">Proceed</button>
+								<button type="button" data-bs-target="#v-transfer-receipt" data-bs-toggle="modal" class="v-submit-button">Proceed</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- modals @::end -->
+		<!-- modal @::end -->
+		<!-- modal @::start-->
+		<!-- modal @::end -->
+		<div class="modal fade" id="v-transfer-receipt" tabindex="-1" aria-labelledby="v-transfer-receiptlabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<button type="button" data-bs-toggle="modal" data-bs-target="#time-frame">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6" />
+							</svg>
+						</button>
+						<h5 class="modal-title flex-grow-1 text-center" id="v-transfer-receiptlabel">Transfer</h5>
+					</div>
+					<div class="modal-body">
+						<div class="col-sm-11 mx-auto">
+							<div class="text-center d-flex align-items-center flex-column gap-3 mx-auto">
+								<div class="d-flex align-items-center gap-3 flex-column">
+									<div class="v-modal-image">
+										<img src="../assets/images/dilaac-success-check.png" alt="" class="img-fluid" />
+									</div>
+									<div class="v-price-container">
+										<h1 class="v-price">&#8358; 2000</h1>
+									</div>
+								</div>
+								<div class="v-separator">
+									<span class="v-date">Aug 20, 2023 2:00pm</span>
+								</div>
+							</div>
+							<div class="v-board">
+								<ul class="v-board-inner">
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Momo Provider</span>
+										<span class="d-flex">
+											<div class="v-image-container">
+												<img src="../assets/images/dilaac-momo-image.png" alt="" class="img-fluid" />
+											</div>
+											<span class="v-value">mtn momo</span>
+										</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<small class="v-key">From</small>
+										<span class="d-flex flex-column align-items-end">
+											<span class="v-value v-acct-num">91347878989</span>
+											<small class="lh-1">MTN MOMO - Arrdee</small>
+										</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<small class="v-key">To</small>
+										<span class="d-flex flex-column align-items-end">
+											<span class="v-value v-acct-num">91347878989</span>
+											<small class="lh-1">Tion Wayne</small>
+										</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Status</span>
+										<!-- use any of the following class for change of color and bg depending on the status  ==> v-success, v-pending, v-failed -->
+										<small class="v-status v-success v-value">Successful</small>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Transfer amount</span>
+										<span class="v-value">&#8358; 2000</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Service charge</span>
+										<span class="v-value">&#8358; 10</span>
+									</li>
+									<li class="v-item d-flex align-items-center justify-content-between">
+										<span class="v-key">Total Amount to be debited</span>
+										<span class="v-value">&#8358; 2010</span>
+									</li>
+								</ul>
+							</div>
+							<div class="mt-5">
+								<button
+									type="button"
+									class="v-submit-button d-flex align-items-center gap-2 justify-content-center"
+									data-bs-toggle="modal"
+									data-bs-target="#v-caution">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+										<path
+											fill="currentColor"
+											d="M4.75 17.25a.75.75 0 0 1 .75.75v2.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V18a.75.75 0 0 1 1.5 0v2.25A1.75 1.75 0 0 1 18.25 22H5.75A1.75 1.75 0 0 1 4 20.25V18a.75.75 0 0 1 .75-.75Z" />
+										<path
+											fill="currentColor"
+											d="M5.22 9.97a.749.749 0 0 1 1.06 0l4.97 4.969V2.75a.75.75 0 0 1 1.5 0v12.189l4.97-4.969a.749.749 0 1 1 1.06 1.06l-6.25 6.25a.749.749 0 0 1-1.06 0l-6.25-6.25a.749.749 0 0 1 0-1.06Z" />
+									</svg>
+									<span>Download receipt</span>
+								</button>
+								<div class="d-flex align-items-center justify-content-between mt-3 mb-2 px-2">
+									<span class="v-left">Contact support</span>
+									<span class="v-right v-links">
+										<a href="">
+											<div class="image-container">
+												<img src="../assets/images/7089163_gmail_google_icon.png" alt="" class="img-fluid" />
+											</div>
+										</a>
+										<a href="">
+											<div class="image-container">
+												<img src="../assets/images/4202050_whatsapp_chat_logo_social_social media_icon.png" alt="" class="img-fluid" />
+											</div>
+										</a>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal @::end -->
+		<!-- modal @::end-->
+		<!-- =============== modals @::end ==================== -->
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
 	</body>

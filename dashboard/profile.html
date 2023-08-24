@@ -16,7 +16,7 @@
 
 		<!-- specific page style -->
 		<link rel="stylesheet" href="../assets/css/users-styles/profile.css" />
-		<title>Layout</title>
+		<title>Profile</title>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -77,7 +77,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./profile.html" class="nav-link-item">
+									<a href="./profile.html" class="nav-link-item active">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 												<g fill="none" stroke="currentColor" stroke-width="1.5">
@@ -438,7 +438,7 @@
 							</a>
 						</li>
 						<li class="each-nav-link">
-							<a href="./set-pin.html" class="nav-link-item">
+							<a href="./profile.html" class="nav-link-item active">
 								<span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 										<g fill="none" stroke="currentColor" stroke-width="1.5">
@@ -515,7 +515,7 @@
 			</div>
 		</div>
 		<!-- modal @::end -->
-		<!-- modal @::end -->
+		<!-- modal @::start -->
 		<div class="modal fade v-password-set-pin-modal" id="v-confirm-pin-modal" tabindex="-1" aria-labelledby="v-confirm-pin-label" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
@@ -563,101 +563,74 @@
 			</div>
 		</div>
 		<!-- modal @::end -->
-		<!-- modals @::start -->
+		<!-- =============== modals @::start ============ -->
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
-		<script>
-			(function () {
-				const seeIcon = `
+		<script type="module">
+			import { treatImage } from "../assets/js/modules/useImage.js";
+
+			const seeIcon = `
 			            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.275 15.296C2.425 14.192 2 13.639 2 12c0-1.64.425-2.191 1.275-3.296C4.972 6.5 7.818 4 12 4c4.182 0 7.028 2.5 8.725 4.704C21.575 9.81 22 10.361 22 12c0 1.64-.425 2.191-1.275 3.296C19.028 17.5 16.182 20 12 20c-4.182 0-7.028-2.5-8.725-4.704Z"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"/></g></svg>
 			         `;
-				const unseeIcon = `
+			const unseeIcon = `
 			            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="M9 12a3 3 0 0 0 5.121 2.121l3.36 3.36A10.44 10.44 0 0 1 12 19c-4.664 0-8.4-2.903-10-7c.901-2.307 2.48-4.236 4.52-5.48l3.359 3.359A2.99 2.99 0 0 0 9 12Z" opacity=".16"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.73 5.073A10.96 10.96 0 0 1 12 5c4.664 0 8.4 2.903 10 7a11.595 11.595 0 0 1-1.555 2.788M6.52 6.519C4.48 7.764 2.9 9.693 2 12c1.6 4.097 5.336 7 10 7a10.44 10.44 0 0 0 5.48-1.52m-7.6-7.6a3 3 0 1 0 4.243 4.243"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m4 4l16 16"/></g></svg>
 			         `;
 
-				const formInputContainers = document.querySelectorAll(".v-has-password");
-				const fakeButton = document.querySelector(".v-ASG-35");
-				const imageProfileInput = document.getElementById("user-image-upload");
-				const parentImageContainer = document.querySelector(".v-user-picture-upload");
+			const formInputContainers = document.querySelectorAll(".v-has-password");
+			const fakeButton = document.querySelector(".v-ASG-35");
+			const imageProfileInput = document.getElementById("user-image-upload");
+			const parentImageContainer = document.querySelector(".v-user-picture-upload");
 
-				const readFile = function (uploadedFile) {
-					return new Promise((resolve, reject) => {
-						const reader = new FileReader();
-
-						reader.addEventListener("load", () => resolve(reader.result));
-						reader.addEventListener("error", () => resolve(reader.error));
-
-						reader.readAsDataURL(uploadedFile);
+			function UpdateTheDom(errorMessage) {
+				const getSpan = parentImageContainer.querySelector(".error-message");
+				if (getSpan && errorMessage) {
+					return getSpan.setHTML(errorMessage);
+				}
+				if (errorMessage) {
+					const span = document.createElement("div");
+					span.classList.add("error-message", "my-3");
+					span.setHTML(errorMessage);
+					return parentImageContainer.appendChild(span);
+				} else {
+					parentImageContainer.querySelectorAll(".error-message").forEach((error) => {
+						return error.remove();
 					});
-				};
+				}
+			}
 
-				function checkTypeOfFile(fileName) {
-					let isAllowableFile = true,
-						errorMessage = null;
-					const fileExtensions = ["png", "jpg", "jpeg"];
+			fakeButton.addEventListener("click", function () {
+				imageProfileInput.click();
+			});
 
-					const fileExt = fileName.split(".")[1].toLowerCase();
-					if (!fileExtensions.includes(fileExt)) {
-						isAllowableFile = false;
-						errorMessage = "Upload an image in PNG, JPEG or JPG format!";
-					}
-					return { isAllowableFile, errorMessage };
+			imageProfileInput.addEventListener("input", async (event) => {
+				const { error = "", base64URL } = await treatImage(event);
+
+				if (error !== "" || !base64URL) {
+					UpdateTheDom(error ?? "Something went wrong, try uploading file again");
 				}
 
-				function UpdateTheDom(errorMessage) {
-					const getSpan = parentImageContainer.querySelector(".error-message");
-					if (getSpan && errorMessage) {
-						return getSpan.setHTML(errorMessage);
-					}
-					if (errorMessage) {
-						const span = document.createElement("div");
-						span.classList.add("error-message", "my-3");
-						span.setHTML(errorMessage);
-						return parentImageContainer.appendChild(span);
-					} else {
-						parentImageContainer.querySelectorAll(".error-message").forEach((error) => {
-							return error.remove();
-						});
-					}
+				if (base64URL && error === "") {
+					fakeButton.querySelector("img.img-fluid").src = base64URL;
+					UpdateTheDom();
 				}
+			});
 
-				fakeButton.addEventListener("click", function () {
-					imageProfileInput.click();
-				});
-				imageProfileInput.addEventListener("input", async (event) => {
-					const imageFile = event.target.files[0];
-					const { isAllowableFile, errorMessage } = checkTypeOfFile(imageFile.name);
+			for (const formInputContainer of formInputContainers) {
+				const formInput = formInputContainer.querySelector(".form-control");
+				const toggleButton = formInputContainer.querySelector(".v-password-toggler");
+				const svg = toggleButton.querySelector("svg");
 
-					if (errorMessage !== null || isAllowableFile === false) {
-						UpdateTheDom(errorMessage ?? "Something went wrong, try uploading file again");
-					}
-
-					if (isAllowableFile && errorMessage === null) {
-						const result = await readFile(imageFile);
-						if (result) {
-							fakeButton.querySelector("img.img-fluid").src = result;
-							UpdateTheDom();
-						}
-					}
-				});
-
-				for (const formInputContainer of formInputContainers) {
-					const formInput = formInputContainer.querySelector(".form-control");
-					const toggleButton = formInputContainer.querySelector(".v-password-toggler");
-					const svg = toggleButton.querySelector("svg");
-
-					toggleButton.innerHTML = unseeIcon;
-					function setInputType(passwordType, iconType) {
-						formInput.type = passwordType;
-						toggleButton.innerHTML = iconType;
-					}
-					function toggleInputPassword(e) {
-						e.stopPropagation();
-						formInput.type === "password" ? setInputType("text", seeIcon) : setInputType("password", unseeIcon);
-					}
-					toggleButton.addEventListener("click", toggleInputPassword);
+				toggleButton.innerHTML = unseeIcon;
+				function setInputType(passwordType, iconType) {
+					formInput.type = passwordType;
+					toggleButton.innerHTML = iconType;
 				}
-			})();
+				function toggleInputPassword(e) {
+					e.stopPropagation();
+					formInput.type === "password" ? setInputType("text", seeIcon) : setInputType("password", unseeIcon);
+				}
+				toggleButton.addEventListener("click", toggleInputPassword);
+			}
 		</script>
 	</body>
 </html>

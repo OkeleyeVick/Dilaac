@@ -33,7 +33,16 @@
 .date-selection .each-date {
 	display: flex;
 	flex-direction: column;
+	position: relative;
 
+	& input {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		user-select: none;
+		margin: auto;
+		right: 0;
+	}
 	& .label {
 		font-size: 0.8rem;
 		opacity: 0.8;
@@ -47,7 +56,7 @@
 		letter-spacing: -0.3px;
 	}
 }
-#time-frame form .v-submit-button {
+.modal .v-submit-button {
 	background-color: var(--primary-clr);
 	color: var(--white);
 	width: 100%;
@@ -55,8 +64,137 @@
 	font-size: 0.9rem;
 	text-align: center;
 	border-radius: 5px;
+	font-weight: 500;
 
+	& svg {
+		--size: var(--lg-svg-size);
+		width: var(--size);
+		height: var(--size);
+	}
 	&:hover {
 		background-color: var(--primary-clr-dark);
+	}
+}
+.modal .v-modal-image {
+	background-color: var(--primary-clr);
+	padding: 1rem;
+	border-radius: 50%;
+	aspect-ratio: 1/1;
+	display: flex;
+	align-items: center;
+	width: 80px;
+	margin-inline: auto;
+	justify-content: center;
+}
+.modal .v-price-container {
+	& .v-price {
+		font-weight: 700;
+	}
+}
+.modal .v-board {
+	--yellow: 251 161 18;
+	--yellow-clr: #fba112;
+	--yellow-opacity: rgba(var(--yellow) / 20%);
+	--red: 235 87 87;
+	--red-clr: #eb5757;
+	--red-opacity: rgba(var(--red) / 20%);
+	--green: 25 135 84;
+	--green-clr: #429d72;
+	--green-opacity: rgba(var(--green) / 20%);
+	background-color: var(--bg-clr);
+	padding: 1rem;
+	border-radius: 7px;
+
+	& .v-board-inner {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.8rem;
+
+		& .v-key {
+			font-size: 0.85rem;
+		}
+		& .v-value {
+			font-weight: 700;
+			font-size: 0.9rem;
+			letter-spacing: -0.6px;
+			word-spacing: 2px;
+			text-transform: uppercase;
+		}
+		& .v-status {
+			font-size: 0.65rem;
+			padding: 4px 10px;
+			letter-spacing: 0.1px;
+			font-weight: 600;
+			border-radius: 4px;
+
+			&.v-success {
+				background-color: var(--green-opacity);
+				color: var(--green-clr);
+			}
+			&.v-failed {
+				background-color: var(--failed-opacity);
+				color: var(--failed-clr);
+			}
+			&.v-pending {
+				background-color: var(--yellow-opacity);
+				color: var(--yellow-clr);
+			}
+		}
+		& .v-image-container {
+			--size: 25px;
+			width: var(--size);
+			height: var(--size);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			aspect-ratio: 1/1;
+			justify-content: center;
+			overflow: hidden;
+			margin-right: 10px;
+		}
+		@media all and (max-width: 400px) {
+			& :is(.v-key, .v-value) {
+				font-size: 0.7rem;
+			}
+		}
+	}
+}
+.modal .modal-dialog-scrollable .modal-body {
+	scrollbar-gutter: stable;
+}
+.modal .v-separator {
+	background-color: var(--grey);
+	height: 1px;
+	position: relative;
+	margin-block: 1.8rem;
+	width: 100%;
+
+	& .v-date {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+		background-color: var(--white);
+		font-size: 0.8rem;
+		padding: 10px 0.5rem;
+		color: var(--grey);
+		letter-spacing: -0.3px;
+		border-radius: 100px;
+	}
+}
+.modal .v-left {
+	color: var(--primary-clr);
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+.modal .v-right.v-links {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+
+	& .image-container {
+		--size: 23px;
+		height: var(--size);
+		width: var(--size);
 	}
 }

@@ -14,6 +14,7 @@
 
 		<!-- utility styles -->
 		<link rel="stylesheet" href="../assets/css/table.css" />
+		<link rel="stylesheet" href="../assets/css/chart.css" />
 
 		<!-- globalstyles -->
 		<link rel="stylesheet" href="../assets/css/base.css" />
@@ -194,9 +195,86 @@
 							<!-- notification ends -->
 						</div>
 						<!-- topper ends  -->
+						<!-- page content body start -->
 						<div class="page-content-body">
 							<main class="page-content-body-inner p-0">
-								<div id="v-cloak" class="row col-12 align-items-stretch m-0">
+								<div id="v-cloak" class="row col-12 align-items-stretch m-0 p-sm-2 pe-sm-1">
+									<div class="col-xl-8 p-0">
+										<div class="v-chart-container p-2 h-100">
+											<div class="v-chart-container-skin color-grey h-100 p-4">
+												<!-- tabs and pills content @::start -->
+												<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+													<li class="nav-item" role="presentation">
+														<button
+															class="nav-link active"
+															id="pills-home-tab"
+															data-bs-toggle="pill"
+															data-bs-target="#pills-home"
+															type="button"
+															role="tab"
+															aria-controls="pills-home"
+															aria-selected="true">
+															Home
+														</button>
+													</li>
+													<li class="nav-item" role="presentation">
+														<button
+															class="nav-link"
+															id="pills-profile-tab"
+															data-bs-toggle="pill"
+															data-bs-target="#pills-profile"
+															type="button"
+															role="tab"
+															aria-controls="pills-profile"
+															aria-selected="false">
+															Profile
+														</button>
+													</li>
+													<li class="nav-item" role="presentation">
+														<button
+															class="nav-link"
+															id="pills-contact-tab"
+															data-bs-toggle="pill"
+															data-bs-target="#pills-contact"
+															type="button"
+															role="tab"
+															aria-controls="pills-contact"
+															aria-selected="false">
+															Contact
+														</button>
+													</li>
+													<li class="nav-item" role="presentation">
+														<button
+															class="nav-link"
+															id="pills-disabled-tab"
+															data-bs-toggle="pill"
+															data-bs-target="#pills-disabled"
+															type="button"
+															role="tab"
+															aria-controls="pills-disabled"
+															aria-selected="false"
+															disabled>
+															Disabled
+														</button>
+													</li>
+												</ul>
+												<div class="tab-content" id="pills-tabContent">
+													<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+														...
+													</div>
+													<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+													<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+													<div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+												</div>
+												<!-- tabs and pills content @::end -->
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-12 col-md-7 p-0">
+										<div class="v-chart-container p-2 h-100">
+											<div class="v-chart-container-skin color-grey h-100"></div>
+										</div>
+									</div>
 									<!-- cards @::start -->
 									<div class="v-card-container-wrapper col-12 p-0">
 										<div class="v-top d-flex align-items-center justify-content-between px-2">
@@ -296,11 +374,10 @@
 										</div>
 									</div>
 									<!-- cards @::end -->
-
 									<div class="col-xl-8 p-0">
 										<!-- table formatting @::start -->
-										<div id="v-table-container" class="p-2">
-											<div class="v-table-skin border rounded-3">
+										<div id="v-table-container" class="p-2 h-100 d-block">
+											<div class="v-table-skin border rounded-3 h-100">
 												<div class="d-flex align-items-center justify-content-between border-bottom pt-2 px-3">
 													<ul class="nav nav-pills" id="pills-tab" role="tablist">
 														<li class="nav-item" role="presentation">
@@ -356,7 +433,7 @@
 															</button>
 														</li>
 													</ul>
-													<a href=""><span>See all</span></a>
+													<a href="" class="link-out"><span>See all</span></a>
 												</div>
 												<div class="tab-content" id="pills-tabContent">
 													<div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab" tabindex="0">
@@ -450,6 +527,114 @@
 																	</td>
 																	<td class="align-middle">
 																		<span class="v-tab pending">Successful</span>
+																	</td>
+																</tr>
+																<!-- each row@:: start -->
+																<!-- each row@:: start -->
+																<tr>
+																	<td class="align-middle">
+																		<span>#2093</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>27/07/2023, 2:20am</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>Intra</span>
+																	</td>
+																	<td class="align-middle">
+																		<div class="d-flex align-items-center v-country-detail">
+																			<div class="v-flag-svg">
+																				<img src="../assets/images/dilaac-af.svg" alt="" class="img-fluid" />
+																			</div>
+																			<span class="v-country-name">South Africa</span>
+																		</div>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-price">&#8358; 18, 400.00</span>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-tab success">Successful</span>
+																	</td>
+																</tr>
+																<!-- each row@:: start -->
+																<!-- each row@:: start -->
+																<tr>
+																	<td class="align-middle">
+																		<span>#2093</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>27/07/2023, 2:20am</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>Intra</span>
+																	</td>
+																	<td class="align-middle">
+																		<div class="d-flex align-items-center v-country-detail">
+																			<div class="v-flag-svg">
+																				<img src="../assets/images/dilaac-ax.svg" alt="" class="img-fluid" />
+																			</div>
+																			<span class="v-country-name">Cameroon</span>
+																		</div>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-price">&#8358; 18, 400.00</span>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-tab failed">Failed</span>
+																	</td>
+																</tr>
+																<!-- each row@:: start -->
+																<!-- each row@:: start -->
+																<tr>
+																	<td class="align-middle">
+																		<span>#2093</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>27/07/2023, 2:20am</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>Intra</span>
+																	</td>
+																	<td class="align-middle">
+																		<div class="d-flex align-items-center v-country-detail">
+																			<div class="v-flag-svg">
+																				<img src="../assets/images/dilaac-af.svg" alt="" class="img-fluid" />
+																			</div>
+																			<span class="v-country-name">South Africa</span>
+																		</div>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-price">&#8358; 18, 400.00</span>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-tab success">Successful</span>
+																	</td>
+																</tr>
+																<!-- each row@:: start -->
+																<!-- each row@:: start -->
+																<tr>
+																	<td class="align-middle">
+																		<span>#2093</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>27/07/2023, 2:20am</span>
+																	</td>
+																	<td class="align-middle">
+																		<span>Intra</span>
+																	</td>
+																	<td class="align-middle">
+																		<div class="d-flex align-items-center v-country-detail">
+																			<div class="v-flag-svg">
+																				<img src="../assets/images/dilaac-ax.svg" alt="" class="img-fluid" />
+																			</div>
+																			<span class="v-country-name">Cameroon</span>
+																		</div>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-price">&#8358; 18, 400.00</span>
+																	</td>
+																	<td class="align-middle">
+																		<span class="v-tab failed">Failed</span>
 																	</td>
 																</tr>
 																<!-- each row@:: start -->
@@ -690,60 +875,6 @@
 																	</td>
 																</tr>
 																<!-- each row@:: start -->
-																<!-- each row@:: start -->
-																<tr>
-																	<td class="align-middle">
-																		<span>#2093</span>
-																	</td>
-																	<td class="align-middle">
-																		<span>27/07/2023, 2:20am</span>
-																	</td>
-																	<td class="align-middle">
-																		<span>Intra</span>
-																	</td>
-																	<td class="align-middle">
-																		<div class="d-flex align-items-center v-country-detail">
-																			<div class="v-flag-svg">
-																				<img src="../assets/images/dilaac-ax.svg" alt="" class="img-fluid" />
-																			</div>
-																			<span class="v-country-name">Cameroon</span>
-																		</div>
-																	</td>
-																	<td class="align-middle">
-																		<span class="v-price">&#8358; 18, 400.00</span>
-																	</td>
-																	<td class="align-middle">
-																		<span class="v-tab failed">Failed</span>
-																	</td>
-																</tr>
-																<!-- each row@:: start -->
-																<!-- each row@:: start -->
-																<tr>
-																	<td class="align-middle">
-																		<span>#2093</span>
-																	</td>
-																	<td class="align-middle">
-																		<span>27/07/2023, 2:20am</span>
-																	</td>
-																	<td class="align-middle">
-																		<span>Intra</span>
-																	</td>
-																	<td class="align-middle">
-																		<div class="d-flex align-items-center v-country-detail">
-																			<div class="v-flag-svg">
-																				<img src="../assets/images/dilaac-bd.svg" alt="" class="img-fluid" />
-																			</div>
-																			<span class="v-country-name">Belgium</span>
-																		</div>
-																	</td>
-																	<td class="align-middle">
-																		<span class="v-price">&#8358; 18, 400.00</span>
-																	</td>
-																	<td class="align-middle">
-																		<span class="v-tab pending">Successful</span>
-																	</td>
-																</tr>
-																<!-- each row@:: start -->
 															</tbody>
 														</table>
 													</div>
@@ -752,15 +883,35 @@
 										</div>
 										<!-- table formatting @::end -->
 									</div>
-									<div class="col-xl-4">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam obcaecati, aliquid id atque ut impedit consequatur laborum fugit
-										dignissimos ipsam nemo sequi quia reprehenderit. Dolorem architecto molestias minus et voluptatem?
+									<div class="col-xl-4 col-12 col-md-7 p-0">
+										<div class="v-chart-container p-2 h-100">
+											<div class="v-chart-container-skin color-grey h-100">
+												<div class="container-title mb-3">
+													<h6 class="v-title">Country Summary</h6>
+												</div>
+												<div class="container-body">
+													<div class="d-flex align-items-center gap-4 flex-wrap flex-sm-nowrap justify-content-between">
+														<div class="d-flex flex-column align-items-center v-chart-detail">
+															<small class="text-nowrap text-sm">Total country in use</small>
+															<h1 class="v-num">5</h1>
+														</div>
+														<canvas id="v-pie-chart"></canvas>
+													</div>
+													<ul id="v-list-countries">
+														<div class="text-end">
+															<small class="lh-1 opacity-75">No of transaction</small>
+														</div>
+													</ul>
+													<div class="text-end">
+														<a href="" class="link-out">See all</a>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</main>
 						</div>
-						<!-- page content body -->
-
 						<!-- page content body end -->
 					</div>
 					<!-- page content inner end -->
@@ -873,5 +1024,80 @@
 		</div>
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
+		<script src="../assets/js/chart.umd.js"></script>
+		<script>
+			(async function () {
+				let data;
+				function getVariationOfMainColor(opacity = 1) {
+					return `rgb(255, 74, 0, ${opacity})`;
+				}
+
+				const countryContainer = document.getElementById("v-list-countries");
+				data = [
+					{ bgColor: "", country: "Ivory Coast", count: 203 },
+					{ bgColor: "", country: "Ghana", count: 1229 },
+					{ bgColor: "", country: "Gambia", count: 325 },
+					{ bgColor: "", country: "Nigeria", count: 894 },
+					{ bgColor: "", country: "South Africa", count: 244 },
+				];
+
+				/*the whole point of 
+					using this, is to use the variations
+					of the primary clr, differing by 20% of 5 items max! 
+				*/
+
+				let numOfItems = 0;
+				const colorVariationArray = [];
+				while (data.length >= numOfItems) {
+					const result = data.length * 20 - numOfItems * 20;
+
+					colorVariationArray.push(result / 100);
+					numOfItems++;
+				}
+
+				if (colorVariationArray.length) {
+					data = data.map((eachData, index) => {
+						const { bgColor } = eachData;
+						const colorOpacity = colorVariationArray.at(index);
+						return {
+							...eachData,
+							bgColor: getVariationOfMainColor(colorOpacity),
+						};
+					});
+				}
+
+				new Chart(document.getElementById("v-pie-chart"), {
+					type: "pie",
+					responsive: true,
+					aspectRatio: 1,
+					borderWidth: 1,
+					legend: {
+						display: true,
+						position: "bottom",
+					},
+					data: {
+						datasets: [
+							{
+								label: "Transactions",
+								data: data.map(({ count }) => count),
+								backgroundColor: data.map(({ bgColor }) => (bgColor !== "" ? bgColor : "")),
+							},
+						],
+					},
+				});
+				data.forEach(({ bgColor, country, count }) => {
+					const li = document.createElement("li");
+					li.classList.add("d-flex", "align-items-center", "justify-content-between");
+					li.innerHTML = `
+							<div class="v-country d-flex align-items-center gap-2">
+								<div class="dot" style="background-color : ${bgColor}";></div>
+								<span class="v-country-name">${country}</span>
+							</div>
+							<span class="v-value">${count}</span>
+					`;
+					countryContainer.appendChild(li);
+				});
+			})();
+		</script>
 	</body>
 </html>

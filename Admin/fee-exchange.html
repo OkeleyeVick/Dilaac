@@ -722,7 +722,7 @@
 												<span>Range</span>
 												<span class="v-range-track-num">1</span>
 											</span>
-											<button class="v-delete-range-button">
+											<button type="button" class="v-delete-range-button">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 													<path
 														fill="none"
@@ -763,7 +763,7 @@
 												<span>Range</span>
 												<span class="v-range-track-num">2</span>
 											</span>
-											<button class="v-delete-range-button">
+											<button type="button" class="v-delete-range-button">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 													<path
 														fill="none"
@@ -825,25 +825,26 @@
 									<input type="text" name="" class="form-control" id="local-to-usd-rate" />
 								</div>
 							</div>
-							<div class="d-flex align-items-center justify-content-between">
+							<div class="v-1fOF1VN">
 								<input type="file" name="v-collection-country-flag" id="" hidden />
-								<button type="button" id="v-add-country-flag-button" class="d-flex align-items-center gap-1">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="1.5"
-											d="M12.75 7.75h-10m5-5v10" />
-									</svg>
-									<span>Add country flag</span>
-								</button>
-								<div class="v-country-flag-display"></div>
+								<div class="d-flex align-items-center justify-content-between">
+									<button type="button" class="d-flex align-items-center gap-1 v-add-country-flag-button">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="1.5"
+												d="M12.75 7.75h-10m5-5v10" />
+										</svg>
+										<span>Add country flag</span>
+									</button>
+									<div class="v-country-flag-display"></div>
+								</div>
 							</div>
-
 							<div class="v-confirm-button mt-4 mb-2">
-								<button type="submit" class="v-confirm-button">Confirm</button>
+								<button type="button" data-bs-target="#v-country-success" data-bs-toggle="modal" class="v-confirm-button">Confirm</button>
 							</div>
 						</form>
 						<template id="v-range-template">
@@ -916,27 +917,51 @@
 									<input type="text" name="" class="form-control" id="country-to-usd-rate" />
 								</div>
 							</div>
-							<div class="d-flex align-items-center justify-content-between">
+							<div class="v-1fOF1VN">
 								<input type="file" name="v-collection-country-flag" id="" hidden />
-								<button type="button" id="v-add-country-flag-button" class="d-flex align-items-center gap-1">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="1.5"
-											d="M12.75 7.75h-10m5-5v10" />
-									</svg>
-									<span>Add country flag</span>
-								</button>
-								<div class="v-country-flag-display"></div>
+								<div class="d-flex align-items-center justify-content-between">
+									<button type="button" class="d-flex align-items-center gap-1 v-add-country-flag-button">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="1.5"
+												d="M12.75 7.75h-10m5-5v10" />
+										</svg>
+										<span>Add country flag</span>
+									</button>
+									<div class="v-country-flag-display"></div>
+								</div>
 							</div>
 
 							<div class="v-confirm-button mt-4 mb-2">
-								<button type="submit" class="v-confirm-button">Confirm</button>
+								<button type="button" data-bs-target="#v-country-success" data-bs-toggle="modal" class="v-confirm-button">Confirm</button>
 							</div>
 						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal @::end -->
+		<!-- modal @::end -->
+		<div class="modal fade" id="v-country-success" tabindex="-1" aria-labelledby="v-country-successlabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h6 class="modal-title flex-grow-1 text-center" id="v-country-successlabel">Country added successfully</h6>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body p-3">
+						<div class="success-image-container col-sm-10 text-center d-flex align-items-center flex-column gap-3 mx-auto">
+							<div class="v-modal-image">
+								<img src="../assets/images/dilaac-success-check.png" alt="" class="img-fluid" />
+							</div>
+						</div>
+						<div class="mt-5">
+							<button type="button" class="v-submit-button" data-bs-dismiss="modal">Home</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -945,9 +970,34 @@
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
 		<script type="module">
-			import { sayName } from "../assets/js/modules/useImage.js";
+			import { appendChild } from "../assets/js/modules/useAppendImage.js";
+			import { treatImage } from "../assets/js/modules/useImage.js";
+			(() => {
+				const parentContainer = document.getElementById("v-ranges-parent-container");
+				const addNewRangeButton = document.getElementById("v-add-range");
+				const rangeTemplate = document.getElementById("v-range-template");
 
-			// sayName();
+				// for modals
+				const modalForms = document.querySelectorAll(".modal .v-form");
+
+				for (const form of modalForms) {
+					const toggleFileInput = form.querySelector(".v-add-country-flag-button");
+					const fileInput = form.querySelector("input[type='file']");
+					const imageContainer = form.querySelector(".v-country-flag-display");
+					const parentContainer = form.querySelector(".v-1fOF1VN");
+
+					toggleFileInput.addEventListener("click", function () {
+						fileInput.click();
+					});
+
+					fileInput.addEventListener("input", async function (event) {
+						if (!event) return;
+						const { error = "Error occured, try again!", base64URL } = await treatImage(event);
+
+						appendChild({ imageParentContainer: imageContainer, imageSrc: base64URL, error: error, parentContainer: parentContainer });
+					});
+				}
+			})();
 		</script>
 	</body>
 </html>

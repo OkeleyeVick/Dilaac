@@ -1,48 +1,55 @@
 "use strict";
 
-function sayName(name) {
-	return console.log("Vickkk is my name");
-}
-
 const readFile = function (uploadedFile) {
 	return new Promise((resolve, reject) => {
 		const reader = new FileReader();
 
 		reader.addEventListener("load", () => resolve(reader.result));
-		reader.addEventListener("error", () => resolve(reader.error));
+		reader.addEventListener("error", () => reject(reader.error));
 
 		reader.readAsDataURL(uploadedFile);
 	});
 };
 
-function checkTypeOfFile(fileName) {
-	let isAllowableFile = true,
-		errorMessage = null;
-	const fileExtensions = ["png", "jpg", "jpeg"];
+const useImage = async (image) => {
+	let error, base64URL;
 
-	const fileExt = fileName.split(".")[1].toLowerCase();
-	if (!fileExtensions.includes(fileExt)) {
-		isAllowableFile = false;
-		errorMessage = "Upload an image in PNG, JPEG or JPG format!";
-	}
-	return { isAllowableFile, errorMessage };
-}
+	if (!image) return;
+	const imageFile = image.target.files[0];
+	if (!imageFile) return;
+	const { newError, newResult } = await dealWithFile(imageFile);
 
-async function dealWithFile(event) {
-	const imageFile = event.target.files[0];
-	const { isAllowableFile, errorMessage } = checkTypeOfFile(imageFile.name);
+	(error = newError), (base64URL = newResult);
 
-	if (errorMessage !== null || isAllowableFile === false) {
-		UpdateTheDom(errorMessage ?? "Something went wrong, try uploading file again");
-	}
+	function checkTypeOfFile(fileName) {
+		let isAllowableFile = true,
+			errorMessage = "";
+		const fileExtensions = ["png", "jpg", "jpeg"];
 
-	if (isAllowableFile && errorMessage === null) {
-		const result = await readFile(imageFile);
-		if (result) {
-			fakeButton.querySelector("img.img-fluid").src = result;
-			UpdateTheDom();
+		const fileExt = fileName.split(".")[1].toLowerCase();
+		if (!fileExtensions.includes(fileExt)) {
+			isAllowableFile = false;
+			errorMessage = "Upload an image in PNG, JPEG or JPG format!";
 		}
+		return { isAllowableFile, errorMessage };
 	}
-}
 
-export { sayName };
+	async function dealWithFile(image) {
+		let newError, newResult;
+		if (!image) return;
+		const { isAllowableFile, errorMessage } = checkTypeOfFile(image.name);
+
+		if (errorMessage !== "" || isAllowableFile === false) {
+			newError = errorMessage;
+		}
+
+		if (isAllowableFile && errorMessage === "") {
+			newResult = await readFile(image);
+		}
+		return { newError, newResult };
+	}
+
+	return { error, base64URL };
+};
+
+export { useImage as treatImage };

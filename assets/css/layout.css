@@ -306,7 +306,7 @@ main.page-content-body-inner {
 	--r-offset: 1rem;
 	width: 100%;
 	transform-origin: right;
-	transition: scale 200ms ease;
+	transition: scale 200ms ease, border-color 300ms ease-in-out;
 	scale: 0 1;
 	position: relative;
 	display: grid;
@@ -386,4 +386,9 @@ main.page-content-body-inner {
 			z-index: 10;
 		}
 	}
+}
+.error-message {
+	color: red;
+	font-size: 0.85rem;
+	font-weight: 500;
 }

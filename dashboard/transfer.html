@@ -49,7 +49,7 @@
 									</a>
 								</li>
 								<li class="each-nav-link">
-									<a href="./transfer.html" class="nav-link-item">
+									<a href="./transfer.html" class="nav-link-item active">
 										<span>
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 												<path
@@ -387,7 +387,6 @@
 							<!--  main @::end-->
 						</div>
 						<!-- page content body @::end -->
-
 						<!-- page content body @::end -->
 					</div>
 					<!-- page content inner @::end -->
@@ -426,7 +425,7 @@
 							</a>
 						</li>
 						<li class="each-nav-link">
-							<a href="./transfer.html" class="nav-link-item">
+							<a href="./transfer.html" class="nav-link-item active">
 								<span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
 										<path
@@ -701,9 +700,59 @@
 									<button type="button" class="v-resend">Resend</button>
 								</span>
 								<div class="submit-button">
-									<button type="submit" class="v-submit-button">Proceed</button>
+									<button type="button" data-bs-toggle="modal" data-bs-target="#v-success" class="v-submit-button">Proceed</button>
 								</div>
 							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal @::end -->
+		<!-- modal @::end -->
+		<div class="modal fade" id="v-caution" tabindex="-1" aria-labelledby="v-cautionlabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h5 class="modal-title flex-grow-1 text-center" id="v-cautionlabel">Set transaction PIN</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="col-sm-10 text-center d-flex align-items-center flex-column gap-3 mx-auto">
+							<div class="v-modal-image">
+								<img src="../assets/images/dilaac-security-guard.png" alt="" class="img-fluid" />
+							</div>
+							<span class="text col-10 col-sm-9 v-small"> You need to set transaction PIN for you to continue with your present transaction </span>
+						</div>
+						<div class="mt-5">
+							<button type="button" class="v-submit-button" data-bs-toggle="modal" data-bs-target="#v-input-pin-modal">Continue</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal @::end -->
+		<!-- modal @::end -->
+		<div class="modal fade" id="v-success" tabindex="-1" aria-labelledby="v-successlabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-0">
+						<h5 class="modal-title flex-grow-1 text-center" id="v-successlabel">Transfer Successful</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="success-image-container col-sm-10 text-center d-flex align-items-center flex-column gap-3 mx-auto">
+							<div class="v-modal-image">
+								<img src="../assets/images/dilaac-success-check.png" alt="" class="img-fluid" />
+							</div>
+							<span class="text col-10 col-sm-9 v-small">
+								You have successfully transferred <span class="v-amount">&dollar; 20,000</span>
+								<br />
+								to <span class="v-receiver">Marcus Arjannah</span>
+							</span>
+						</div>
+						<div class="mt-5">
+							<button type="button" class="v-submit-button" data-bs-toggle="modal" data-bs-target="#v-caution">Home</button>
 						</div>
 					</div>
 				</div>
@@ -716,7 +765,7 @@
 		<script src="../assets/js/custom.js"></script>
 		<script src="../assets/js/utilities.js"></script>
 		<script>
-			(function () {
+			(() => {
 				const tabContainer = document.querySelector("#pills-international");
 				const formThatChanges = tabContainer.querySelector("#v-check-selection-option");
 				const checks = formThatChanges.querySelectorAll(".form-check");

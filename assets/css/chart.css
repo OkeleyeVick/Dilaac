@@ -1,0 +1,69 @@
+#v-pie-chart {
+	--size: 9rem;
+	max-width: var(--size) !important;
+	height: var(--size) !important;
+	aspect-ratio: 1/1;
+	width: 100% !important;
+}
+.v-chart-detail small {
+	font-size: 0.8rem;
+}
+.v-chart-container-skin .v-title {
+	font-size: 0.9rem;
+}
+.v-chart-container-skin.color-grey {
+	background-color: #f3f2f0;
+	border-radius: 5px;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+
+	& .container-body {
+		flex-grow: 1;
+		display: flex;
+		row-gap: 1rem;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	& .dot {
+		--size: 14px;
+		height: var(--size);
+		width: var(--size);
+		aspect-ratio: 1/1;
+		border: 1px solid var(--primary-clr);
+		border-radius: 50%;
+	}
+
+	& .v-value {
+		font-size: 0.85rem;
+		letter-spacing: -1px;
+		font-weight: 600;
+	}
+
+	& .v-country-name {
+		font-size: 0.86rem;
+	}
+}
+.v-chart-container-skin.color-grey .v-num {
+	font-weight: 600;
+	font-size: 2.6rem;
+}
+#v-list-countries {
+	row-gap: 0.25rem;
+	display: flex;
+	flex-direction: column;
+}
+.link-out {
+	display: flex;
+	align-items: center;
+	color: var(--primary-clr);
+	gap: 5px;
+	justify-content: flex-end;
+	font-size: 0.85rem;
+	font-weight: 500;
+
+	&:hover {
+		color: var(--primary-clr-dark);
+	}
+}

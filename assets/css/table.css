@@ -92,7 +92,6 @@
 #v-table-container {
 	display: flex;
 	flex-direction: column;
-	row-gap: 2rem;
 	height: 100%;
 	justify-content: space-between;
 }
@@ -511,7 +510,7 @@ table tbody td .v-dollar-value {
 		opacity: 0.82;
 	}
 
-	& :is(#v-add-country-flag-button, #v-add-range) {
+	& :is(.v-add-country-flag-button, #v-add-range) {
 		color: var(--primary-clr);
 		& svg {
 			--size: var(--md-svg-size);
