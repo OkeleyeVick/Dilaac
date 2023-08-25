@@ -477,11 +477,11 @@
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header border-0">
-						<h6 class="modal-title flex-grow-1 text-center" id="v-input-pin-label">Enter new PIN</h6>
+						<h6 class="modal-title flex-grow-1 text-center">Enter new PIN</h6>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<div id="v-new-pin-form-container" class="col-12 col-sm-11 mx-auto">
+						<div class="col-12 col-sm-11 mx-auto">
 							<form action="" id="">
 								<div class="v-pins-container gap-2 gap-sm-3">
 									<!-- each pin input @::start -->
@@ -520,11 +520,11 @@
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header border-0">
-						<h6 class="modal-title flex-grow-1 text-center" id="v-input-pin-label">Confirm new PIN</h6>
+						<h6 class="modal-title flex-grow-1 text-center">Confirm new PIN</h6>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<div id="v-new-pin-form-container" class="col-12 col-sm-11 mx-auto">
+						<div class="col-12 col-sm-11 mx-auto">
 							<form action="" id="">
 								<div class="v-pins-container gap-2 gap-sm-3">
 									<!-- each pin input @::start -->
@@ -552,7 +552,7 @@
 									<button type="button" class="v-cancel flex-grow-1 text-center" data-bs-target="#v-new-pin-modal" data-bs-toggle="modal">
 										Back
 									</button>
-									<button type="button" class="v-proceed flex-grow-1" data-bs-toggle="modal" data-bs-target="#v-input-pin-modal">
+									<button type="button" class="v-proceed flex-grow-1 text-center" data-bs-toggle="modal" data-bs-target="#v-input-pin-modal">
 										Proceed to transfer
 									</button>
 								</div>
@@ -568,6 +568,7 @@
 		<script src="../assets/js/utilities.js"></script>
 		<script type="module">
 			import { treatImage } from "../assets/js/modules/useImage.js";
+			import { usePINPasting } from "../assets/js/modules/usePINPasting.js";
 
 			const seeIcon = `
 			            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.275 15.296C2.425 14.192 2 13.639 2 12c0-1.64.425-2.191 1.275-3.296C4.972 6.5 7.818 4 12 4c4.182 0 7.028 2.5 8.725 4.704C21.575 9.81 22 10.361 22 12c0 1.64-.425 2.191-1.275 3.296C19.028 17.5 16.182 20 12 20c-4.182 0-7.028-2.5-8.725-4.704Z"/><path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0Z"/></g></svg>
@@ -580,8 +581,17 @@
 			const fakeButton = document.querySelector(".v-ASG-35");
 			const imageProfileInput = document.getElementById("user-image-upload");
 			const parentImageContainer = document.querySelector(".v-user-picture-upload");
+			const modalsForPINS = document.querySelectorAll(".v-password-set-pin-modal");
 
-			function UpdateTheDom(errorMessage) {
+			// for PIN creaton
+			for (const eachModal of modalsForPINS) {
+				const formControls = eachModal.querySelectorAll(".v-pins-container .form-control");
+
+				usePINPasting({ allFormControls: formControls });
+			}
+
+			// for picture image upload
+			function updateTheDom(errorMessage) {
 				const getSpan = parentImageContainer.querySelector(".error-message");
 				if (getSpan && errorMessage) {
 					return (getSpan.textContent = `${errorMessage}`);
@@ -606,15 +616,16 @@
 				const { error = "", base64URL } = await treatImage(event);
 
 				if (error !== "" || !base64URL) {
-					UpdateTheDom(error ?? "Something went wrong, try uploading file again");
+					updateTheDom(error ?? "Something went wrong, try uploading file again");
 				}
 
 				if (base64URL && error === "") {
 					fakeButton.querySelector("img.img-fluid").src = base64URL;
-					UpdateTheDom();
+					updateTheDom();
 				}
 			});
 
+			// for password toggles
 			for (const formInputContainer of formInputContainers) {
 				const formInput = formInputContainer.querySelector(".form-control");
 				const toggleButton = formInputContainer.querySelector(".v-password-toggler");

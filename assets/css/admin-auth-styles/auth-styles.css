@@ -25,7 +25,7 @@ main {
 	align-items: flex-start;
 	justify-content: flex-start;
 	row-gap: 4rem;
-	padding-block-start: rem;
+	padding-block-start: 2.8rem;
 	flex-direction: column;
 }
 main .position-sticky {

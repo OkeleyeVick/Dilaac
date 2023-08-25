@@ -747,7 +747,7 @@
 												<div class="v-form-input flex-grow-1 col-sm">
 													<label for="input-range" class="form-label">Input range</label>
 													<div class="v-form-input-inner">
-														<input type="tel" name="" class="form-control" id="input-range" />
+														<input type="tel" name="" class="form-control" />
 													</div>
 												</div>
 												<!-- each input @::end -->
@@ -755,7 +755,7 @@
 												<div class="v-form-input flex-grow-1 col-sm">
 													<label for="service-charge" class="form-label">Service charge</label>
 													<div class="v-form-input-inner">
-														<input type="tel" name="" class="form-control" id="service-charge" />
+														<input type="tel" name="" class="form-control" />
 													</div>
 												</div>
 												<!-- each input @::start -->
@@ -788,7 +788,7 @@
 												<div class="v-form-input flex-grow-1 col-sm">
 													<label for="input-range" class="form-label">Input range</label>
 													<div class="v-form-input-inner">
-														<input type="tel" name="" class="form-control" id="input-range" />
+														<input type="tel" name="" class="form-control" />
 													</div>
 												</div>
 												<!-- each input @::end -->
@@ -796,7 +796,7 @@
 												<div class="v-form-input flex-grow-1 col-sm">
 													<label for="service-charge" class="form-label">Service charge</label>
 													<div class="v-form-input-inner">
-														<input type="tel" name="" class="form-control" id="service-charge" />
+														<input type="tel" name="" class="form-control" />
 													</div>
 												</div>
 												<!-- each input @::start -->
@@ -880,7 +880,7 @@
 										<div class="v-form-input flex-grow-1 col-sm">
 											<label for="input-range" class="form-label">Input range</label>
 											<div class="v-form-input-inner">
-												<input type="tel" name="" class="form-control" id="input-range" />
+												<input type="tel" name="" class="form-control" />
 											</div>
 										</div>
 										<!-- each input @::end -->
@@ -888,7 +888,7 @@
 										<div class="v-form-input flex-grow-1 col-sm">
 											<label for="service-charge" class="form-label">Service charge</label>
 											<div class="v-form-input-inner">
-												<input type="tel" name="" class="form-control" id="service-charge" />
+												<input type="tel" name="" class="form-control" />
 											</div>
 										</div>
 										<!-- each input @::start -->
@@ -979,6 +979,38 @@
 		<script type="module">
 			import { appendChild } from "../assets/js/modules/useAppendImage.js";
 			import { treatImage } from "../assets/js/modules/useImage.js";
+
+			//for adding ranges
+			const rangesContainer = document.querySelector("#v-ranges-parent-container");
+			const addRangeButton = document.querySelector("#v-add-range");
+			const rangeTemplate = document.querySelector("#v-range-template");
+			let rangesList = rangesContainer.querySelectorAll(".v-each-range");
+
+			// give the existing items an id
+			rangesList.forEach((eachRange, index) => {
+				eachRange.setAttribute("id", index + 1);
+			});
+
+			//put the previously existing ranges in an array
+			let arrayOfRanges = [...rangesList];
+
+			function updateTheDom() {
+				rangesContainer.innerHTML = "";
+				for (const range of arrayOfRanges) {
+					rangesContainer.appendChild(range);
+				}
+			}
+
+			function addNewTemplate() {
+				const newTemplate = rangeTemplate.content.cloneNode(true).querySelector(".v-each-range");
+				newTemplate.querySelector(".v-range-track-num").textContent = arrayOfRanges.length + 1;
+				newTemplate.setAttribute("id", arrayOfRanges.length + 1);
+
+				arrayOfRanges.push(newTemplate);
+				updateTheDom();
+			}
+
+			addRangeButton.addEventListener("click", addNewTemplate);
 
 			// for modals
 			const modalForms = document.querySelectorAll(".modal .v-form");

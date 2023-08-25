@@ -12,7 +12,7 @@
 	font-size: 0.9rem;
 }
 .v-chart-container-skin.color-grey {
-	background-color: #f3f2f0;
+	background-color: #f3f2f0cf;
 	border-radius: 5px;
 	padding: 1rem;
 	display: flex;
@@ -43,6 +43,15 @@
 
 	& .v-country-name {
 		font-size: 0.86rem;
+	}
+	& :is(.state, .percentage-value) {
+		font-size: 0.8rem;
+	}
+
+	& .v-each-chart-info {
+		& .dot {
+			--size: 10px;
+		}
 	}
 }
 .v-chart-container-skin.color-grey .v-num {
@@ -144,6 +153,7 @@
 		color: var(--dark);
 		font-size: 0.8rem;
 		padding-inline: 4px;
+		padding-block-start: 0;
 
 		&.active {
 			background-color: transparent;
@@ -151,5 +161,29 @@
 			font-weight: 600;
 			color: var(--dark);
 		}
+	}
+}
+.v-chart-container-skin .v-top {
+	& .v-title {
+		font-size: 500;
+		letter-spacing: -0.4px;
+	}
+	& a.link-out:has(svg) {
+		letter-spacing: -0.4px;
+		font-size: 0.78rem;
+	}
+	& svg {
+		--size: var(--md-svg-size);
+		height: var(--size);
+		width: var(--size);
+	}
+}
+
+.v-chart-container {
+	& #pie-chart {
+		--size: 10rem;
+		max-width: var(--size) !important;
+		height: var(--size) !important;
+		margin: auto;
 	}
 }

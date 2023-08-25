@@ -198,7 +198,7 @@
 						<!-- page content body start -->
 						<div class="page-content-body">
 							<main class="page-content-body-inner p-0">
-								<div id="v-cloak" class="row col-12 align-items-stretch m-0 p-sm-2 pe-sm-1">
+								<div class="row col-12 align-items-stretch m-0 p-sm-2 pe-sm-1">
 									<div class="col-xl-8 p-0">
 										<div class="v-chart-container p-2 h-100">
 											<div class="v-chart-container-skin color-grey h-100 p-3 d-flex align-items-stretch flex-column flex-md-row gap-4 flex-wrap">
@@ -1086,7 +1086,8 @@
 		<script src="../assets/js/chart.umd.js"></script>
 		<script>
 			// for pie chart of countries
-			(async function () {
+
+			(() => {
 				let data;
 				function getVariationOfMainColor(opacity = 1) {
 					return `rgb(255, 74, 0, ${opacity})`;
@@ -1101,9 +1102,10 @@
 					{ bgColor: "", country: "South Africa", count: 244 },
 				];
 
-				/*the whole point of 
+				/*
+				the whole point of
 					using this, is to use the variations
-					of the primary clr, differing by 20% of 5 items max! 
+					of the primary clr, differing by 20% of 5 items max!
 				*/
 
 				let numOfItems = 0;
@@ -1128,12 +1130,9 @@
 
 				new Chart(document.getElementById("v-pie-chart"), {
 					type: "pie",
-					responsive: true,
-					legend: {
-						display: true,
-						position: "bottom",
-					},
+					legend: false,
 					data: {
+						// labels: ["v", "i", "c", "k", "s"],
 						datasets: [
 							{
 								label: "Transactions",
@@ -1144,6 +1143,7 @@
 						],
 					},
 				});
+
 				data.forEach(({ bgColor, country, count }) => {
 					const li = document.createElement("li");
 					li.classList.add("d-flex", "align-items-center", "justify-content-between");

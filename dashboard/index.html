@@ -17,6 +17,9 @@
 
 		<!-- utility styles -->
 		<link rel="stylesheet" href="../assets/css/table.css" />
+		<link rel="stylesheet" href="../assets/css/chart.css" />
+
+		<link rel="stylesheet" href="" />
 
 		<!-- specific page style -->
 		<link rel="stylesheet" href="../assets/css/users-styles/index.css" />
@@ -289,6 +292,193 @@
 									</div>
 								</div>
 								<!-- cards @::end -->
+								<div class="row col-12 align-items-stretch m-0 p-2 pe-sm-1">
+									<div class="col-xl-8 p-0">
+										<div class="v-chart-container h-100">
+											<div class="v-chart-container-skin color-grey h-100 p-3 d-flex align-items-stretch flex-column flex-md-row gap-4 flex-wrap">
+												<div class="v-chart-info">
+													<div>
+														<h6 class="v-title">Amount summary</h6>
+													</div>
+													<ul>
+														<li>
+															<div>
+																<h3 class="v-description-value">
+																	<sup>&dollar;</sup>
+																	140, 000
+																</h3>
+																<span class="v-description-text"> Total amount transferred </span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<h3 class="v-description-value">
+																	<sup>&dollar;</sup>
+																	140, 000
+																</h3>
+																<span class="v-description-text"> Total amount transferred </span>
+															</div>
+														</li>
+														<li>
+															<div>
+																<h3 class="v-description-value">
+																	<sup>&dollar;</sup>
+																	140, 000
+																</h3>
+																<span class="v-description-text"> Total amount transferred </span>
+															</div>
+														</li>
+														<li>
+															<a href="" class="d-flex align-items-center gap-2">
+																<span>See history</span>
+																<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+																	<path
+																		fill="none"
+																		stroke="currentColor"
+																		stroke-linecap="round"
+																		stroke-linejoin="round"
+																		stroke-width="2"
+																		d="M22 3h7v7m-1.5-5.5L20 12m-3-7H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3v-9" />
+																</svg>
+															</a>
+														</li>
+													</ul>
+												</div>
+												<div class="flex-grow-1">
+													<!-- tabs and pills content @::start -->
+													<ul class="nav nav-pills mb-3 justify-content-start gap-3" id="pills-tab" role="tablist">
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link active"
+																id="pills-daily-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-daily"
+																type="button"
+																role="tab"
+																aria-controls="pills-daily"
+																aria-selected="true">
+																Daily
+															</button>
+														</li>
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link"
+																id="pills-weekly-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-weekly"
+																type="button"
+																role="tab"
+																aria-controls="pills-weekly"
+																aria-selected="false">
+																Weekly
+															</button>
+														</li>
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link"
+																id="pills-monthly-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-monthly"
+																type="button"
+																role="tab"
+																aria-controls="pills-monthly"
+																aria-selected="false">
+																Monthly
+															</button>
+														</li>
+														<li class="nav-item" role="presentation">
+															<button
+																class="nav-link"
+																id="pills-yearly-tab"
+																data-bs-toggle="pill"
+																data-bs-target="#pills-yearly"
+																type="button"
+																role="tab"
+																aria-controls="pills-yearly"
+																aria-selected="false">
+																Yearly
+															</button>
+														</li>
+													</ul>
+													<div class="tab-content" id="pills-tabContent">
+														<div class="tab-pane fade show active" id="pills-daily" role="tabpanel" aria-labelledby="pills-daily-tab" tabindex="0">
+															<canvas id="daily-chart"></canvas>
+														</div>
+														<div class="tab-pane fade" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab" tabindex="0">
+															<canvas id="weekly-chart"></canvas>
+														</div>
+														<div class="tab-pane fade" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab" tabindex="0">
+															<canvas id="monthly-chart"></canvas>
+														</div>
+														<div class="tab-pane fade" id="pills-yearly" role="tabpanel" aria-labelledby="pills-yearly-tab" tabindex="0">
+															<canvas id="yealy-chart"></canvas>
+														</div>
+													</div>
+													<!-- tabs and pills content @::end -->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-4 col-12 p-0">
+										<div class="v-chart-container py-2 py-xl-0 px-xl-3 h-100">
+											<div class="v-chart-container-skin color-grey h-100">
+												<div class="d-flex v-top align-items-center justify-content-between">
+													<h6 class="v-title">All transaction status</h6>
+													<a href="" class="link-out bg-transparent">
+														<span>View Details</span>
+														<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+															<path
+																fill="none"
+																stroke="currentColor"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																stroke-width="2"
+																d="M22 3h7v7m-1.5-5.5L20 12m-3-7H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3v-9" />
+														</svg>
+													</a>
+												</div>
+												<div class="d-flex flex-column align-items-center flex-xl-column flex-sm-row">
+													<div class="container-body my-4 justify-content-center">
+														<canvas id="pie-chart"></canvas>
+													</div>
+													<div
+														class="d-flex flex-grow-1 flex-row flex-sm-column flex-xl-row align-items-center justify-content-center flex-wrap gap-3 mt-3">
+														<!-- each chart info @::start -->
+														<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
+															<span class="d-flex align-items-center gap-1">
+																<span class="dot"></span>
+																<span class="state">Pending</span>
+															</span>
+															<span class="hypen">&hyphen;</span>
+															<span class="percentage-value">20%</span>
+														</div>
+														<!-- each chart info @::end -->
+														<!-- each chart info @::start -->
+														<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
+															<span class="d-flex align-items-center gap-1">
+																<span class="dot"></span>
+																<span class="state">Pending</span>
+															</span>
+															<span class="hypen">&hyphen;</span>
+															<span class="percentage-value">45%</span>
+														</div>
+														<!-- each chart info @::end -->
+														<!-- each chart info @::start -->
+														<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
+															<span class="d-flex align-items-center gap-1">
+																<span class="dot"></span>
+																<span class="state">Pending</span>
+															</span>
+															<span class="hypen">&hyphen;</span>
+															<span class="percentage-value">35%</span>
+														</div>
+														<!-- each chart info @::end -->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 								<!-- table formatting @::start -->
 								<div id="v-table-container" class="p-2">
 									<div class="v-table-skin border rounded-3">
@@ -1379,5 +1569,44 @@
 		</div>
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
+		<script src="../assets/js/chart.umd.js"></script>
+		<script src="../assets/js/helpers.js"></script>
+		<script>
+			const value = new Chart();
+			console.log(value);
+			(async () => {
+				const data = [300, 50, 100];
+				const newData = {
+					labels: ["Red", "Blue", "Yellow"],
+					datasets: [
+						{
+							label: "My First Dataset",
+							data: data,
+							backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"],
+							hoverOffset: 10,
+						},
+					],
+				};
+				const options = {
+					type: "pie",
+					data: {
+						datasets: newData.datasets,
+					},
+				};
+
+				function getPercentage() {
+					const sumTotal = data.reduce((currentTotalValue, currentValue) => {
+						return currentTotalValue + currentValue;
+					});
+					const percentages = data.map((eachDatavalue, index) => {
+						return Math.floor((eachDatavalue / sumTotal) * 100);
+					});
+				}
+
+				getPercentage();
+
+				new Chart(document.getElementById("pie-chart"), options);
+			})();
+		</script>
 	</body>
 </html>

@@ -113,7 +113,7 @@
 	border-radius: 4px;
 
 	&:hover {
-		background-color: var(--bore);
+		background-color: var(--primary-clr-dark);
 	}
 }
 #v-table-container .nav-item .nav-link.active {

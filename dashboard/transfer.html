@@ -762,15 +762,22 @@
 		<!-- =============== ALL MODALS @::end ========== -->
 
 		<script src="../assets/js/bootstrap.bundle.js"></script>
-		<script src="../assets/js/custom.js"></script>
+		<!-- <script src="../assets/js/custom.js"></script> -->
 		<script src="../assets/js/utilities.js"></script>
-		<script>
+		<script type="module">
+			import { usePINPasting } from "../assets/js/modules/usePINPasting.js";
+
 			(() => {
 				const tabContainer = document.querySelector("#pills-international");
 				const formThatChanges = tabContainer.querySelector("#v-check-selection-option");
 				const checks = formThatChanges.querySelectorAll(".form-check");
 				const containerWithLabelThatChanges = document.querySelector("#v-2gaNAQE3");
 
+				// for modal to change PIN
+				const allCodeInputs = document.querySelectorAll("#v-input-pin-form-container .v-pins-container .form-control");
+				usePINPasting({ allFormControls: allCodeInputs });
+
+				// for tabs and pills on the page
 				for (const check of checks) {
 					const labelThatChanges = containerWithLabelThatChanges.querySelector(".form-label");
 					const input = check.querySelector(".form-check-input");
