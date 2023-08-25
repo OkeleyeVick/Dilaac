@@ -442,37 +442,20 @@
 														<canvas id="pie-chart"></canvas>
 													</div>
 													<div
-														class="d-flex flex-grow-1 flex-row flex-sm-column flex-xl-row align-items-center justify-content-center flex-wrap gap-3 mt-3">
-														<!-- each chart info @::start -->
-														<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
-															<span class="d-flex align-items-center gap-1">
-																<span class="dot"></span>
-																<span class="state">Pending</span>
-															</span>
-															<span class="hypen">&hyphen;</span>
-															<span class="percentage-value">20%</span>
-														</div>
-														<!-- each chart info @::end -->
-														<!-- each chart info @::start -->
-														<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
-															<span class="d-flex align-items-center gap-1">
-																<span class="dot"></span>
-																<span class="state">Pending</span>
-															</span>
-															<span class="hypen">&hyphen;</span>
-															<span class="percentage-value">45%</span>
-														</div>
-														<!-- each chart info @::end -->
-														<!-- each chart info @::start -->
-														<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
-															<span class="d-flex align-items-center gap-1">
-																<span class="dot"></span>
-																<span class="state">Pending</span>
-															</span>
-															<span class="hypen">&hyphen;</span>
-															<span class="percentage-value">35%</span>
-														</div>
-														<!-- each chart info @::end -->
+														class="d-flex flex-grow-1 flex-row flex-sm-column flex-xl-row align-items-start justify-content-center flex-wrap gap-3 mt-3"
+														id="v-data-explanation-info">
+														<template id="v-data-explanation-info-template">
+															<!-- each chart info @::start -->
+															<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
+																<span class="d-flex align-items-center gap-1">
+																	<span class="dot"></span>
+																	<span class="state"></span>
+																</span>
+																<span class="hypen">&hyphen;</span>
+																<span class="percentage-value"></span>
+															</div>
+															<!-- each chart info @::end -->
+														</template>
 													</div>
 												</div>
 											</div>
@@ -1570,43 +1553,52 @@
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
 		<script src="../assets/js/chart.umd.js"></script>
-		<script src="../assets/js/helpers.js"></script>
-		<script>
-			const value = new Chart();
-			console.log(value);
-			(async () => {
-				const data = [300, 50, 100];
-				const newData = {
-					labels: ["Red", "Blue", "Yellow"],
-					datasets: [
-						{
-							label: "My First Dataset",
-							data: data,
-							backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"],
-							hoverOffset: 10,
-						},
-					],
-				};
-				const options = {
-					type: "pie",
-					data: {
-						datasets: newData.datasets,
-					},
-				};
 
-				function getPercentage() {
-					const sumTotal = data.reduce((currentTotalValue, currentValue) => {
-						return currentTotalValue + currentValue;
-					});
-					const percentages = data.map((eachDatavalue, index) => {
-						return Math.floor((eachDatavalue / sumTotal) * 100);
-					});
-				}
+		<script type="module">
+			import { usePieChart } from "../assets/js/modules/useChartjs.js";
+			const dataItemTemplate = document.getElementById("v-data-explanation-info-template");
+			const dataItemContainer = document.getElementById("v-data-explanation-info");
 
-				getPercentage();
+			/*
+			let say you have the data coming from the
+			backend as an array of object, you have to extra out
+			an array of the needed data, for the PIE CHART ALONE!
+			example below: 👇
 
-				new Chart(document.getElementById("pie-chart"), options);
-			})();
+			PLEASE ENSURE YOU GIVE THE VALUE A VARIABLE NAME CALLED "value"
+			*/
+
+			// ============== example of data @::start ============= //
+			const statuses = [
+				{
+					status: "Successful",
+					value: 70,
+				},
+				{
+					status: "Pending",
+					value: 15,
+				},
+				{
+					status: "Failed",
+					value: 15,
+				},
+			];
+			// ============== example of data @::end ============= //
+
+			const { data: result } = usePieChart({
+				element: document.getElementById("pie-chart"),
+				arrayOfdata: statuses,
+				labelTitle: "Status",
+			});
+
+			result.forEach(({ bgColor, status, value, valueAsDecimal }) => {
+				const newTemplate = dataItemTemplate.content.cloneNode(true).querySelector(".v-each-chart-info");
+				newTemplate.querySelector(".dot").style.backgroundColor = bgColor;
+				newTemplate.querySelector(".state").textContent = status;
+				newTemplate.querySelector(".percentage-value").textContent = `${value}%`;
+
+				dataItemContainer.appendChild(newTemplate);
+			});
 		</script>
 	</body>
 </html>

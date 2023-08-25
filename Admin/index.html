@@ -200,13 +200,13 @@
 							<main class="page-content-body-inner p-0">
 								<div class="row col-12 align-items-stretch m-0 p-sm-2 pe-sm-1">
 									<div class="col-xl-8 p-0">
-										<div class="v-chart-container p-2 h-100">
+										<div class="v-chart-container py-2 py-xl-0 px-xl-2 h-100">
 											<div class="v-chart-container-skin color-grey h-100 p-3 d-flex align-items-stretch flex-column flex-md-row gap-4 flex-wrap">
-												<div class="v-chart-info">
+												<div class="v-chart-info d-flex flex-column">
 													<div>
 														<h6 class="v-title">Amount summary</h6>
 													</div>
-													<ul>
+													<ul class="flex-grow-1">
 														<li>
 															<div>
 																<h3 class="v-description-value">
@@ -325,9 +325,46 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-xl-4 col-12 col-md-7 p-0">
-										<div class="v-chart-container p-2 h-100">
-											<div class="v-chart-container-skin color-grey h-100"></div>
+									<div class="col-xl-4 col-12 p-0">
+										<div class="v-chart-container py-2 py-xl-0 px-xl-2 h-100">
+											<div class="v-chart-container-skin color-grey h-100">
+												<div class="d-flex v-top align-items-center justify-content-between">
+													<h6 class="v-title">All transaction status</h6>
+													<a href="" class="link-out bg-transparent">
+														<span>View Details</span>
+														<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+															<path
+																fill="none"
+																stroke="currentColor"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																stroke-width="2"
+																d="M22 3h7v7m-1.5-5.5L20 12m-3-7H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3v-9" />
+														</svg>
+													</a>
+												</div>
+												<div class="d-flex flex-column align-items-center flex-xl-column flex-sm-row">
+													<div class="container-body my-4 justify-content-center">
+														<canvas id="pie-chart"></canvas>
+													</div>
+													<div
+														class="d-flex flex-grow-1 flex-row flex-sm-column flex-xl-row align-items-start justify-content-center flex-wrap gap-3 mt-3"
+														id="v-data-explanation-info">
+														<template id="v-data-explanation-info-template">
+															<!-- each chart info @::start -->
+															<div class="flex-grow-1 d-flex align-items-center justify-content-center gap-2 v-each-chart-info">
+																<span class="d-flex align-items-center gap-1">
+																	<span class="dot"></span>
+																	<span class="state"></span>
+																</span>
+																<span class="hypen">&hyphen;</span>
+																<span class="percentage-value"></span>
+															</div>
+															<!-- each chart info @::end -->
+														</template>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<!-- cards @::start -->
@@ -1084,79 +1121,79 @@
 		<script src="../assets/js/bootstrap.bundle.js"></script>
 		<script src="../assets/js/utilities.js"></script>
 		<script src="../assets/js/chart.umd.js"></script>
-		<script>
-			// for pie chart of countries
+		<script type="module">
+			import { usePieChart } from "../assets/js/modules/useChartjs.js";
+			const dataItemTemplate = document.getElementById("v-data-explanation-info-template");
+			const dataItemContainer = document.getElementById("v-data-explanation-info");
+			const countryContainer = document.getElementById("v-list-countries");
 
-			(() => {
-				let data;
-				function getVariationOfMainColor(opacity = 1) {
-					return `rgb(255, 74, 0, ${opacity})`;
-				}
+			/*
+			let say you have the data coming from the
+			backend as an array of object, you have to extra out
+			an array of the needed data, for the PIE CHART ALONE!
+			example below: 👇
 
-				const countryContainer = document.getElementById("v-list-countries");
-				data = [
-					{ bgColor: "", country: "Ivory Coast", count: 203 },
-					{ bgColor: "", country: "Ghana", count: 1229 },
-					{ bgColor: "", country: "Gambia", count: 325 },
-					{ bgColor: "", country: "Nigeria", count: 894 },
-					{ bgColor: "", country: "South Africa", count: 244 },
-				];
+			PLEASE ENSURE YOU GIVE THE VALUE A VARIABLE NAME CALLED "value"
+			*/
 
-				/*
-				the whole point of
-					using this, is to use the variations
-					of the primary clr, differing by 20% of 5 items max!
-				*/
+			// ============== example of data @::start ============= //
+			const statuses = [
+				{
+					status: "Successful",
+					value: 70,
+				},
+				{
+					status: "Pending",
+					value: 15,
+				},
+				{
+					status: "Failed",
+					value: 15,
+				},
+			];
+			// ============== example of data @::end ============= //
 
-				let numOfItems = 0;
-				const colorVariationArray = [];
-				while (data.length >= numOfItems) {
-					const result = data.length * 20 - numOfItems * 20;
+			const { data: result } = usePieChart({
+				element: document.getElementById("pie-chart"),
+				arrayOfdata: statuses,
+				labelTitle: "Status",
+			});
 
-					colorVariationArray.push(result / 100);
-					numOfItems++;
-				}
+			result.forEach(({ bgColor, status, value, valueAsDecimal }) => {
+				const newTemplate = dataItemTemplate.content.cloneNode(true).querySelector(".v-each-chart-info");
+				newTemplate.querySelector(".dot").style.backgroundColor = bgColor;
+				newTemplate.querySelector(".state").textContent = status;
+				newTemplate.querySelector(".percentage-value").textContent = `${value}%`;
 
-				if (colorVariationArray.length) {
-					data = data.map((eachData, index) => {
-						const { bgColor } = eachData;
-						const colorOpacity = colorVariationArray.at(index);
-						return {
-							...eachData,
-							bgColor: getVariationOfMainColor(colorOpacity),
-						};
-					});
-				}
+				dataItemContainer.appendChild(newTemplate);
+			});
 
-				new Chart(document.getElementById("v-pie-chart"), {
-					type: "pie",
-					legend: false,
-					data: {
-						// labels: ["v", "i", "c", "k", "s"],
-						datasets: [
-							{
-								label: "Transactions",
-								data: data.map(({ count }) => count),
-								backgroundColor: data.map(({ bgColor }) => (bgColor !== "" ? bgColor : "")),
-								hoverOffset: 10,
-							},
-						],
-					},
-				});
+			const data2 = [
+				{ country: "Ivory Coast", value: 203 },
+				{ country: "Ghana", value: 1229 },
+				{ country: "Gambia", value: 325 },
+				{ country: "Nigeria", value: 894 },
+				{ country: "South Africa", value: 244 },
+			];
 
-				data.forEach(({ bgColor, country, count }) => {
-					const li = document.createElement("li");
-					li.classList.add("d-flex", "align-items-center", "justify-content-between");
-					li.innerHTML = `
+			const { data: anotherResult } = usePieChart({
+				element: document.getElementById("v-pie-chart"),
+				arrayOfdata: data2,
+				labelTitle: "Transaction",
+			});
+
+			anotherResult.forEach(({ bgColor, country, value, valueAsDecimal }) => {
+				const li = document.createElement("li");
+				li.classList.add("d-flex", "align-items-center", "justify-content-between");
+				li.innerHTML = `
 							<div class="v-country d-flex align-items-center gap-2">
 								<div class="dot" style="background-color : ${bgColor}";></div>
 								<span class="v-country-name">${country}</span>
 							</div>
-							<span class="v-value">${count}</span>
+							<span class="v-value">${value}</span>
 					`;
-					countryContainer.appendChild(li);
-				});
-			})();
+				countryContainer.appendChild(li);
+			});
 		</script>
 	</body>
 </html>
